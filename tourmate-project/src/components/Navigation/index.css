@@ -1,0 +1,36 @@
+.nav {
+  border: 1px solid #e4e4e4;
+}
+.nav .ui.secondary.menu {
+  margin: 0 15px;
+}
+.nav .ui.small.image {
+  width: 50px;
+}
+.nav .ui.menu .menu {
+  width: 100%;
+}
+.nav .ui.secondary.menu .right.menu .item {
+  border: 1px solid #c6c6c6;
+}
+.nav .ui.menu:not(.vertical) .right.menu {
+  justify-content: end;
+}
+.sub-nav {
+  background-color: #ff385c;
+}
+.sub-nav .ui.menu .item {
+  color: #fff;
+}
+
+.sub-nav .ui.secondary.menu {
+  display: flex;
+  justify-content: center;
+}
+
+/*media query*/
+@media screen and (min-width: 768px) {
+  .ui.menu:not(.vertical) .item > .input {
+    left: 40% !important;
+  }
+}
