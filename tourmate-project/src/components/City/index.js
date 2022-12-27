@@ -1,7 +1,7 @@
 import React from "react";
 
 const City = () => {
-  return <div>City</div>;
+  return <div>CityName</div>;
 };
 
 export default City;
