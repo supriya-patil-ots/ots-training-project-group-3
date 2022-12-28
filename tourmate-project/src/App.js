@@ -6,7 +6,8 @@ import Products from "./components/Products";
 import City from "./components/City";
 import Contact from "./components/Contact";
 import Home from "./components/Home";
-
+import Footer from "./components/Footer";
+// import CityCardProduct from "./components/CityCardProduct";
 function App() {
   return (
     <div className="App">
@@ -17,6 +18,8 @@ function App() {
         <Route path="/City" element={<City />} />
         <Route path="/Contact" element={<Contact />} />
       </Routes>
+      {/* <CityCardProduct /> */}
+      {/* <Footer /> */}
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import React from "react";
-
+import CityCardProduct from "../CityCardProduct";
 const Products = () => {
-  return <div>Products</div>;
+  return <CityCardProduct />;
 };
 
 export default Products;

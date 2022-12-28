@@ -1,0 +1,15 @@
+.footer {
+  background-color: #044290;
+
+  margin-top: 40px;
+  color: #fff;
+}
+.footer ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+.social-icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
