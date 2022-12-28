@@ -6,17 +6,21 @@ import Products from "./components/Products";
 import City from "./components/City";
 import Contact from "./components/Contact";
 import Home from "./components/Home";
+import { Provider } from 'react-redux';
+import { store } from "./redux/store";
 
 function App() {
   return (
     <div className="App">
-      <Navigation />
+    <Provider store={store}>
+    <Navigation />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />
         <Route path="/City" element={<City />} />
         <Route path="/Contact" element={<Contact />} />
       </Routes>
+    </Provider>
     </div>
   );
 }
