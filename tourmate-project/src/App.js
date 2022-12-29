@@ -8,10 +8,14 @@ import Contact from "./components/Contact";
 import Home from "./components/Home";
 import Footer from "./components/Footer";
 // import CityCardProduct from "./components/CityCardProduct";
+import { Provider } from 'react-redux';
+import { store } from "./redux/store";
+
 function App() {
   return (
     <div className="App">
-      <Navigation />
+    <Provider store={store}>
+    <Navigation />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />
@@ -20,6 +24,7 @@ function App() {
       </Routes>
       {/* <CityCardProduct /> */}
       {/* <Footer /> */}
+    </Provider>
     </div>
   );
 }
