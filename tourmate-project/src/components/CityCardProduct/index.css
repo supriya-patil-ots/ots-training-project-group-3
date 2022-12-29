@@ -1,0 +1,28 @@
+.city-card {
+  margin-top: 40px;
+}
+
+.city-card .ui.card > .content,
+.ui.cards > .card > .content {
+  text-align: left;
+}
+.city-card .ui.card {
+  width: 100%;
+}
+
+.city-card .ui.card:hover {
+  transform: scale(1.04);
+  transition: 0.6s;
+}
+
+.city-card .ui.card > .image {
+  /* max-height: 160px; */
+}
+
+.ui.card > .image:not(.ui) > img,
+.ui.cards > .card > .image:not(.ui) > img {
+  border: none;
+}
+.city-card .ui.card > .image > img {
+  height: 100%;
+}

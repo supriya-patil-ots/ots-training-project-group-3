@@ -10,14 +10,12 @@
 .nav .ui.menu .menu {
   width: 100%;
 }
-.nav .ui.secondary.menu .right.menu .item {
-  border: 1px solid #c6c6c6;
-}
+
 .nav .ui.menu:not(.vertical) .right.menu {
   justify-content: end;
 }
 .sub-nav {
-  background-color: #ff385c;
+  background-color: #0160d6;
 }
 .sub-nav .ui.menu .item {
   color: #fff;
@@ -26,11 +24,20 @@
 .sub-nav .ui.secondary.menu {
   display: flex;
   justify-content: center;
+  margin: 0px;
+}
+.nav .ui.menu:not(.vertical) > .menu {
+  width: 100%;
 }
 
 /*media query*/
-@media screen and (min-width: 768px) {
+/* @media screen and (min-width: 768px) {
   .ui.menu:not(.vertical) .item > .input {
     left: 40% !important;
+  }
+} */
+@media screen and (max-width: 768px) {
+  .nav .ui.menu:not(.vertical) .right.menu {
+    display: none;
   }
 }

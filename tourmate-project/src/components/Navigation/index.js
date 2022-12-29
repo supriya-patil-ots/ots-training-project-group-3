@@ -1,5 +1,5 @@
 import React from "react";
-import { Input, Menu, Image } from "semantic-ui-react";
+import { Input, Menu, Image, Dropdown } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import "./index.css";
 
@@ -46,7 +46,7 @@ const Navigation = () => {
         </Menu>
       </div>
       <div className="sub-nav">
-        <Menu secondary>
+        <Menu pointing secondary>
           <Link to="/">
             <Menu.Item
               name="Home"
