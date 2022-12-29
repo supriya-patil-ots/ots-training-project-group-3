@@ -13,9 +13,16 @@ const CityCardProduct = () => {
               <>
                 <Grid.Column>
                   <Card>
+                    <Icon name="heart outline" size="large" />
                     <Image src={city.imageMain} wrapped ui={false} />
                     <Card.Content>
-                      <Card.Header >{city.cityName} , {city.countryName} <span ><Icon name="star" size="small" />{city.rating}</span></Card.Header>
+                      <Card.Header>
+                        {city.cityName} , {city.countryName}{" "}
+                        <span>
+                          <Icon name="star" size="small" />
+                          {city.rating}
+                        </span>
+                      </Card.Header>
                       <Card.Description>{city.description}</Card.Description>
                       <Card.Meta>
                         <span className="date">{city.date}</span>
@@ -38,18 +45,3 @@ const CityCardProduct = () => {
 };
 
 export default CityCardProduct;
-
-
-// import React from "react";
-// import axios from 'axios'
-// import CityCardProduct from "../CityCardProduct";
-// import Footer from "../Footer";
-
-// const Home = () => {
-//   return <div>
-//     <CityCardProduct/>
-//     <Footer/>
-//   </div>;
-// };
-
-// export default Home;
