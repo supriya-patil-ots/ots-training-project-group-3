@@ -1,23 +1,33 @@
 import React from "react";
 import CityData from "../Data/CityData";
 import { Card, Image, Icon, Grid } from "semantic-ui-react";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from "react-responsive-carousel";
 import "./index.css";
 
 const CityCardProduct = () => {
   return (
     <div className="city-card">
-      <Grid container doubling stackable columns={4}>
+      <Grid doubling stackable columns={4}>
         {CityData.length > 0 &&
           CityData.map((city) => {
             return (
               <>
                 <Grid.Column>
                   <Card>
-                    <Icon name="heart outline" size="large" />
-                    <Image src={city.imageMain} wrapped ui={false} />
+                    <Icon
+                      className="heartIcon"
+                      name="heart outline"
+                      size="big"
+                    />
+                    <Carousel>
+                      {city.imageCollection.map((item) => (
+                        <Image src={item} wrapped ui={false} />
+                      ))}
+                    </Carousel>
                     <Card.Content>
                       <Card.Header>
-                        {city.cityName} , {city.countryName}{" "}
+                        {city.cityName} , {city.countryName}
                         <span>
                           <Icon name="star" size="small" />
                           {city.rating}
@@ -43,5 +53,5 @@ const CityCardProduct = () => {
     </div>
   );
 };
-
+document.querySelector(".demo-carousel");
 export default CityCardProduct;
