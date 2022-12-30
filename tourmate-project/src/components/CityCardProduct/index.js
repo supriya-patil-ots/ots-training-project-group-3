@@ -1,5 +1,5 @@
 import React from "react";
-import CityData from "../MockCityData";
+import CityData from "../Data/CityData";
 import { Card, Image, Icon, Grid } from "semantic-ui-react";
 import "./index.css";
 
@@ -13,10 +13,17 @@ const CityCardProduct = () => {
               <>
                 <Grid.Column>
                   <Card>
-                    <Image src={city.cityimage} wrapped ui={false} />
+                    <Icon name="heart outline" size="large" />
+                    <Image src={city.imageMain} wrapped ui={false} />
                     <Card.Content>
-                      <Card.Header>{city.name}</Card.Header>
-                      <Card.Description>{city.desc}</Card.Description>
+                      <Card.Header>
+                        {city.cityName} , {city.countryName}{" "}
+                        <span>
+                          <Icon name="star" size="small" />
+                          {city.rating}
+                        </span>
+                      </Card.Header>
+                      <Card.Description>{city.description}</Card.Description>
                       <Card.Meta>
                         <span className="date">{city.date}</span>
                       </Card.Meta>
