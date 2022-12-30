@@ -15,6 +15,7 @@ const CityData = [
       "https://a0.muscache.com/im/pictures/miso/Hosting-34113796/original/8a9f650e-be60-47a9-833f-2ed0950cb9f9.jpeg?im_w=720",
     ],
     price: "33045",
+    count:1,
   },
   {
     id: 2,
@@ -32,6 +33,7 @@ const CityData = [
       "https://a0.muscache.com/im/pictures/b05f9a24-d591-43e4-b977-96d9783b8439.jpg?im_w=720",
     ],
     price: "49194",
+    count:1,
   },
   {
     id: 3,
@@ -49,6 +51,7 @@ const CityData = [
       "https://assets.traveltriangle.com/blog/wp-content/uploads/2017/12/76.jpg",
     ],
     price: "425.00",
+    count:1,
   },
   {
     id: 4,
@@ -66,6 +69,7 @@ const CityData = [
       "https://a0.muscache.com/im/pictures/fd0a5f30-5a6c-41ff-9ee9-1a7c4a8e1aaf.jpg?im_w=720",
     ],
     price: "33425.00",
+    count:1,
   },
   {
     id: 5,
@@ -84,6 +88,7 @@ const CityData = [
       "https://a0.muscache.com/im/pictures/miso/Hosting-39327758/original/bb45980a-a9b2-48f3-9249-2749486716d7.jpeg?im_w=720",
     ],
     price: "8700",
+    count:1,
   },
   {
     id: 6,
@@ -102,6 +107,7 @@ const CityData = [
       "https://a0.muscache.com/im/pictures/fa69ad41-88c2-44cb-b1d6-edc7605c8444.jpg?im_w=720",
     ],
     price: "44425.00",
+    count:1,
   },
   {
     id: 7,
@@ -119,6 +125,7 @@ const CityData = [
       "https://a0.muscache.com/im/pictures/bb5079d1-426f-4014-9b08-9c472915b532.jpg?im_w=720",
     ],
     price: "2444425.00",
+    count:1,
   },
   {
     id: 8,
@@ -136,6 +143,7 @@ const CityData = [
       "https://a0.muscache.com/im/pictures/481c168a-8de1-4b2d-a5d4-f2e98cfae4bb.jpg?im_w=720",
     ],
     price: "60081.00",
+    count:1,
   },
   {
     id: 9,
@@ -153,6 +161,7 @@ const CityData = [
       "https://a0.muscache.com/im/pictures/a2d2a43b-4993-41f7-8bf5-d80030e5cd2b.jpg?im_w=720",
     ],
     price: "7567425.00",
+    count:1,
   },
   {
     id: 10,
@@ -170,6 +179,7 @@ const CityData = [
       "https://a0.muscache.com/im/pictures/2002b4fd-4ddd-46f9-910e-97f158a78d38.jpg?im_w=720",
     ],
     price: "34425.00",
+    count:1,
   },
   {
     id: 11,
@@ -187,6 +197,7 @@ const CityData = [
       "https://a0.muscache.com/im/pictures/prohost-api/Hosting-736722090825455994/original/fdc17a9f-21b7-4f24-9d77-a55484a08bc7.jpeg?im_w=720",
     ],
     price: "134425.00",
+    count:1,
   },
   {
     id: 12,
@@ -204,6 +215,7 @@ const CityData = [
       "https://a0.muscache.com/im/pictures/miso/Hosting-53816778/original/de7cff46-9f2d-4999-aca4-09e137e4a90f.jpeg?im_w=720",
     ],
     price: "164425.00",
+    count:1,
   },
   {
     id: 13,
@@ -221,6 +233,7 @@ const CityData = [
       "https://a0.muscache.com/im/pictures/341beaee-0118-45b5-98f5-2b50412ecccb.jpg?im_w=720",
     ],
     price: "164425.00",
+    count:1,
   },
   {
     id: 14,
@@ -238,6 +251,7 @@ const CityData = [
       "https://a0.muscache.com/im/pictures/c496581e-c510-4d2a-9cf7-a10297c5116a.jpg?im_w=720",
     ],
     price: "4500.00",
+    count:1,
   },
   {
     id: 15,
@@ -255,6 +269,7 @@ const CityData = [
       "https://a0.muscache.com/im/pictures/510c4f1f-9b7f-42b7-b40b-5bc0e8f2ef27.jpg?im_w=720",
     ],
     price: "10569.00",
+    count:1,
   },
   {
     id: 16,
@@ -272,6 +287,7 @@ const CityData = [
       "https://a0.muscache.com/im/pictures/42efae77-0c92-4a28-91ac-4165f0d87813.jpg?im_w=720",
     ],
     price: "20081.00",
+    count:1,
   },
   {
     id: 17,
@@ -289,6 +305,7 @@ const CityData = [
       "https://a0.muscache.com/im/pictures/62bdb67a-b509-4e2f-ac99-01f2f6059419.jpg?im_w=720",
     ],
     price: "6048.00",
+    count:1,
   },
   {
     id: 18,
@@ -306,6 +323,7 @@ const CityData = [
       "https://a0.muscache.com/im/pictures/416b3c2d-6851-4827-b302-2001ba9d55d6.jpg?im_w=720",
     ],
     price: "4672.00",
+    count:1,
   },
   {
     id: 19,
@@ -323,6 +341,7 @@ const CityData = [
       "https://a0.muscache.com/im/pictures/miso/Hosting-598313527114703676/original/4bb59f64-00e9-4c64-9b17-2b603249c920.jpeg?im_w=720",
     ],
     price: "46722.00",
+    count:1,
   },
   {
     id: 20,
@@ -340,6 +359,24 @@ const CityData = [
       "https://a0.muscache.com/im/pictures/a0555f81-4175-4eb7-8a05-7919b1801de1.jpg?im_w=720",
     ],
     price: "6722.00",
+    count:1,
+  },
+  {  id:21,
+    countryName: "India",
+    cityName: "Shimla",
+    rating: "4.7",
+    description: "Mountain and valley views.",
+    date: "6-8 jan",
+    imageMain:
+    "https://a0.muscache.com/im/pictures/3a5f274a-84cf-46ec-a6fb-63c85ad04479.jpg?im_w=720",
+    imageCollection: [
+      "https://a0.muscache.com/im/pictures/3a5f274a-84cf-46ec-a6fb-63c85ad04479.jpg?im_w=720",
+      "https://a0.muscache.com/im/pictures/2330e2f1-b473-4272-b0c5-c05391f69400.jpg?im_w=720",
+      "https://a0.muscache.com/im/pictures/4fad8886-60f9-43e0-9f07-047dccaeea72.jpg?im_w=720",
+      "https://a0.muscache.com/im/pictures/a0555f81-4175-4eb7-8a05-7919b1801de1.jpg?im_w=720",
+    ],
+    price: "6722.00",
+    count:1,
   },
 ];
 export default CityData;

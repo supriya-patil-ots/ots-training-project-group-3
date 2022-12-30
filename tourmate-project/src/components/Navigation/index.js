@@ -76,6 +76,13 @@ const Navigation = () => {
               onClick={handleItemClick}
             />
           </Link>
+          <Link to="/cart">
+            <Menu.Item
+              name="Cart"
+              active={activeItem === "Cart"}
+              onClick={handleItemClick}
+            />
+          </Link>
         </Menu>
       </div>
     </div>

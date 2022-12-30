@@ -1,6 +1,7 @@
 import React from "react";
 import CityData from "../Data/CityData";
 import { Card, Image, Icon, Grid } from "semantic-ui-react";
+import Whishlist from "../whislist-Icon";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import "./index.css";
@@ -14,15 +15,11 @@ const CityCardProduct = () => {
             return (
               <>
                 <Grid.Column>
-                  <Card>
-                    <Icon
-                      className="heartIcon"
-                      name="heart outline"
-                      size="big"
-                    />
-                    <Carousel>
+                <Card  key={city.id}>
+                  <Whishlist  productData={city}/>
+                    <Carousel verticalSwipe='standard'>
                       {city.imageCollection.map((item) => (
-                        <Image src={item} wrapped ui={false} />
+                        <Image src={item} wrapped ui={false}/>
                       ))}
                     </Carousel>
                     <Card.Content>
