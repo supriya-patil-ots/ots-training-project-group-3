@@ -1,5 +1,6 @@
 const CityData = [
-  { id:1,
+  {
+    id: 1,
     countryName: " Indonesia",
     cityName: "Bali",
     rating: "4.5",
@@ -10,33 +11,32 @@ const CityData = [
     imageCollection: [
       "https://a0.muscache.com/im/pictures/e25a9b25-fa98-4160-bfd1-039287bf38b6.jpg?im_w=720",
       "https://a0.muscache.com/im/pictures/miso/Hosting-34113796/original/f4f7b242-db33-46fc-9080-c3d6a6fd55ec.jpeg?im_w=720",
-      " https://a0.muscache.com/im/pictures/miso/Hosting-34113796/original/f68527d6-3502-4eb5-913b-c914b73994ac.jpeg?im_w=720",
+      "https://a0.muscache.com/im/pictures/miso/Hosting-34113796/original/f68527d6-3502-4eb5-913b-c914b73994ac.jpeg?im_w=720",
       "https://a0.muscache.com/im/pictures/miso/Hosting-34113796/original/8a9f650e-be60-47a9-833f-2ed0950cb9f9.jpeg?im_w=720",
-      "https://a0.muscache.com/im/pictures/miso/Hosting-34113796/original/ce88a637-a2a6-48e0-af3f-86296d03a316.jpeg?im_w=720",
     ],
     price: "33045",
     count:1,
   },
-  { id:2,
+  {
+    id: 2,
     countryName: "Thailand",
     cityName: " Koh Samui",
     rating: "4.9",
     description: "The mountains are calling and you must go.",
     date: "19-24 January",
     imageMain:
-    "https://a0.muscache.com/im/pictures/81e4c829-71c1-479c-bf8f-a3f08ea47910.jpg?im_w=720",
+      "https://a0.muscache.com/im/pictures/81e4c829-71c1-479c-bf8f-a3f08ea47910.jpg?im_w=720",
     imageCollection: [
       "https://a0.muscache.com/im/pictures/81e4c829-71c1-479c-bf8f-a3f08ea47910.jpg?im_w=720",
       "https://a0.muscache.com/im/pictures/ee40d030-7a6e-4d24-b341-7a585f28f041.jpg?im_w=720",
       "https://a0.muscache.com/im/pictures/63892733-898e-4ad9-a3dd-e9b3a314c833.jpg?im_w=720",
       "https://a0.muscache.com/im/pictures/b05f9a24-d591-43e4-b977-96d9783b8439.jpg?im_w=720",
-      "https://a0.muscache.com/im/pictures/8e4ed667-fe94-4ee3-b002-74fc789cd4ca.jpg?im_w=720",
-      "https://a0.muscache.com/im/pictures/03b2ade0-afb3-4643-a6ed-be09df1365a3.jpg?im_w=720",
     ],
     price: "49194",
     count:1,
   },
-  { id:3,
+  {
+    id: 3,
     countryName: "India",
     cityName: "Manali",
     rating: "4.8",
@@ -53,7 +53,8 @@ const CityData = [
     price: "425.00",
     count:1,
   },
-  {id:4,
+  {
+    id: 4,
     countryName: "Japan",
     cityName: "Nagano",
     rating: "4.5",
@@ -62,7 +63,7 @@ const CityData = [
     imageMain:
       "https://a0.muscache.com/im/pictures/07eda303-0a89-419e-a7b8-1b788ef4e6f0.jpg?im_w=720",
     imageCollection: [
-      "https://a0.muscache.com/im/pictures/07eda303-0a89-419e-a7b8-1b788ef4e6f0.jpg?im_w=720",      
+      "https://a0.muscache.com/im/pictures/07eda303-0a89-419e-a7b8-1b788ef4e6f0.jpg?im_w=720",
       "https://a0.muscache.com/im/pictures/ed750929-3e90-4b43-a309-8a50439779c4.jpg?im_w=720",
       "https://a0.muscache.com/im/pictures/9c142ac7-34d3-49ed-98d2-5c25e878e9c3.jpg?im_w=720",
       "https://a0.muscache.com/im/pictures/fd0a5f30-5a6c-41ff-9ee9-1a7c4a8e1aaf.jpg?im_w=720",
@@ -70,7 +71,8 @@ const CityData = [
     price: "33425.00",
     count:1,
   },
-  {id:5,
+  {
+    id: 5,
     countryName: "India",
     cityName: "Agonda",
     rating: "4.3",
@@ -88,7 +90,8 @@ const CityData = [
     price: "8700",
     count:1,
   },
-  {id:6,
+  {
+    id: 6,
     countryName: "Philippines",
     cityName: "Floral Island",
     rating: "4.6",
@@ -106,7 +109,8 @@ const CityData = [
     price: "44425.00",
     count:1,
   },
-  {id:7,
+  {
+    id: 7,
     countryName: "India",
     cityName: "Maldives",
     rating: "4.9",
@@ -123,14 +127,15 @@ const CityData = [
     price: "2444425.00",
     count:1,
   },
-  {  id:8,
+  {
+    id: 8,
     countryName: "SriLanka",
     cityName: "Kathaluwa",
     rating: "4.7",
     description: "Just another day in Paradise.",
     date: "11-23 jan",
     imageMain:
-    "https://a0.muscache.com/im/pictures/5f6bddac-3d43-4cec-9ca8-997520fb6165.jpg?im_w=720",
+      "https://a0.muscache.com/im/pictures/5f6bddac-3d43-4cec-9ca8-997520fb6165.jpg?im_w=720",
     imageCollection: [
       "https://a0.muscache.com/im/pictures/5f6bddac-3d43-4cec-9ca8-997520fb6165.jpg?im_w=720",
       "https://a0.muscache.com/im/pictures/53e723d2-9c17-4292-a800-4baae82caa55.jpg?im_w=720",
@@ -140,7 +145,8 @@ const CityData = [
     price: "60081.00",
     count:1,
   },
-  {id:9,
+  {
+    id: 9,
     countryName: "India",
     cityName: "Maldives",
     rating: "4.9",
@@ -157,7 +163,8 @@ const CityData = [
     price: "7567425.00",
     count:1,
   },
-  {  id:10,
+  {
+    id: 10,
     countryName: "Sri Lanka",
     cityName: "Trincomalee",
     rating: "4.5",
@@ -174,16 +181,17 @@ const CityData = [
     price: "34425.00",
     count:1,
   },
-  {  id:11,
+  {
+    id: 11,
     countryName: "UAE",
     cityName: "Dubai",
     rating: "4.5",
     description: "Just another day in Paradise.",
     date: "19-24 August",
     imageMain:
-      'https://a0.muscache.com/im/pictures/prohost-api/Hosting-736722090825455994/original/02409886-42f5-4e74-a605-60f252946f12.jpeg?im_w=720',
+      "https://a0.muscache.com/im/pictures/prohost-api/Hosting-736722090825455994/original/02409886-42f5-4e74-a605-60f252946f12.jpeg?im_w=720",
     imageCollection: [
-      'https://a0.muscache.com/im/pictures/prohost-api/Hosting-736722090825455994/original/02409886-42f5-4e74-a605-60f252946f12.jpeg?im_w=720',
+      "https://a0.muscache.com/im/pictures/prohost-api/Hosting-736722090825455994/original/02409886-42f5-4e74-a605-60f252946f12.jpeg?im_w=720",
       "https://a0.muscache.com/im/pictures/prohost-api/Hosting-736722090825455994/original/7727adbc-99c8-479c-83e6-b24c87726581.jpeg?im_w=720",
       "https://a0.muscache.com/im/pictures/prohost-api/Hosting-736722090825455994/original/a0423776-11d5-40f1-8f34-ea0bd9fd273d.jpeg?im_w=720",
       "https://a0.muscache.com/im/pictures/prohost-api/Hosting-736722090825455994/original/fdc17a9f-21b7-4f24-9d77-a55484a08bc7.jpeg?im_w=720",
@@ -191,16 +199,17 @@ const CityData = [
     price: "134425.00",
     count:1,
   },
-  {  id:12,
+  {
+    id: 12,
     countryName: "India",
     cityName: "Reis Magos",
     rating: "4.7",
     description: "Just another day in Paradise.",
     date: "19-24 March",
     imageMain:
-      'https://a0.muscache.com/im/pictures/miso/Hosting-53816778/original/04fcc196-bb34-426f-8be9-85cd2a438d06.jpeg?im_w=720',
+      "https://a0.muscache.com/im/pictures/miso/Hosting-53816778/original/04fcc196-bb34-426f-8be9-85cd2a438d06.jpeg?im_w=720",
     imageCollection: [
-      'https://a0.muscache.com/im/pictures/miso/Hosting-53816778/original/04fcc196-bb34-426f-8be9-85cd2a438d06.jpeg?im_w=720',
+      "https://a0.muscache.com/im/pictures/miso/Hosting-53816778/original/04fcc196-bb34-426f-8be9-85cd2a438d06.jpeg?im_w=720",
       "https://a0.muscache.com/im/pictures/miso/Hosting-53816778/original/b98a449d-c539-47ce-beaf-8dd42e895e51.jpeg?im_w=720",
       "https://a0.muscache.com/im/pictures/miso/Hosting-53816778/original/f2eccd41-660c-4755-9d39-5ea775ed203c.jpeg?im_w=720",
       "https://a0.muscache.com/im/pictures/miso/Hosting-53816778/original/de7cff46-9f2d-4999-aca4-09e137e4a90f.jpeg?im_w=720",
@@ -208,16 +217,17 @@ const CityData = [
     price: "164425.00",
     count:1,
   },
-  {  id:13,
+  {
+    id: 13,
     countryName: "Thailand",
     cityName: "Ko Samui",
     rating: "4.7",
     description: "Just another day in Paradise.",
     date: "19-24 March",
     imageMain:
-      'https://a0.muscache.com/im/pictures/e93264d8-15b8-4869-ab79-d47130cd930b.jpg?im_w=720',
+      "https://a0.muscache.com/im/pictures/e93264d8-15b8-4869-ab79-d47130cd930b.jpg?im_w=720",
     imageCollection: [
-      'https://a0.muscache.com/im/pictures/e93264d8-15b8-4869-ab79-d47130cd930b.jpg?im_w=720',
+      "https://a0.muscache.com/im/pictures/e93264d8-15b8-4869-ab79-d47130cd930b.jpg?im_w=720",
       "https://a0.muscache.com/im/pictures/9a9837c0-7a3c-45fb-ae5f-53954a1b8cfe.jpg?im_w=720",
       "https://a0.muscache.com/im/pictures/9fc76494-abc0-4036-8c34-19854738868b.jpg?im_w=720",
       "https://a0.muscache.com/im/pictures/341beaee-0118-45b5-98f5-2b50412ecccb.jpg?im_w=720",
@@ -225,16 +235,17 @@ const CityData = [
     price: "164425.00",
     count:1,
   },
-  {  id:14,
+  {
+    id: 14,
     countryName: "India",
     cityName: "Agra",
     rating: "4.7",
     description: "Just another day in Paradise.",
     date: "11-23 jan",
     imageMain:
-    "https://a0.muscache.com/im/pictures/c496581e-c510-4d2a-9cf7-a10297c5116a.jpg?im_w=720",
+      "https://a0.muscache.com/im/pictures/c496581e-c510-4d2a-9cf7-a10297c5116a.jpg?im_w=720",
     imageCollection: [
-      'https://a0.muscache.com/im/pictures/ae568f21-3100-450f-884a-67490e92f414.jpg?im_w=720',
+      "https://a0.muscache.com/im/pictures/ae568f21-3100-450f-884a-67490e92f414.jpg?im_w=720",
       "https://a0.muscache.com/im/pictures/428c2b02-bc46-41d3-856a-cf58c1d0f4c7.jpg?im_w=720",
       "https://a0.muscache.com/im/pictures/051f7407-5425-422e-8498-1910735560c8.jpg?im_w=720",
       "https://a0.muscache.com/im/pictures/c496581e-c510-4d2a-9cf7-a10297c5116a.jpg?im_w=720",
@@ -242,14 +253,15 @@ const CityData = [
     price: "4500.00",
     count:1,
   },
-  {  id:15,
+  {
+    id: 15,
     countryName: "Italy",
     cityName: "Pierantonio",
     rating: "4.7",
     description: "Just another day in Paradise.",
     date: "11-23 jan",
     imageMain:
-    "https://a0.muscache.com/im/pictures/2d502704-5db1-47c0-bfee-3816d04743fb.jpg?im_w=720",
+      "https://a0.muscache.com/im/pictures/2d502704-5db1-47c0-bfee-3816d04743fb.jpg?im_w=720",
     imageCollection: [
       "https://a0.muscache.com/im/pictures/2d502704-5db1-47c0-bfee-3816d04743fb.jpg?im_w=720",
       "https://a0.muscache.com/im/pictures/miso/Hosting-2922931/original/e2e5bb39-d1b5-4055-ba63-05b33bef0f1d.jpeg?im_w=720",
@@ -259,14 +271,15 @@ const CityData = [
     price: "10569.00",
     count:1,
   },
-  {  id:16,
+  {
+    id: 16,
     countryName: "Japan",
     cityName: "Inashiki",
     rating: "4.7",
     description: "Just another day in Paradise.",
     date: "11-23 jan",
     imageMain:
-    "https://a0.muscache.com/im/pictures/7de10533-097d-4c23-ab18-f8274199984e.jpg?im_w=720",
+      "https://a0.muscache.com/im/pictures/7de10533-097d-4c23-ab18-f8274199984e.jpg?im_w=720",
     imageCollection: [
       "https://a0.muscache.com/im/pictures/7de10533-097d-4c23-ab18-f8274199984e.jpg?im_w=720",
       "https://a0.muscache.com/im/pictures/69e2a554-04ce-4cc0-bfb3-0b9c81daa542.jpg?im_w=720",
@@ -276,14 +289,15 @@ const CityData = [
     price: "20081.00",
     count:1,
   },
-  {  id:17,
+  {
+    id: 17,
     countryName: "India",
     cityName: "Karnataka",
     rating: "4.7",
     description: "Mountain and valley views.",
     date: "6-8 jan",
     imageMain:
-    "https://a0.muscache.com/im/pictures/d2b6be35-0b3f-47d6-b6a8-e9d9a44f62e9.jpg?im_w=720",
+      "https://a0.muscache.com/im/pictures/d2b6be35-0b3f-47d6-b6a8-e9d9a44f62e9.jpg?im_w=720",
     imageCollection: [
       "https://a0.muscache.com/im/pictures/d2b6be35-0b3f-47d6-b6a8-e9d9a44f62e9.jpg?im_w=720",
       "https://a0.muscache.com/im/pictures/90427026-4ece-4e86-910e-3b4a34a8e9b3.jpg?im_w=720",
@@ -293,14 +307,15 @@ const CityData = [
     price: "6048.00",
     count:1,
   },
-  {  id:18,
+  {
+    id: 18,
     countryName: "India",
     cityName: "Mashobara",
     rating: "4.7",
     description: "Mountain and valley views.",
     date: "6-8 jan",
     imageMain:
-    "https://a0.muscache.com/im/pictures/miso/Hosting-665015970482989205/original/418f18b6-5dd4-4f5d-b381-97c05acc2035.jpeg?im_w=720",
+      "https://a0.muscache.com/im/pictures/miso/Hosting-665015970482989205/original/418f18b6-5dd4-4f5d-b381-97c05acc2035.jpeg?im_w=720",
     imageCollection: [
       "https://a0.muscache.com/im/pictures/miso/Hosting-665015970482989205/original/418f18b6-5dd4-4f5d-b381-97c05acc2035.jpeg?im_w=720",
       "https://a0.muscache.com/im/pictures/miso/Hosting-665015970482989205/original/adcb60e0-0f36-443c-bd1a-3709a1a736e9.jpeg?im_w=720",
@@ -310,14 +325,15 @@ const CityData = [
     price: "4672.00",
     count:1,
   },
-  {  id:19,
+  {
+    id: 19,
     countryName: "India",
     cityName: "Nerul",
     rating: "4.7",
     description: "Mountain and valley views.",
     date: "6-8 jan",
     imageMain:
-    "https://a0.muscache.com/im/pictures/miso/Hosting-598313527114703676/original/c96ce78f-e261-4e8f-831d-7703f4683dd8.jpeg?im_w=720",
+      "https://a0.muscache.com/im/pictures/miso/Hosting-598313527114703676/original/c96ce78f-e261-4e8f-831d-7703f4683dd8.jpeg?im_w=720",
     imageCollection: [
       "https://a0.muscache.com/im/pictures/miso/Hosting-598313527114703676/original/c96ce78f-e261-4e8f-831d-7703f4683dd8.jpeg?im_w=720",
       "https://a0.muscache.com/im/pictures/miso/Hosting-598313527114703676/original/1b3ee7fc-454e-48e4-bc68-495eccdb6315.jpeg?im_w=720",
@@ -327,14 +343,15 @@ const CityData = [
     price: "46722.00",
     count:1,
   },
-  {  id:20,
+  {
+    id: 20,
     countryName: "India",
     cityName: "Shimla",
     rating: "4.7",
     description: "Mountain and valley views.",
     date: "6-8 jan",
     imageMain:
-    "https://a0.muscache.com/im/pictures/3a5f274a-84cf-46ec-a6fb-63c85ad04479.jpg?im_w=720",
+      "https://a0.muscache.com/im/pictures/3a5f274a-84cf-46ec-a6fb-63c85ad04479.jpg?im_w=720",
     imageCollection: [
       "https://a0.muscache.com/im/pictures/3a5f274a-84cf-46ec-a6fb-63c85ad04479.jpg?im_w=720",
       "https://a0.muscache.com/im/pictures/2330e2f1-b473-4272-b0c5-c05391f69400.jpg?im_w=720",
