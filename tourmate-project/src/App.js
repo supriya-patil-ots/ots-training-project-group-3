@@ -10,6 +10,7 @@ import Footer from "./components/Footer";
 // import CityCardProduct from "./components/CityCardProduct";
 import { Provider } from 'react-redux';
 import { store } from "./redux/store";
+import Cart from "./components/cart";
 
 function App() {
   return (
@@ -21,9 +22,8 @@ function App() {
         <Route path="/products" element={<Products />} />
         <Route path="/City" element={<City />} />
         <Route path="/Contact" element={<Contact />} />
+        <Route path="/Cart" element={<Cart />} />
       </Routes>
-      {/* <CityCardProduct /> */}
-      {/* <Footer /> */}
     </Provider>
     </div>
   );
