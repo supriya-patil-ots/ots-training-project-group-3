@@ -1,14 +1,17 @@
 .city-card {
-  margin-top: 40px;
-  margin: left 10px;
+  margin: 30px 30px;
 }
 
 .city-card .ui.card > .content,
 .ui.cards > .card > .content {
   text-align: left;
+  height: 140px;
 }
 .city-card .ui.card {
   width: 100%;
+}
+.city-card .carousel-root {
+  height: 190px;
 }
 
 .city-card .ui.card:hover {
@@ -16,14 +19,24 @@
   transition: 0.6s;
 }
 
-.city-card .ui.card > .image {
-  /* max-height: 160px; */
+.city-card .image {
+  max-height: 190px;
 }
 
-.ui.card > .image:not(.ui) > img,
+.city-card .ui.card > .image:not(.ui) > img,
 .ui.cards > .card > .image:not(.ui) > img {
   border: none;
 }
-.city-card .ui.card > .image > img {
-  height: 100%;
+.city-card .carousel .slide img {
+  height: 190px;
+}
+.city-card .carousel .carousel-status {
+  bottom: 0;
+}
+.heartIcon {
+  position: absolute;
+  z-index: 1;
+  color: #fff;
+  right: 5px;
+  top: 5px;
 }
