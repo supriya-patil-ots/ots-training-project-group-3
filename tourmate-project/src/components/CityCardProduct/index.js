@@ -17,9 +17,9 @@ const CityCardProduct = () => {
                 <Grid.Column>
                 <Card  key={city.id}>
                   <Whishlist  productData={city}/>
-                    <Carousel>
+                    <Carousel verticalSwipe='standard'>
                       {city.imageCollection.map((item) => (
-                        <Image src={item} wrapped ui={false} />
+                        <Image src={item} wrapped ui={false}/>
                       ))}
                     </Carousel>
                     <Card.Content>

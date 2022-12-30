@@ -14,9 +14,9 @@ function Cart() {
                 {Object.keys(cartItem).length > 0 &&
                     Object.keys(cartItem).map((city) => {
                         return (
-                            <div key={cartItem[city].id}>
-                                <Grid.Column >
-                                    <Card >
+                         
+                                <Grid.Column key={cartItem[city].id}>
+                                    <Card>
                                         <Image src={cartItem[city].imageMain} wrapped ui={false} />
                                         <Card.Content>
                                             <Card.Header>
@@ -40,7 +40,7 @@ function Cart() {
                                         </Card.Content>
                                     </Card>
                                 </Grid.Column>
-                            </div>
+                           
                         );
                     })}
             </Grid>
