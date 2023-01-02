@@ -16,6 +16,28 @@ const Home = () => {
   //   .then((data) => console.log(data))
   //   .catch((err) => console.log(err));
 
+  const options = {
+    method: 'GET',
+    url: 'https://travel-advisor.p.rapidapi.com/attractions/list-by-latlng',
+    params: {
+      longitude: '109.19553',
+      latitude: '12.235588',
+      lunit: 'km',
+      currency: 'USD',
+      lang: 'en_US'
+    },
+    headers: {
+      'X-RapidAPI-Key': 'a65a80bf25msh93c3ec85e82fac8p1d2ceejsnb7a5bc014cd5',
+      'X-RapidAPI-Host': 'travel-advisor.p.rapidapi.com'
+    }
+  };
+  
+  axios.request(options).then(function (response) {
+    console.log(response.data);
+  }).catch(function (error) {
+    console.error(error);
+  });
+
   return (
     <div>
       <CityCardProduct />
