@@ -1,0 +1,10 @@
+.loginorsignin .ui.button {
+  background-color: #0160d6;
+}
+.sub-btn {
+  background-color: #0160d6 !important;
+  color: #fff !important;
+}
+.err {
+  color: red;
+}
