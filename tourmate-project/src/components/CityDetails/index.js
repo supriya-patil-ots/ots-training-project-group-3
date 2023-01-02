@@ -19,7 +19,7 @@ const CityDetails = () => {
   } = CityData[id];
   return (
     <div className="city-details">
-      <Grid columns={3} divided>
+      <Grid container stackable columns={3} divided>
         <Grid.Row stretched>
           <Grid.Column>
             <Segment>

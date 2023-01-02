@@ -5,7 +5,7 @@
 .city-card .ui.card > .content,
 .ui.cards > .card > .content {
   text-align: left;
-  height: 140px;
+  height: 190px;
 }
 .city-card .ui.card {
   width: 100%;
@@ -18,9 +18,24 @@
   transform: scale(1.04);
   transition: 0.6s;
 }
+.city-card .date {
+  color: #000;
+}
+.cart-remove-btn {
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #0160d6;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+}
 
 .city-card .image {
   max-height: 190px;
+}
+.city-card .content {
+  display: flex;
+  flex-direction: column;
 }
 
 .city-card .ui.card > .image:not(.ui) > img,
@@ -32,4 +47,10 @@
 }
 .city-card .carousel .carousel-status {
   bottom: 0;
+}
+
+.city-card .ui.card > .content > .header:not(.ui),
+.ui.cards > .card > .content > .header:not(.ui) {
+  display: flex;
+  justify-content: space-between;
 }
