@@ -1,14 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import CityData from "../Data/CityData";
-import { Card, Image, Icon, Grid } from "semantic-ui-react";
-import Whishlist from "../whislist-Icon";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel } from "react-responsive-carousel";
-import "./index.css";
 import { cityDetailData } from "../../redux/cartReducer";
 import { useDispatch } from "react-redux";
 import Footer from "../Footer";
+import CityData from "../Data/CityData";
+import { Card, Image, Icon, Grid } from "semantic-ui-react";
+import Whishlist from "../whislist-Icon";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from "react-responsive-carousel";
+import "./index.css";
 const City = () => {
   const dispatch = useDispatch();
 

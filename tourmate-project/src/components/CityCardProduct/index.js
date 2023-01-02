@@ -16,6 +16,7 @@ const CityCardProduct = () => {
       <Grid doubling stackable columns={4}>
         {CityData.length > 0 &&
           CityData.map((city, index) => {
+            
             return (
               <>
                 <Grid.Column>
