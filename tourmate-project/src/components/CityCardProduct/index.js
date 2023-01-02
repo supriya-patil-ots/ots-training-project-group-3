@@ -15,18 +15,18 @@ const CityCardProduct = () => {
             return (
               <>
                 <Grid.Column>
-                <Card  key={city.id}>
-                  <Whishlist  productData={city}/>
+                  <Card key={city.id}>
+                    <Whishlist productData={city} />
                     <Carousel verticalSwipe='standard'>
                       {city.imageCollection.map((item) => (
-                        <Image src={item} wrapped ui={false}/>
+                        <Image src={item} wrapped ui={false} />
                       ))}
                     </Carousel>
                     <Card.Content>
                       <Card.Header>
                         {city.cityName} , {city.countryName}
                         <span>
-                          <Icon name="star" size="small" />
+                          <Icon name="star" size="small"/>
                           {city.rating}
                         </span>
                       </Card.Header>

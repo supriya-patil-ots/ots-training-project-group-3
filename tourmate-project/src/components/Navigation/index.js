@@ -89,10 +89,10 @@ const Navigation = () => {
               onClick={handleItemClick}
             />
           </Link>
-          <Link to="/cart">
+          <Link to="/wishlist">
             <Menu.Item
-              name="Cart"
-              active={activeItem === "Cart"}
+              name="Wishlist"
+              active={activeItem === "Wishlist"}
               onClick={handleItemClick}
             />
           </Link>
