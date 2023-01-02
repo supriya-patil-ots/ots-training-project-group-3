@@ -1,13 +1,13 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Card, Image, Icon, Grid, Button } from "semantic-ui-react";
-import { removeFromCart } from "../../redux/cartReducer";
+import { cityDetailData, removeFromCart } from "../../redux/cartReducer";
 import "./index.css";
+import { Link } from "react-router-dom";
 
-function Cart() {
+function Wishlist() {
   const { cartItem } = useSelector((state) => state.cart.data);
   const dispatch = useDispatch();
-  console.log(cartItem);
   return (
     <div className="city-card">
       <Grid doubling stackable columns={4}>
@@ -15,7 +15,10 @@ function Cart() {
           Object.keys(cartItem).map((city) => {
             return (
               <Grid.Column key={cartItem[city].id}>
-                <Card>
+                {/* <Link to="/CityDetails"> */}
+                <Card  onClick={() => {
+                              dispatch(cityDetailData(cartItem[city]));
+                            }}>
                   <Image src={cartItem[city].imageMain} wrapped ui={false} />
                   <Card.Content>
                     <Card.Header>
@@ -39,7 +42,7 @@ function Cart() {
                         {cartItem[city].price} night
                       </span>
                       <br />
-                      <button
+                      <Button
                         className="cart-remove-btn"
                         primary
                         onClick={() =>
@@ -47,10 +50,11 @@ function Cart() {
                         }
                       >
                         Remove Destination
-                      </button>
+                      </Button>
                     </Card.Description>
                   </Card.Content>
                 </Card>
+                {/* </Link> */}
               </Grid.Column>
             );
           })}
@@ -59,4 +63,4 @@ function Cart() {
   );
 }
 
-export default Cart;
+export default Wishlist;
