@@ -30,8 +30,8 @@
 .city-card .carousel .slide img {
   height: 190px;
 }
-.city-card .carousel .carousel-status {
-  bottom: 0;
+.carousel .carousel-status {
+  top: 85% !important;
 }
 .heartIcon {
   position: absolute;

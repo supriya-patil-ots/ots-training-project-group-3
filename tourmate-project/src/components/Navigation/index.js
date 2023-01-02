@@ -1,12 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import { Input, Menu, Image, Dropdown } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import "./index.css";
+import LoginOrSignup from "../LoginOrSignup";
 
 const Navigation = () => {
+  const [loginActive, setLoginActive] = useState(false);
+  const [signupActive, setSignupActive] = useState(false);
   const state = { activeItem: "home" };
 
-  const handleItemClick = (e, { name }) => this.setState({ activeItem: name });
+  const handleItemClick = (e, { name }) => {
+    this.setState({ activeItem: name });
+  };
+  const handleLoginActive = () => {
+    setLoginActive(true);
+  };
+
+  const handleSignup = () => {
+    setSignupActive(true);
+  };
+
   const { activeItem } = state;
 
   return (
@@ -35,12 +48,12 @@ const Navigation = () => {
             <Menu.Item
               name="Sign Up"
               active={activeItem === "Sign Up"}
-              onClick={handleItemClick}
+              onClick={handleSignup}
             />
             <Menu.Item
               name="login"
               active={activeItem === "login"}
-              onClick={handleItemClick}
+              onClick={handleLoginActive}
             />
           </Menu.Menu>
         </Menu>
@@ -77,6 +90,10 @@ const Navigation = () => {
             />
           </Link>
         </Menu>
+        <LoginOrSignup
+          handleLoginActive={loginActive}
+          signupActive={signupActive}
+        />
       </div>
     </div>
   );
