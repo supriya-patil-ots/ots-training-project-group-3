@@ -16,21 +16,23 @@ const CityCardProduct = () => {
             return (
               <>
                 <Grid.Column>
-                  <Link to={`/CityDetails/${index}`}>
-                    <Card key={city.id}>
-                      <Whishlist productData={city} />
-                      <Carousel verticalSwipe="standard">
-                        {city.imageCollection.map((item) => (
-                          <Image src={item} wrapped ui={false} />
-                        ))}
-                      </Carousel>
+                  <Card key={city.id}>
+                    <Whishlist productData={city} />
+                    <Carousel verticalSwipe="standard">
+                      {city.imageCollection.map((item) => (
+                        <Image src={item} wrapped ui={false} />
+                      ))}
+                    </Carousel>
+                    <Link to={`/CityDetails/${index}`}>
                       <Card.Content>
                         <Card.Header>
-                          {city.cityName} , {city.countryName}
-                          <span>
+                          <p>
+                            {city.cityName} , {city.countryName}
+                          </p>
+                          <p>
                             <Icon name="star" size="small" />
                             {city.rating}
-                          </span>
+                          </p>
                         </Card.Header>
                         <Card.Description>{city.description}</Card.Description>
                         <Card.Meta>
@@ -43,8 +45,8 @@ const CityCardProduct = () => {
                           </span>
                         </Card.Description>
                       </Card.Content>
-                    </Card>
-                  </Link>
+                    </Link>
+                  </Card>
                 </Grid.Column>
               </>
             );

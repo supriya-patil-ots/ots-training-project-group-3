@@ -19,11 +19,13 @@ function Cart() {
                   <Image src={cartItem[city].imageMain} wrapped ui={false} />
                   <Card.Content>
                     <Card.Header>
-                      {cartItem[city].cityName} , {cartItem[city].countryName}
-                      <span>
+                      <p>
+                        {cartItem[city].cityName} , {cartItem[city].countryName}
+                      </p>
+                      <p>
                         <Icon name="star" size="small" />
                         {cartItem[city].rating}
-                      </span>
+                      </p>
                     </Card.Header>
                     <Card.Description>
                       {cartItem[city].description}
@@ -36,14 +38,16 @@ function Cart() {
                         <Icon name="rupee sign" size="small" />
                         {cartItem[city].price} night
                       </span>
-                      <Button
+                      <br />
+                      <button
+                        className="cart-remove-btn"
                         primary
                         onClick={() =>
                           dispatch(removeFromCart(cartItem[city].id))
                         }
                       >
                         Remove Destination
-                      </Button>
+                      </button>
                     </Card.Description>
                   </Card.Content>
                 </Card>

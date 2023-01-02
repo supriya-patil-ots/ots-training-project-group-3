@@ -5,7 +5,7 @@
 .city-card .ui.card > .content,
 .ui.cards > .card > .content {
   text-align: left;
-  height: 140px;
+  height: 130px;
 }
 .city-card .ui.card {
   width: 100%;
@@ -17,6 +17,25 @@
 .city-card .ui.card:hover {
   transform: scale(1.04);
   transition: 0.6s;
+}
+.city-card .carousel.carousel-slider .control-arrow {
+  top: 40%;
+  color: #fff;
+  font-size: 26px;
+  bottom: 0;
+  margin-top: 0;
+  height: 40px;
+  background: gray;
+  width: 40px;
+  border-radius: 50%;
+  padding: 5px;
+  z-index: 111;
+}
+.city-card .content {
+  color: #000;
+  padding: 10px;
+  height: 130px;
+  text-align: left;
 }
 
 .city-card .image {
@@ -35,3 +54,7 @@
   top: 85% !important;
 }
 
+.city-card .header {
+  display: flex;
+  justify-content: space-between;
+}
