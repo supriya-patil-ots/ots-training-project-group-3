@@ -21,7 +21,6 @@
 
 .city-card .image {
   max-height: 190px;
-  object-fit: contain;
 }
 
 .city-card .ui.card > .image:not(.ui) > img,
@@ -31,7 +30,6 @@
 .city-card .carousel .slide img {
   height: 190px;
 }
-.carousel .carousel-status {
-  top: 85% !important;
+.city-card .carousel .carousel-status {
+  bottom: 0;
 }
-
