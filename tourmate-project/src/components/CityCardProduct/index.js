@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import CityData from "../Data/CityData";
 import { Card, Image, Icon, Grid } from "semantic-ui-react";
 import Whishlist from "../whislist-Icon";
@@ -11,37 +12,39 @@ const CityCardProduct = () => {
     <div className="city-card">
       <Grid doubling stackable columns={4}>
         {CityData.length > 0 &&
-          CityData.map((city) => {
+          CityData.map((city, index) => {
             return (
               <>
                 <Grid.Column>
-                <Card  key={city.id}>
-                  <Whishlist  productData={city}/>
-                    <Carousel verticalSwipe='standard'>
-                      {city.imageCollection.map((item) => (
-                        <Image src={item} wrapped ui={false}/>
-                      ))}
-                    </Carousel>
-                    <Card.Content>
-                      <Card.Header>
-                        {city.cityName} , {city.countryName}
-                        <span>
-                          <Icon name="star" size="small" />
-                          {city.rating}
-                        </span>
-                      </Card.Header>
-                      <Card.Description>{city.description}</Card.Description>
-                      <Card.Meta>
-                        <span className="date">{city.date}</span>
-                      </Card.Meta>
-                      <Card.Description>
-                        <span className="date">
-                          <Icon name="rupee sign" size="small" />
-                          {city.price} night
-                        </span>
-                      </Card.Description>
-                    </Card.Content>
-                  </Card>
+                  <Link to={`/CityDetails/${index}`}>
+                    <Card key={city.id}>
+                      <Whishlist productData={city} />
+                      <Carousel verticalSwipe="standard">
+                        {city.imageCollection.map((item) => (
+                          <Image src={item} wrapped ui={false} />
+                        ))}
+                      </Carousel>
+                      <Card.Content>
+                        <Card.Header>
+                          {city.cityName} , {city.countryName}
+                          <span>
+                            <Icon name="star" size="small" />
+                            {city.rating}
+                          </span>
+                        </Card.Header>
+                        <Card.Description>{city.description}</Card.Description>
+                        <Card.Meta>
+                          <span className="date">{city.date}</span>
+                        </Card.Meta>
+                        <Card.Description>
+                          <span className="date">
+                            <Icon name="rupee sign" size="small" />
+                            {city.price} night
+                          </span>
+                        </Card.Description>
+                      </Card.Content>
+                    </Card>
+                  </Link>
                 </Grid.Column>
               </>
             );

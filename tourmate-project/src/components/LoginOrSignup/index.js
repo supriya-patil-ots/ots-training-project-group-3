@@ -46,6 +46,7 @@ const LoginOrSignup = ({ handleLoginActive, signupActive }) => {
       if (item.userName === userName && item.password === password) {
         console.log(userName);
         setErr("");
+        setOpen(false);
       } else {
         setErr("Enter valid username or password");
       }
