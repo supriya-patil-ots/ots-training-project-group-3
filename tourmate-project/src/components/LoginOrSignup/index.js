@@ -1,28 +1,11 @@
 import React, { useEffect, useState } from "react";
-import {
-  Button,
-  Header,
-  Image,
-  Modal,
-  Form,
-  Checkbox,
-} from "semantic-ui-react";
+import { Button, Modal, Form } from "semantic-ui-react";
+import { Navigate } from "react-router-dom";
 import "./index.css";
 
-const loginData = [
-  {
-    userName: "supriya@otssolutions.com",
-    password: "supriya123",
-  },
-  {
-    userName: "saurabh@otssolutions.com",
-    password: "saurabh123",
-  },
-  {
-    userName: "sahil@otssolutions.com",
-    password: "sahil123",
-  },
-];
+const users =
+  JSON.parse(localStorage.getItem("users")).length > 0 &&
+  JSON.parse(localStorage.getItem("users"));
 
 const LoginOrSignup = ({ handleLoginActive, signupActive }) => {
   const [open, setOpen] = useState(false);
@@ -34,29 +17,33 @@ const LoginOrSignup = ({ handleLoginActive, signupActive }) => {
 
   // let msg="Enter valid username or password"
 
-  const handleEmail = (event) => {
-    setUserName(event.target.value);
-  };
+  //  localStorage.setItem("items", JSON.stringify(items));
 
-  const handlePassword = (event) => {
-    setPawssword(event.target.value);
-  };
-  const HandleLogin = () => {
-    loginData.map((item) => {
+  const HandleLogin = (e) => {
+    e.preventDefault();
+    users.map((item) => {
       if (item.userName === userName && item.password === password) {
         console.log(userName);
         setErr("");
+        setUserName("");
+        setPawssword("");
         setOpen(false);
+        <Navigate to="/" />;
       } else {
         setErr("Enter valid username or password");
       }
     });
   };
 
-  const handleSignin = (event) => {
-    loginData.push({ userName, password });
-    console.log(loginData);
+  const handleSignup = (event) => {
+    event.preventDefault();
+    users.push({ userName, password });
+    let users_str_data = JSON.stringify(users);
+    localStorage.setItem("users", users_str_data);
+    console.log(localStorage.getItem("users"));
     setOpen(false);
+    setUserName("");
+    setPawssword("");
   };
   useEffect(() => {
     setOpen(handleLoginActive);
@@ -85,7 +72,7 @@ const LoginOrSignup = ({ handleLoginActive, signupActive }) => {
                 <input
                   type="email"
                   placeholder="Enter Email"
-                  onChange={handleEmail}
+                  onChange={(e) => setUserName(e.target.value)}
                   value={userName}
                 />
                 <p className="err">{err}</p>
@@ -95,7 +82,7 @@ const LoginOrSignup = ({ handleLoginActive, signupActive }) => {
                 <input
                   type="password"
                   placeholder="Password"
-                  onChange={handlePassword}
+                  onChange={(e) => setPawssword(e.target.value)}
                   value={password}
                 />
                 <p className="err">{err}</p>
@@ -109,7 +96,7 @@ const LoginOrSignup = ({ handleLoginActive, signupActive }) => {
               </Button>
             </Form>
           ) : (
-            <Form onSubmit={handleSignin}>
+            <Form onSubmit={handleSignup}>
               <Form.Field>
                 <label>First Name</label>
                 <input
