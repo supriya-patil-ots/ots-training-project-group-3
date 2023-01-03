@@ -60,18 +60,25 @@ const Navigation = () => {
       </div>
       <div className="sub-nav">
         <Menu pointing secondary>
+        <Link to="/">
+            <Menu.Item
+              name="tourmate"
+              active={activeItem === "Home"}
+              onClick={handleItemClick}
+            />
+          </Link>
           <Link to="/">
             <Menu.Item
-              name="Home"
+              name="Trending Destinations"
               active={activeItem === "Home"}
               onClick={handleItemClick}
             />
           </Link>
 
-          <Link to="/products">
+          <Link to="/packages">
             <Menu.Item
-              name="Products"
-              active={activeItem === "Products"}
+              name="Packages"
+              active={activeItem === "Packages"}
               onClick={handleItemClick}
             />
           </Link>
@@ -89,10 +96,10 @@ const Navigation = () => {
               onClick={handleItemClick}
             />
           </Link>
-          <Link to="/cart">
+          <Link to="/Wishlist">
             <Menu.Item
-              name="Cart"
-              active={activeItem === "Cart"}
+              name="Wishlist"
+              active={activeItem === "Wishlist"}
               onClick={handleItemClick}
             />
           </Link>

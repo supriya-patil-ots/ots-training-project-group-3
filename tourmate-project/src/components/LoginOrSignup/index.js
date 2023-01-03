@@ -3,9 +3,7 @@ import { Button, Modal, Form } from "semantic-ui-react";
 import { Navigate } from "react-router-dom";
 import "./index.css";
 
-const users =
-  JSON.parse(localStorage.getItem("users")).length > 0 &&
-  JSON.parse(localStorage.getItem("users"));
+const users = JSON.parse(localStorage.getItem("users"));
 
 const LoginOrSignup = ({ handleLoginActive, signupActive }) => {
   const [open, setOpen] = useState(false);
@@ -46,6 +44,7 @@ const LoginOrSignup = ({ handleLoginActive, signupActive }) => {
     setPawssword("");
   };
   useEffect(() => {
+    
     setOpen(handleLoginActive);
   }, [handleLoginActive]);
 

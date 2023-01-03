@@ -37,15 +37,18 @@ const cartSlice = createSlice({
             if (state.data.cartItem[action.payload].id === action.payload) {
                 let item = delete state.data.cartItem[action.payload];
                 state.data = { cartItem: { ...state.data.cartItem, ...item } };
-            }
+              }
         },
-        removeAllItem: () => {
+        cityDetailData: (state,action) => {
 
+            state.data = {
+                cartItem: { ...action.payload },
+            };
 
         }
     }
 });
 
-export const { addCart, removeFromCart } = cartSlice.actions;
+export const { addCart, removeFromCart,cityDetailData } = cartSlice.actions;
 
 export default cartSlice;
