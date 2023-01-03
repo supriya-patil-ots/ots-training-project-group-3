@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, {useState } from "react";
 import { Icon } from "semantic-ui-react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch} from "react-redux";
 import { addCart } from "../../redux/cartReducer";
 
-function Whishlist({ productData }) {
+function Whishlist({ productData}) {
   const [color, setColor] = useState("white");
   const dispatch = useDispatch();
   const handleWhishlist = () => {
@@ -14,6 +14,7 @@ function Whishlist({ productData }) {
     }
     dispatch(addCart(productData));
   };
+
 
   return (
     <>

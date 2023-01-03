@@ -6,25 +6,42 @@ import Whishlist from "../whislist-Icon";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import "./index.css";
+import { cityDetailData } from "../../redux/cartReducer";
+import { useDispatch } from "react-redux";
 
 const CityCardProduct = () => {
+  const dispatch = useDispatch();
   return (
     <div className="city-card">
       <Grid doubling stackable columns={4}>
         {CityData.length > 0 &&
           CityData.map((city, index) => {
+            
             return (
               <>
-                <Grid.Column>
-                  <Card key={city.id}>
+                <Grid.Column >
+                  <Card key={index}>
                     <Whishlist productData={city} />
                     <Carousel verticalSwipe="standard">
                       {city.imageCollection.map((item) => (
-                        <Image src={item} wrapped ui={false} />
+                        <Link to="/CityDetails">
+                          <Image
+                            src={item}
+                            wrapped
+                            ui={false}
+                            onClick={() => {
+                              dispatch(cityDetailData(city));
+                            }}
+                          />
+                        </Link>
                       ))}
                     </Carousel>
-                    <Link to={`/CityDetails/${index}`}>
-                      <Card.Content>
+                    <Link to="/CityDetails">
+                      <Card.Content
+                        onClick={() => {
+                          dispatch(cityDetailData(city));
+                        }}
+                      >
                         <Card.Header>
                           <p>
                             {city.cityName} , {city.countryName}
