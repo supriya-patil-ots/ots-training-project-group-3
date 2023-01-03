@@ -37,7 +37,7 @@ const cartSlice = createSlice({
             if (state.data.cartItem[action.payload].id === action.payload) {
                 let item = delete state.data.cartItem[action.payload];
                 state.data = { cartItem: { ...state.data.cartItem, ...item } };
-            }
+              }
         },
         cityDetailData: (state,action) => {
 

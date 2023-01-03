@@ -14,11 +14,8 @@ function Wishlist() {
         {Object.keys(cartItem).length > 0 &&
           Object.keys(cartItem).map((city) => {
             return (
-              <Grid.Column key={cartItem[city].id}>
-                {/* <Link to="/CityDetails"> */}
-                <Card  onClick={() => {
-                              dispatch(cityDetailData(cartItem[city]));
-                            }}>
+              <Grid.Column>
+                <Card  key={cartItem[city].id}>
                   <Image src={cartItem[city].imageMain} wrapped ui={false} />
                   <Card.Content>
                     <Card.Header>
@@ -41,20 +38,19 @@ function Wishlist() {
                         <Icon name="rupee sign" size="small" />
                         {cartItem[city].price} night
                       </span>
-                      <br />
                       <Button
                         className="cart-remove-btn"
-                        primary
+                        secondary
                         onClick={() =>
                           dispatch(removeFromCart(cartItem[city].id))
                         }
+                        style={{marginLeft:'20px',width:'120px',padding:'2px'}}
                       >
                         Remove Destination
                       </Button>
                     </Card.Description>
                   </Card.Content>
                 </Card>
-                {/* </Link> */}
               </Grid.Column>
             );
           })}
@@ -64,3 +60,58 @@ function Wishlist() {
 }
 
 export default Wishlist;
+
+
+{/* <Grid.Column>
+                <Card key={cartItem[city].id}>
+                  <Link to="/CityDetails">
+                    <Image src={cartItem[city].imageMain} wrapped ui={false} onClick={() => { dispatch(cityDetailData(cartItem[city])) }} />
+                  </Link>
+                  <Card.Content>
+                    <Link to="/CityDetails">
+                      <Card.Header onClick={() => { dispatch(cityDetailData(cartItem[city])) }}>
+                        <p>
+                          {cartItem[city].cityName} , {cartItem[city].countryName}
+                        </p>
+                        <p>
+                          <Icon name="star" size="small" />
+                          {cartItem[city].rating}
+                        </p>
+                      </Card.Header>
+                    </Link>
+                    <Link to="/CityDetails">
+                      <Card.Description onClick={() => { dispatch(cityDetailData(cartItem[city])) }}>
+                        {cartItem[city].description}
+                      </Card.Description>
+                    </Link>
+                    <Link to="/CityDetails">
+                      <Card.Meta onClick={() => { dispatch(cityDetailData(cartItem[city])) }}>
+                        <span className="date">{cartItem[city].date}</span>
+                      </Card.Meta>
+                    </Link>
+                    <Card.Description style={{ color: "white" }}>
+                      <Link to="/CityDetails" onClick={() => { dispatch(cityDetailData(cartItem[city])) }}>
+                        <span className="date">
+                          <Icon name="rupee sign" size="small" />
+                          {cartItem[city].price} night
+                        </span>
+                      </Link>
+
+                      <Button
+                        className="cart-remove-btn"
+                        secondary
+                        onClick={() =>
+                          dispatch(removeFromCart(cartItem[city].id))
+                        }
+                        style={{ marginLeft: '20px', width: '120px', padding: '2px' }}
+                      >
+                        Remove Destination
+                      </Button>
+                    </Card.Description>
+                  </Card.Content>
+                </Card>
+
+              </Grid.Column>
+            );
+          })}
+      </Grid> */}

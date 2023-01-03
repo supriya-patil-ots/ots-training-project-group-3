@@ -3,7 +3,7 @@ import { Icon } from "semantic-ui-react";
 import { useDispatch} from "react-redux";
 import { addCart } from "../../redux/cartReducer";
 
-function Whishlist({ productData ,clickedData}) {
+function Whishlist({ productData}) {
   const [color, setColor] = useState("white");
   const dispatch = useDispatch();
   const handleWhishlist = () => {
