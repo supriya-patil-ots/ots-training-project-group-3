@@ -25,7 +25,7 @@ const Products = () => {
           </div>
         </Carousel>
       </div>
-      <div style={{ margin: 10 }}>
+      <div style={{ margin: "20px", padding: '10px'}}>
         <Segment.Group horizontal size="massive" >
           <Segment textAlign="left">
             <div style={{ display: 'flex', flexDirection: 'row' }}>
