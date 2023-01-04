@@ -1,31 +1,14 @@
 import React from "react";
-import { Carousel } from "react-responsive-carousel";
-import { Segment, Image, Icon } from 'semantic-ui-react';
+import { Segment, Image, Icon, SegmentGroup, Card } from 'semantic-ui-react';
 import Footer from "../Footer";
+import TopCarousel from "./TopCarousel";
 
 const Products = () => {
+
   return (
     <>
+      <TopCarousel />
       <div style={{ margin: "20px", padding: '10px' }}>
-        <Carousel showThumbs={false} autoPlay={true} infiniteLoop={true} showStatus={false}>
-          <div>
-            <img src=" https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/heroBannerImages/Sun-SationalEurope1_1200x320_27Dec_Desktop.jpg?crop=1282:342" />
-          </div>
-          <div>
-            <img src="https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/heroBannerImages/Vh1Supersonic_1200x320_15Dec.jpg?crop=1200:320" />
-          </div>
-          <div>
-            <img src="https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/heroBannerImages/HoneymoonPackage_1200x320_22Aug.jpg?crop=1200:320" />
-          </div>
-          <div>
-            <img src="https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/heroBannerImages/Thailand_1200x320_26Dec.jpg?crop=1200:320" />
-          </div>
-          <div>
-            <img src="https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/heroBannerImages/Mauritius_1200x320_23Dec.jpg?crop=1200:320" />
-          </div>
-        </Carousel>
-      </div>
-      <div style={{ margin: "20px", padding: '10px'}}>
         <Segment.Group horizontal size="massive" >
           <Segment textAlign="left">
             <div style={{ display: 'flex', flexDirection: 'row' }}>
@@ -76,9 +59,11 @@ const Products = () => {
           </Segment>
         </Segment.Group>
       </div>
+      
       <Footer />
     </>
   );
+
 };
 
 export default Products;

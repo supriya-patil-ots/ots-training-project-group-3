@@ -1,27 +1,39 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import CityData from "../Data/CityData";
 import { Card, Image, Icon, Grid } from "semantic-ui-react";
 import Whishlist from "../whislist-Icon";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import "./index.css";
 import { cityDetailData } from "../../redux/cartReducer";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const CityCardProduct = () => {
-  const [cityList, setCityList] = useState([]);
 
+  const data1 = useSelector((state) => state.search.data);
+  const CityData = useSelector((state) => state.cityData.data);
+  const [searchCityData, setSearchCityData] = useState([]);
   useEffect(() => {
-    setCityList(CityData);
-  }, []);
+    if (data1) {
+      const filteredData = CityData.filter((city) =>
+        city.cityName.toLowerCase().includes(data1.toLowerCase())
+      );
+      setSearchCityData(filteredData);
+    }
+  }, [data1]);
+
+  // useEffect(() => {
+  //   if(CityData.length>0){
+  //     setCityList(CityData);
+  //   }
+  // }, [CityData]);
 
   const dispatch = useDispatch();
   return (
     <div className="city-card">
-      <Grid doubling stackable columns={4}>
-        {cityList.length > 0 &&
-          cityList.map((city, index) => {
+      {data1 ? <Grid doubling stackable columns={4}>
+        {searchCityData.length > 0 &&
+          searchCityData.map((city, index) => {
             return (
               <>
                 <Grid.Column>
@@ -74,8 +86,67 @@ const CityCardProduct = () => {
             );
           })}
       </Grid>
+        : <Grid doubling stackable columns={4}>
+          {CityData.length > 0 &&
+            CityData.map((city, index) => {
+              return (
+                <>
+                  <Grid.Column>
+                    <Card key={index}>
+                      <Whishlist productData={city} />
+                      <Carousel verticalSwipe="standard" showStatus={false}>
+                        {city.imageCollection.map((item) => (
+                          <Link to="/CityDetails">
+                            <Image
+                              src={item}
+                              wrapped
+                              ui={false}
+                              onClick={() => {
+                                dispatch(cityDetailData(city));
+                              }}
+                            />
+                          </Link>
+                        ))}
+                      </Carousel>
+                      <Link to="/CityDetails">
+                        <Card.Content
+                          onClick={() => {
+                            dispatch(cityDetailData(city));
+                          }}
+                        >
+                          <Card.Header>
+                            <p>
+                              {city.cityName} , {city.countryName}
+                            </p>
+                            <p>
+                              <Icon name="star" size="small" />
+                              {city.rating}
+                            </p>
+                          </Card.Header>
+                          <Card.Description>{city.description}</Card.Description>
+                          <Card.Meta>
+                            <span className="date">{city.date}</span>
+                          </Card.Meta>
+                          <Card.Description>
+                            <span className="date">
+                              <Icon name="rupee sign" size="small" />
+                              {city.price} night
+                            </span>
+                          </Card.Description>
+                        </Card.Content>
+                      </Link>
+                    </Card>
+                  </Grid.Column>
+                </>
+              );
+            })}
+        </Grid>
+      }
     </div>
   );
 };
 document.querySelector(".demo-carousel");
 export default CityCardProduct;
+
+
+

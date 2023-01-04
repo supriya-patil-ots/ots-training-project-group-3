@@ -3,14 +3,23 @@ import { Input, Menu, Image, Dropdown } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import "./index.css";
 import LoginOrSignup from "../LoginOrSignup";
+import { searchData } from "../../redux/searchReducer";
+import { useDispatch } from "react-redux";
+import { mainData } from "../../redux/mockDataReducer";
+import CityData from "../Data/CityData";
 
 const Navigation = () => {
+   const dispatch =useDispatch();
   const [loginActive, setLoginActive] = useState(false);
   const [signupActive, setSignupActive] = useState(false);
   const state = { activeItem: "home" };
 
+  if(state.activeItem==='home'){
+     dispatch(mainData(CityData));
+  }
   const handleItemClick = (e, { name }) => {
     this.setState({ activeItem: name });
+   
   };
   const handleLoginActive = () => {
     setLoginActive(true);
@@ -40,7 +49,7 @@ const Navigation = () => {
 
           <Menu.Menu>
             <Menu.Item style={{ width: "100%" }}>
-              <Input icon="search" placeholder="Search..." />
+              <Input icon="search" placeholder="Search..." onChange={(e)=>dispatch(searchData(e.target.value))}/>
             </Menu.Item>
           </Menu.Menu>
 
