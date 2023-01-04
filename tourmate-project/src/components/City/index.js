@@ -17,7 +17,7 @@ const City = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (data1 != "") {
+    if (data1 !== "") {
       const filteredData = CityData.filter((city) =>
         city.cityName.toLowerCase().includes(data1)
       );

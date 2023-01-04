@@ -22,11 +22,6 @@ const CityCardProduct = () => {
     }
   }, [data1]);
 
-  // useEffect(() => {
-  //   if(CityData.length>0){
-  //     setCityList(CityData);
-  //   }
-  // }, [CityData]);
 
   const dispatch = useDispatch();
   return (
