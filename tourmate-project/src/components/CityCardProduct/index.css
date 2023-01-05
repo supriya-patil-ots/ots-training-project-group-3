@@ -67,6 +67,9 @@
 .city-card .content p {
   margin: 0 0 0.5rem;
 }
+.city-card .disc {
+  min-height: 45px;
+}
 
 .city-card .desc {
   min-height: 45px;

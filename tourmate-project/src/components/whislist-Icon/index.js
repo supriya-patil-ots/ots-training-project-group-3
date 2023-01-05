@@ -1,21 +1,11 @@
-<<<<<<< HEAD
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Icon } from "semantic-ui-react";
-import { useDispatch } from "react-redux";
-=======
-import React, {useEffect, useState } from "react";
-import { Icon } from "semantic-ui-react";
-import { useDispatch, useSelector} from "react-redux";
->>>>>>> e73a45a3d445b0e843d27f96b9154d35cdb356c6
+import { useDispatch, useSelector } from "react-redux";
 import { addCart } from "../../redux/cartReducer";
-import {  removeFromCart } from "../../redux/cartReducer";
+import { removeFromCart } from "../../redux/cartReducer";
 
-<<<<<<< HEAD
 function Whishlist({ productData }) {
-=======
-function Whishlist({ productData}) {
   const { cartItem } = useSelector((state) => state.cart.data);
->>>>>>> e73a45a3d445b0e843d27f96b9154d35cdb356c6
   const [color, setColor] = useState("white");
   const dispatch = useDispatch();
   const handleWhishlist = () => {
@@ -27,14 +17,11 @@ function Whishlist({ productData}) {
       dispatch(addCart(productData));
     }
   };
-<<<<<<< HEAD
-=======
-  useEffect(()=>{
-   if(cartItem.hasOwnProperty(productData.id)){
-    setColor("red");
-   }
-  },[cartItem])
->>>>>>> e73a45a3d445b0e843d27f96b9154d35cdb356c6
+  useEffect(() => {
+    if (cartItem.hasOwnProperty(productData.id)) {
+      setColor("red");
+    }
+  }, [cartItem]);
 
   return (
     <>

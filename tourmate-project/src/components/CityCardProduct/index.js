@@ -62,7 +62,7 @@ const CityCardProduct = () => {
                               {city.rating}
                             </p>
                           </Card.Header>
-                          <Card.Description className="desc">
+                          <Card.Description className="disc">
                             {city.description}
                           </Card.Description>
                           <Card.Meta>
