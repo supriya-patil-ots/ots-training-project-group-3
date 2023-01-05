@@ -45,7 +45,9 @@ const cartSlice = createSlice({
                 cartItem: { ...action.payload },
             };
 
-        }
+        },
+        
+  
     }
 });
 
