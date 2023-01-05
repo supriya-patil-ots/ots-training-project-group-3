@@ -21,7 +21,7 @@ const CityData = [
   {
     id: 2,
     countryName: "Thailand",
-    cityName: " Koh Samui",
+    cityName: "Koh Samui",
     rating: "4.9",
     description: "The mountains are calling and you must go.",
     date: "19-24 January",
