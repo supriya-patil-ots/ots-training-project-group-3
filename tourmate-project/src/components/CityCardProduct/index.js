@@ -16,10 +16,9 @@ const CityCardProduct = () => {
       <Grid doubling stackable columns={4}>
         {CityData.length > 0 &&
           CityData.map((city, index) => {
-            
             return (
               <>
-                <Grid.Column >
+                <Grid.Column>
                   <Card key={index}>
                     <Whishlist productData={city} />
                     <Carousel verticalSwipe="standard">
@@ -51,7 +50,9 @@ const CityCardProduct = () => {
                             {city.rating}
                           </p>
                         </Card.Header>
-                        <Card.Description>{city.description}</Card.Description>
+                        <Card.Description className="desc">
+                          {city.description}
+                        </Card.Description>
                         <Card.Meta>
                           <span className="date">{city.date}</span>
                         </Card.Meta>

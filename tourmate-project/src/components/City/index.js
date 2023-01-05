@@ -14,73 +14,79 @@ const City = () => {
 
   // --------------------- done sorting ----------------
 
-  let newData= CityData.sort(function(a, b)
-  { let x = a.cityName.toLowerCase();
-     let y = b.cityName.toLowerCase();
-     if (x < y) {return -1;}
-     if (x > y) {return 1;}
-     return 0;}
-   );
+  let newData = CityData.sort(function (a, b) {
+    let x = a.cityName.toLowerCase();
+    let y = b.cityName.toLowerCase();
+    if (x < y) {
+      return -1;
+    }
+    if (x > y) {
+      return 1;
+    }
+    return 0;
+  });
 
   return (
     <>
       <div className="city-card">
-      <Grid doubling stackable columns={4}>
-        {newData.length > 0 &&
-          newData.map((city, index) => {
-            return (
-              <>
-                <Grid.Column>
-                  <Card key={index}>
-                    <Whishlist productData={city} />
-                    <Carousel verticalSwipe="standard">
-                      {city.imageCollection.map((item) => (
-                        <Link to="/CityDetails">
-                          <Image
-                            src={item}
-                            wrapped
-                            ui={false}
-                            onClick={() => {
-                              dispatch(cityDetailData(city));
-                            }}
-                          />
-                        </Link>
-                      ))}
-                    </Carousel>
-                    <Link to="/CityDetails">
-                      <Card.Content
-                        onClick={() => {
-                          dispatch(cityDetailData(city));
-                        }}
-                      >
-                        <Card.Header>
-                          <p>
-                            {city.cityName} , {city.countryName}
-                          </p>
-                          <p>
-                            <Icon name="star" size="small" />
-                            {city.rating}
-                          </p>
-                        </Card.Header>
-                        <Card.Description>{city.description}</Card.Description>
-                        <Card.Meta>
-                          <span className="date">{city.date}</span>
-                        </Card.Meta>
-                        <Card.Description>
-                          <span className="date">
-                            <Icon name="rupee sign" size="small" />
-                            {city.price} night
-                          </span>
-                        </Card.Description>
-                      </Card.Content>
-                    </Link>
-                  </Card>
-                </Grid.Column>
-              </>
-            );
-          })}
-      </Grid>
-    </div>
+        <Grid doubling stackable columns={4}>
+          {newData.length > 0 &&
+            newData.map((city, index) => {
+              return (
+                <>
+                  <Grid.Column>
+                    <Card key={index}>
+                      <Whishlist productData={city} />
+                      <Carousel verticalSwipe="standard">
+                        {city.imageCollection.map((item) => (
+                          <Link to="/CityDetails">
+                            <Image
+                              src={item}
+                              wrapped
+                              ui={false}
+                              onClick={() => {
+                                dispatch(cityDetailData(city));
+                              }}
+                            />
+                          </Link>
+                        ))}
+                      </Carousel>
+                      <Link to="/CityDetails">
+                        <Card.Content
+                          onClick={() => {
+                            dispatch(cityDetailData(city));
+                          }}
+                        >
+                          <Card.Header>
+                            <p>
+                              {city.cityName} , {city.countryName}
+                            </p>
+                            <p>
+                              <Icon name="star" size="small" />
+                              {city.rating}
+                            </p>
+                          </Card.Header>
+                          <Card.Description className="desc">
+                            {city.description}
+                          </Card.Description>
+                          <Card.Meta>
+                            <span className="date">{city.date}</span>
+                          </Card.Meta>
+                          <Card.Description>
+                            <span className="date">
+                              <Icon name="rupee sign" size="small" />
+                              {city.price} night
+                            </span>
+                          </Card.Description>
+                        </Card.Content>
+                      </Link>
+                    </Card>
+                  </Grid.Column>
+                </>
+              );
+            })}
+        </Grid>
+      </div>
       <Footer />
     </>
   );

@@ -151,7 +151,7 @@ input:focus {
 
 /* review css */
 .testimonial {
-  margin: 0 65px;
+  margin: 40px 65px;
 }
 .review {
   display: flex;
@@ -172,6 +172,9 @@ input:focus {
   bottom: 0;
   margin-top: 0;
   padding: 5px;
-  background: gray;
+  background: black;
   border-radius: 50%;
+}
+.testimonial .carousel .control-dots {
+  display: none;
 }
