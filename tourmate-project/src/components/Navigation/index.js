@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-import { Input, Menu, Image, Dropdown } from "semantic-ui-react";
+import { Input, Menu, Image, Dropdown, Flag } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import "./index.css";
 import LoginOrSignup from "../LoginOrSignup";
 
 const Navigation = () => {
+  const [modalOf, setModalOf] = useState("");
+
   const [loginActive, setLoginActive] = useState(false);
   const [signupActive, setSignupActive] = useState(false);
   const state = { activeItem: "home" };
@@ -12,12 +14,15 @@ const Navigation = () => {
   const handleItemClick = (e, { name }) => {
     this.setState({ activeItem: name });
   };
-  const handleLoginActive = () => {
-    setLoginActive(true);
-  };
 
   const handleSignup = () => {
-    setSignupActive(true);
+    setLoginActive(false);
+    setSignupActive(!signupActive);
+  };
+  console.log(signupActive);
+  const handleLoginActive = () => {
+    setSignupActive(false);
+    setLoginActive(!loginActive);
   };
 
   const { activeItem } = state;
@@ -48,19 +53,19 @@ const Navigation = () => {
             <Menu.Item
               name="Sign Up"
               active={activeItem === "Sign Up"}
-              onClick={handleSignup}
+              onClick={() => setModalOf("signup")}
             />
             <Menu.Item
               name="login"
               active={activeItem === "login"}
-              onClick={handleLoginActive}
+              onClick={() => setModalOf("login")}
             />
           </Menu.Menu>
         </Menu>
       </div>
       <div className="sub-nav">
         <Menu pointing secondary>
-        <Link to="/">
+          <Link to="/">
             <Menu.Item
               name="tourmate"
               active={activeItem === "Home"}
@@ -105,6 +110,7 @@ const Navigation = () => {
           </Link>
         </Menu>
         <LoginOrSignup
+          modalOf={modalOf}
           handleLoginActive={loginActive}
           signupActive={signupActive}
         />

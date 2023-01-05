@@ -1,12 +1,72 @@
-.city-details img {
+.city-details-grid img {
+  height: 100%;
+  width: 100%;
+}
+.city-details-grid img:hover {
+  opacity: 0.7;
+}
+
+.city-details-grid .image {
   width: 100%;
   height: 100%;
 }
-.city-details .image {
-  width: 100%;
-  height: 100%;
+.city-details-grid .ui.grid > .row > .column {
+  padding-left: 0rem;
+  padding-right: 0.5rem;
 }
-.city-details
+.booking {
+  margin: 20px 0px;
+}
+.booking_date {
+  display: flex;
+}
+.booking_date p {
+  margin: 0px;
+}
+.booking_section .react-datepicker-wrapper {
+  width: 100%;
+}
+.first_date {
+  border: 1px solid gray;
+  width: 98%;
+  padding: 15px 0;
+  border-top-left-radius: 8px;
+  text-align: center;
+}
+.second_date {
+  border: 1px solid gray;
+  padding: 15px 0;
+  width: 100%;
+  border-top-right-radius: 8px;
+  text-align: center;
+}
+.heading {
+  display: flex;
+  justify-content: space-between;
+}
+.drop_down {
+  width: 100% !important;
+  padding: 15px 0 !important;
+  border-bottom-left-radius: 8px !important;
+  border-bottom-right-radius: 8px !important;
+  background-color: #fff !important;
+  border: 1px solid gray !important;
+  color: #000 !important;
+  border-top-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+}
+
+.city-details-grid .ui.segment {
+  height: 200px;
+  position: relative;
+  background: #fff;
+  box-shadow: 0 1px 2px 0 rgb(34 36 38 / 15%);
+  margin: 0.25rem 0;
+  padding: 0em 0em;
+  border-radius: 0.28571429rem;
+  border: 1px solid rgba(34, 36, 38, 0.15);
+}
+.city-details-grid
   .ui.divided.grid:not([class*="vertically divided"])
   > .column:first-child,
 .ui.divided.grid:not([class*="vertically divided"])
@@ -15,16 +75,103 @@
   box-shadow: none;
 }
 
-.city-details
+.city-details-grid
   .ui.divided.grid:not([class*="vertically divided"])
   > .row
   > .column {
   box-shadow: 0px 0 0 0 rgb(34 36 38 / 15%);
 }
-/* .city-details .ui.grid > .row {
-  height: 50vh;
+.city_details {
+  text-align: left;
+  margin-top: 30px;
 }
 
-.city-details .ui.grid > .row .column {
-  height: 100%;
-} */
+.city_details_heading,
+.details_name {
+  margin: 10px 65px;
+}
+.details_desc {
+  padding-right: 20px;
+}
+.details_desc .sub_head {
+  color: #5e5d5d;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.pricing p {
+  font-size: 16px;
+}
+.city_details_desc_section {
+  margin: 20px 0;
+}
+.booking_section {
+  position: relative;
+}
+.booking_section .booking_card {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px 2px #e3e1e1;
+}
+.booking_section .ui.button,
+.ui.buttons .button,
+.ui.buttons .or {
+  font-size: 1rem;
+  width: 100%;
+  background-color: #0160d6;
+  color: #fff;
+  padding: 15px;
+}
+.booking_section .ui.button:hover {
+  font-size: 1rem;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 0 10px 2px #e3e1e1;
+  color: #0160d6;
+}
+.adults {
+  display: flex;
+  justify-content: space-between;
+}
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="text"] {
+  border: 0;
+  outline: none;
+  text-align: center;
+}
+input:focus-visible,
+input:focus {
+  outline: none;
+}
+
+/* review css */
+.testimonial {
+  margin: 0 65px;
+}
+.review {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.review_img {
+  height: 100px;
+  width: 100px !important;
+  border-radius: 50%;
+}
+.testimonial .carousel.carousel-slider .control-arrow {
+  top: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 10px;
+  bottom: 0;
+  margin-top: 0;
+  padding: 5px;
+  background: gray;
+  border-radius: 50%;
+}

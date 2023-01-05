@@ -8,3 +8,6 @@
 .err {
   color: red;
 }
+.content input {
+  text-align: left !important;
+}
