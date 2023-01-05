@@ -5,7 +5,7 @@ import "./index.css";
 
 const users = JSON.parse(localStorage.getItem("users"));
 
-const LoginOrSignup = ({ handleLoginActive, signupActive }) => {
+const LoginOrSignup = ({ modalOf }) => {
   const [open, setOpen] = useState(false);
   const [userName, setUserName] = useState("");
   const [password, setPawssword] = useState("");
@@ -13,24 +13,22 @@ const LoginOrSignup = ({ handleLoginActive, signupActive }) => {
   const [lastName, setLastName] = useState("");
   const [err, setErr] = useState("");
 
-  // let msg="Enter valid username or password"
-
-  //  localStorage.setItem("items", JSON.stringify(items));
-
   const HandleLogin = (e) => {
     e.preventDefault();
-    users.map((item) => {
-      if (item.userName === userName && item.password === password) {
-        console.log(userName);
-        setErr("");
-        setUserName("");
-        setPawssword("");
-        setOpen(false);
-        <Navigate to="/" />;
-      } else {
-        setErr("Enter valid username or password");
-      }
-    });
+    if (users.length > 0) {
+      users.map((item) => {
+        if (item.userName === userName && item.password === password) {
+          console.log(userName);
+          setErr("");
+          setUserName("");
+          setPawssword("");
+          setOpen(false);
+          <Navigate to="/" />;
+        } else {
+          setErr("Enter valid username or password");
+        }
+      });
+    }
   };
 
   const handleSignup = (event) => {
@@ -39,18 +37,20 @@ const LoginOrSignup = ({ handleLoginActive, signupActive }) => {
     let users_str_data = JSON.stringify(users);
     localStorage.setItem("users", users_str_data);
     console.log(localStorage.getItem("users"));
-    setOpen(false);
     setUserName("");
     setPawssword("");
+    setOpen(false);
+    <Navigate to="/" />;
   };
-  useEffect(() => {
-    
-    setOpen(handleLoginActive);
-  }, [handleLoginActive]);
 
   useEffect(() => {
-    setOpen(signupActive);
-  }, [signupActive]);
+    console.log(modalOf);
+    if (modalOf == "") {
+      setOpen(false);
+    } else {
+      setOpen(true);
+    }
+  }, [modalOf]);
 
   return (
     <div className="loginorsignin">
@@ -64,8 +64,8 @@ const LoginOrSignup = ({ handleLoginActive, signupActive }) => {
       >
         <Modal.Header>Login Or Signup</Modal.Header>
         <Modal.Content>
-          {handleLoginActive ? (
-            <Form widths="equal" onSubmit={HandleLogin}>
+          {modalOf == "login" ? (
+            <Form widths="equal">
               <Form.Field>
                 <label>Email</label>
                 <input
@@ -90,12 +90,12 @@ const LoginOrSignup = ({ handleLoginActive, signupActive }) => {
                 <p>Forgot your password?</p>
               </Form.Field>
 
-              <Button type="submit" className="sub-btn">
+              <Button type="submit" className="sub-btn" onSubmit={HandleLogin}>
                 Login
               </Button>
             </Form>
           ) : (
-            <Form onSubmit={handleSignup}>
+            <Form>
               <Form.Field>
                 <label>First Name</label>
                 <input
@@ -133,7 +133,7 @@ const LoginOrSignup = ({ handleLoginActive, signupActive }) => {
               <Form.Field>
                 <p>Already a member? logIn.</p>
               </Form.Field>
-              <Button type="submit" className="sub-btn">
+              <Button type="submit" className="sub-btn" onSubmit={handleSignup}>
                 SignIn
               </Button>
             </Form>

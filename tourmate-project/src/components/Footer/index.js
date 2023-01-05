@@ -10,44 +10,44 @@ const Footer = () => {
           <Grid.Row columns={4}>
             <Grid.Column>
               <div className="footer-child-one">
-                <h2>Our Company</h2>
+                <h2>Lorem Ipsum</h2>
                 <ul>
-                  <li>About Us</li>
+                  <li>Lorem Ipsum</li>
 
-                  <li>Franchise</li>
+                  <li>Lorem Ipsum</li>
 
-                  <li>Awards & Accolades</li>
+                  <li>Lorem Ipsum</li>
 
-                  <li>Our Reachs</li>
+                  <li>Lorem Ipsum</li>
                 </ul>
               </div>
             </Grid.Column>
             <Grid.Column>
               <div className="footer-child-two">
-                <h2>Trending</h2>
+                <h2>Lorem Ipsum</h2>
                 <ul>
-                  <li>About Us</li>
-                  <li>Franchise</li>
-                  <li>Awards & Accolades</li>
-                  <li>Our Reachs</li>
+                  <li>Lorem Ipsum</li>
+                  <li>Lorem Ipsum</li>
+                  <li>Lorem Ipsum</li>
+                  <li>Lorem Ipsum</li>
                 </ul>
               </div>
             </Grid.Column>
             <Grid.Column>
               <div className="footer-child-three">
-                <h2>Quick Links</h2>
+                <h2>Lorem Ipsum</h2>
 
                 <ul>
-                  <li>About Us</li>
-                  <li>Franchise</li>
-                  <li>Awards & Accolades</li>
-                  <li>Our Reachs</li>
+                  <li>Lorem Ipsum</li>
+                  <li>Lorem Ipsum</li>
+                  <li>Lorem Ipsum</li>
+                  <li>Lorem Ipsum</li>
                 </ul>
               </div>
             </Grid.Column>
             <Grid.Column>
               <div className="footer-child-four">
-                <h2>Get In Touch</h2>
+                <h2>Lorem Ipsum</h2>
 
                 <ul className="social-icon">
                   <li>
@@ -68,13 +68,16 @@ const Footer = () => {
                   </li>
                 </ul>
 
-                <p>Awards & Accolades</p>
+                <p>Lorem Ipsum</p>
 
-                <p>Our Reachs</p>
+                <p>Lorem Ipsum</p>
               </div>
             </Grid.Column>
           </Grid.Row>
         </Grid>
+      </div>
+      <div className="foote_end">
+        <p>© 2023 Tourmate.com.All Rights Reserved</p>
       </div>
     </>
   );

@@ -1,0 +1,14 @@
+.control__btn {
+  font-size: 14px;
+  height: 25px;
+  width: 25px;
+  margin: 5px;
+  padding: 0px 0;
+  background-color: transparent;
+  color: rgb(16, 0, 54);
+  border: 1px solid rgb(16, 0, 54);
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  border-radius: 50%;
+  border: 1px solid gray;
+}
