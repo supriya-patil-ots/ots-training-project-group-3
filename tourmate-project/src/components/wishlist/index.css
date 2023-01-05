@@ -1,3 +1,10 @@
+.wishlist-card .image{
+  max-height: 100% !important;
+}
+.wishlist-card img{
+  width:100%;
+}
+
 .city-card {
   margin: 30px 30px;
 }

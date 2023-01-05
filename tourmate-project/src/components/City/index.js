@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { cityDetailData } from "../../redux/cartReducer";
-import { useDispatch, useSelector } from "react-redux";
+import {  useSelector } from "react-redux";
 import Footer from "../Footer";
 import CityData from "../Data/CityData";
 import { Card, Image, Icon, Grid } from "semantic-ui-react";
@@ -14,7 +13,6 @@ const City = () => {
   const [cityList, setCityList] = useState([]);
   const [searchCityData, setSearchCityData] = useState([]);
   const [sortedCityList, setSortedCityList] = useState([]);
-  const dispatch = useDispatch();
 
   useEffect(() => {
     if (data1 !== "") {
@@ -63,23 +61,17 @@ const City = () => {
                       <Whishlist productData={city} />
                       <Carousel verticalSwipe="standard" showStatus={false}>
                         {city.imageCollection.map((item) => (
-                          <Link to="/CityDetails">
+                          <Link to={`/CityDetails/${city.id}`}>
                             <Image
                               src={item}
                               wrapped
                               ui={false}
-                              onClick={() => {
-                                dispatch(cityDetailData(city));
-                              }}
                             />
                           </Link>
                         ))}
                       </Carousel>
-                      <Link to="/CityDetails">
+                      <Link to={`/CityDetails/${city.id}`}>
                         <Card.Content
-                          onClick={() => {
-                            dispatch(cityDetailData(city));
-                          }}
                         >
                           <Card.Header>
                             <p>
@@ -118,23 +110,17 @@ const City = () => {
                         <Whishlist productData={city} />
                         <Carousel verticalSwipe="standard" showStatus={false}>
                           {city.imageCollection.map((item) => (
-                            <Link to="/CityDetails">
+                            <Link to={`/CityDetails/${city.id}`}>
                               <Image
                                 src={item}
                                 wrapped
                                 ui={false}
-                                onClick={() => {
-                                  dispatch(cityDetailData(city));
-                                }}
                               />
                             </Link>
                           ))}
                         </Carousel>
-                        <Link to="/CityDetails">
+                        <Link to={`/CityDetails/${city.id}`}>
                           <Card.Content
-                            onClick={() => {
-                              dispatch(cityDetailData(city));
-                            }}
                           >
                             <Card.Header>
                               <p>

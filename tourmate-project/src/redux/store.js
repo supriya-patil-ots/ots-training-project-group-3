@@ -3,6 +3,7 @@ import cartSlice from './cartReducer';
 import userSlice from './loginreducer';
 import searchSlice from './searchReducer';
 import mockDataSlice from './mockDataReducer';
+import cityDetailSlice from './cityDetailReducer';
 
 
  export const store = configureStore({
@@ -10,6 +11,7 @@ import mockDataSlice from './mockDataReducer';
       cart:cartSlice.reducer,
       user:userSlice.reducer,
       search:searchSlice.reducer,
-      cityData:mockDataSlice.reducer
+      cityData:mockDataSlice.reducer,
+      cityDetail:cityDetailSlice.reducer
     }
  });

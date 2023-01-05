@@ -18,7 +18,6 @@ const LoginOrSignup = ({ modalOf }) => {
     if (users.length > 0) {
       users.map((item) => {
         if (item.userName === userName && item.password === password) {
-          console.log(userName);
           setErr("");
           setUserName("");
           setPawssword("");
@@ -36,7 +35,6 @@ const LoginOrSignup = ({ modalOf }) => {
     users.push({ userName, password });
     let users_str_data = JSON.stringify(users);
     localStorage.setItem("users", users_str_data);
-    console.log(localStorage.getItem("users"));
     setUserName("");
     setPawssword("");
     setOpen(false);
@@ -44,7 +42,6 @@ const LoginOrSignup = ({ modalOf }) => {
   };
 
   useEffect(() => {
-    console.log(modalOf);
     if (modalOf == "") {
       setOpen(false);
     } else {

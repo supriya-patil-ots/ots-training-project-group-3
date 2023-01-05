@@ -28,7 +28,6 @@ const Navigation = () => {
     setLoginActive(false);
     setSignupActive(!signupActive);
   };
-  console.log(signupActive);
   const handleLoginActive = () => {
     setSignupActive(false);
     setLoginActive(!loginActive);
