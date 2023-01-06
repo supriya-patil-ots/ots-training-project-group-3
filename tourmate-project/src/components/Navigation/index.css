@@ -31,13 +31,26 @@
 }
 
 /*media query*/
+
 /* @media screen and (min-width: 768px) {
   .ui.menu:not(.vertical) .item > .input {
     left: 40% !important;
   }
 } */
 @media screen and (max-width: 768px) {
+  .nav {
+    background-color: #0160d6;
+    color: #fff;
+  }
   .nav .ui.menu:not(.vertical) .right.menu {
-    display: none;
+    text-align: center;
+  }
+
+  .ui.stackable.menu .item {
+    display: block !important;
+    color: #fff;
+  }
+  .ui.stackable.menu .item img {
+    margin: 0 auto;
   }
 }

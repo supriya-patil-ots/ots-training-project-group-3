@@ -9,7 +9,6 @@ import { cityDetailData } from "../../redux/cartReducer";
 import { useDispatch, useSelector } from "react-redux";
 
 const CityCardProduct = () => {
-
   const data1 = useSelector((state) => state.search.data);
   const CityData = useSelector((state) => state.cityData.data);
   const [searchCityData, setSearchCityData] = useState([]);
@@ -22,66 +21,69 @@ const CityCardProduct = () => {
     }
   }, [data1]);
 
-
   const dispatch = useDispatch();
   return (
     <div className="city-card">
-      {data1 ? <Grid doubling stackable columns={4}>
-        {searchCityData.length > 0 &&
-          searchCityData.map((city, index) => {
-            return (
-              <>
-                <Grid.Column>
-                  <Card key={index}>
-                    <Whishlist productData={city} />
-                    <Carousel verticalSwipe="standard" showStatus={false}>
-                      {city.imageCollection.map((item) => (
-                        <Link to="/CityDetails">
-                          <Image
-                            src={item}
-                            wrapped
-                            ui={false}
-                            onClick={() => {
-                              dispatch(cityDetailData(city));
-                            }}
-                          />
-                        </Link>
-                      ))}
-                    </Carousel>
-                    <Link to="/CityDetails">
-                      <Card.Content
-                        onClick={() => {
-                          dispatch(cityDetailData(city));
-                        }}
-                      >
-                        <Card.Header>
-                          <p>
-                            {city.cityName} , {city.countryName}
-                          </p>
-                          <p>
-                            <Icon name="star" size="small" />
-                            {city.rating}
-                          </p>
-                        </Card.Header>
-                        <Card.Description>{city.description}</Card.Description>
-                        <Card.Meta>
-                          <span className="date">{city.date}</span>
-                        </Card.Meta>
-                        <Card.Description>
-                          <span className="date">
-                            <Icon name="rupee sign" size="small" />
-                            {city.price} night
-                          </span>
-                        </Card.Description>
-                      </Card.Content>
-                    </Link>
-                  </Card>
-                </Grid.Column>
-              </>
-            );
-          })}
-      </Grid>
-        : <Grid doubling stackable columns={4}>
+      {data1 ? (
+        <Grid doubling stackable columns={4}>
+          {searchCityData.length > 0 &&
+            searchCityData.map((city, index) => {
+              return (
+                <>
+                  <Grid.Column>
+                    <Card key={index}>
+                      <Whishlist productData={city} />
+                      <Carousel verticalSwipe="standard" showStatus={false}>
+                        {city.imageCollection.map((item) => (
+                          <Link to="/CityDetails">
+                            <Image
+                              src={item}
+                              wrapped
+                              ui={false}
+                              onClick={() => {
+                                dispatch(cityDetailData(city));
+                              }}
+                            />
+                          </Link>
+                        ))}
+                      </Carousel>
+                      <Link to="/CityDetails">
+                        <Card.Content
+                          onClick={() => {
+                            dispatch(cityDetailData(city));
+                          }}
+                        >
+                          <Card.Header>
+                            <p>
+                              {city.cityName} , {city.countryName}
+                            </p>
+                            <p>
+                              <Icon name="star" size="small" />
+                              {city.rating}
+                            </p>
+                          </Card.Header>
+                          <Card.Description className="disc">
+                            {city.description}
+                          </Card.Description>
+                          <Card.Meta>
+                            <span className="date">{city.date}</span>
+                          </Card.Meta>
+                          <Card.Description>
+                            <span className="date">
+                              <Icon name="rupee sign" size="small" />
+                              {city.price} night
+                            </span>
+                          </Card.Description>
+                        </Card.Content>
+                      </Link>
+                    </Card>
+                  </Grid.Column>
+                </>
+              );
+            })}
+        </Grid>
+      ) : (
+        <Grid doubling stackable columns={4}>
           {CityData.length > 0 &&
             CityData.map((city, index) => {
               return (
@@ -118,7 +120,9 @@ const CityCardProduct = () => {
                               {city.rating}
                             </p>
                           </Card.Header>
-                          <Card.Description>{city.description}</Card.Description>
+                          <Card.Description>
+                            {city.description}
+                          </Card.Description>
                           <Card.Meta>
                             <span className="date">{city.date}</span>
                           </Card.Meta>
@@ -136,12 +140,9 @@ const CityCardProduct = () => {
               );
             })}
         </Grid>
-      }
+      )}
     </div>
   );
 };
 document.querySelector(".demo-carousel");
 export default CityCardProduct;
-
-
-

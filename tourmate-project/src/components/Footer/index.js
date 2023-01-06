@@ -7,47 +7,34 @@ const Footer = () => {
     <>
       <div className="footer">
         <Grid doubling stackable>
-          <Grid.Row columns={4}>
-            <Grid.Column>
-              <div className="footer-child-one">
-                <h2>Lorem Ipsum</h2>
-                <ul>
-                  <li>Lorem Ipsum</li>
-
-                  <li>Lorem Ipsum</li>
-
-                  <li>Lorem Ipsum</li>
-
-                  <li>Lorem Ipsum</li>
-                </ul>
-              </div>
-            </Grid.Column>
+          <Grid.Row columns={3}>
             <Grid.Column>
               <div className="footer-child-two">
-                <h2>Lorem Ipsum</h2>
+                <h3>Our Services In India</h3>
                 <ul>
-                  <li>Lorem Ipsum</li>
-                  <li>Lorem Ipsum</li>
-                  <li>Lorem Ipsum</li>
-                  <li>Lorem Ipsum</li>
+                  <li>Manali</li>
+                  <li>Agonda</li>
+                  <li>Agra</li>
+                  <li>Karnataka</li>
+                  <li>Maldives</li>
                 </ul>
               </div>
             </Grid.Column>
             <Grid.Column>
               <div className="footer-child-three">
-                <h2>Lorem Ipsum</h2>
+                <h3>Quick Links</h3>
 
                 <ul>
-                  <li>Lorem Ipsum</li>
-                  <li>Lorem Ipsum</li>
-                  <li>Lorem Ipsum</li>
-                  <li>Lorem Ipsum</li>
+                  <li>Trending Destinations</li>
+                  <li>Packages</li>
+                  <li>City</li>
+                  <li>Wishlist</li>
                 </ul>
               </div>
             </Grid.Column>
             <Grid.Column>
               <div className="footer-child-four">
-                <h2>Lorem Ipsum</h2>
+                <h2>Follow us on:</h2>
 
                 <ul className="social-icon">
                   <li>
@@ -60,7 +47,7 @@ const Footer = () => {
                   </li>
 
                   <li>
-                    <Icon name="facebook f" color="large" size="large" />
+                    <Icon name="facebook f" color="white" size="large" />
                   </li>
 
                   <li>
@@ -68,9 +55,26 @@ const Footer = () => {
                   </li>
                 </ul>
 
-                <p>Lorem Ipsum</p>
+                <p>
+                  <Icon
+                    name="phone"
+                    color="white"
+                    size="small"
+                    flipped="horizontally"
+                  />
+                  :(972) 454-4888
+                </p>
 
-                <p>Lorem Ipsum</p>
+                <p>
+                  <Icon
+                    name="map marker alternate"
+                    color="white"
+                    size="small"
+                  />
+                  :16,Bootstrat,4th floar,
+                  <br />
+                  &nbsp; &nbsp; &nbsp;City Vista,Kharadi,pune.
+                </p>
               </div>
             </Grid.Column>
           </Grid.Row>
