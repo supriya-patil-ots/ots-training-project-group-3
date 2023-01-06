@@ -2,7 +2,7 @@
 import { Route, Routes,useParams } from "react-router-dom";
 import "./App.css";
 import Navigation from "./components/Navigation";
-import Products from "./components/Products";
+import Packages from "./components/Packages";
 import City from "./components/City";
 import Contact from "./components/Contact";
 import Home from "./components/Home";
@@ -19,7 +19,7 @@ function App() {
         <Navigation />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/packages" element={<Products />} />
+          <Route path="/packages" element={<Packages />} />
           <Route path="/City" element={<City />} />
           <Route path={`/CityDetails/:id`} element={<CityDetails/>} />
           <Route path='/Contact' element={<Contact />} />

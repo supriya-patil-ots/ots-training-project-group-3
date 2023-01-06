@@ -115,7 +115,7 @@ const CityDetails = () => {
                   <span style={{ color: "#8c8c8c", paddingRight: "5px" }}>
                     Spend Your quality time in
                   </span>
-                  {cartItem.cityName}
+                  {cartItem.cityName}&nbsp;
                   {cartItem.countryName}
                 </h3>
                 <p className="sub_head">{cartItem.description}</p>

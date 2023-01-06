@@ -21,13 +21,13 @@ function Whishlist({ productData }) {
     if (cartItem.hasOwnProperty(productData.id)) {
       setColor("red");
     }
-  }, [cartItem])
+  }, [cartItem]);
 
   return (
     <>
       <Icon
         name="heart"
-        size="big"
+        size="large"
         className="heartIcon"
         onClick={handleWhishlist}
         color={color}

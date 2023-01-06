@@ -9,19 +9,18 @@ import { mainData } from "../../redux/mockDataReducer";
 import CityData from "../Data/CityData";
 
 const Navigation = () => {
-   const dispatch =useDispatch();
+  const dispatch = useDispatch();
   const [modalOf, setModalOf] = useState("");
 
   const [loginActive, setLoginActive] = useState(false);
   const [signupActive, setSignupActive] = useState(false);
   const state = { activeItem: "home" };
 
-  if(state.activeItem==='home'){
-     dispatch(mainData(CityData));
+  if (state.activeItem === "home") {
+    dispatch(mainData(CityData));
   }
   const handleItemClick = (e, { name }) => {
     this.setState({ activeItem: name });
-   
   };
 
   const handleSignup = () => {
@@ -38,7 +37,7 @@ const Navigation = () => {
   return (
     <div>
       <div className="nav">
-        <Menu secondary>
+        <Menu secondary stackable>
           <Menu.Item
             name="logo"
             active={activeItem === "logo"}
@@ -53,7 +52,11 @@ const Navigation = () => {
 
           <Menu.Menu>
             <Menu.Item style={{ width: "100%" }}>
-              <Input icon="search" placeholder="Search..." onChange={(e)=>dispatch(searchData(e.target.value))}/>
+              <Input
+                icon="search"
+                placeholder="Search..."
+                onChange={(e) => dispatch(searchData(e.target.value))}
+              />
             </Menu.Item>
           </Menu.Menu>
 
@@ -72,7 +75,7 @@ const Navigation = () => {
         </Menu>
       </div>
       <div className="sub-nav">
-        <Menu pointing secondary>
+        <Menu pointing secondary stackable>
           <Link to="/">
             <Menu.Item
               name="tourmate"

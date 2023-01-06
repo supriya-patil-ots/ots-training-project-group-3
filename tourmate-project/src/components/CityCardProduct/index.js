@@ -130,6 +130,3 @@ const CityCardProduct = () => {
 };
 document.querySelector(".demo-carousel");
 export default CityCardProduct;
-
-
-
