@@ -2,6 +2,8 @@ import React from "react";
 import { Grid, Image, Icon, Card, GridRow } from "semantic-ui-react";
 import Footer from "../Footer";
 import TopCarousel from "./TopCarousel";
+import InternationalData from "./InternationalData";
+import unexploredData from "./unexploredData";
 import "./index.css";
 
 const packageData = [
@@ -22,60 +24,6 @@ const packageData = [
   },
 ];
 
-const InternationalData = [
-  {
-    img: "https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/cities/3198/shutterstock_176887880.jpg?crop=192:285&downsize=192:285",
-    title: "Europe",
-    price: "16,300",
-  },
-  {
-    img: "https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/cities/3147/majestic-mauritus-and-dubai.jpg?crop=192:285&downsize=192:285",
-    title: "Dunai",
-    price: "17,800",
-  },
-  {
-    img: "https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/cities/2514/singapore1.jpg?crop=192:285&downsize=192:285",
-    title: "Singapore",
-    price: "26,100",
-  },
-  {
-    img: "https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/cities/3067/I.jpg?crop=192:285&downsize=192:285",
-    title: "Tailand",
-    price: "28,200",
-  },
-  {
-    img: "https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/cities/3127/Golden-Horn,-Istanbul,-Turkey.jpg?crop=192:285&downsize=192:285",
-    title: "Turkey",
-    price: "78,300",
-  },
-];
-const unexploredData = [
-  {
-    img: "https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/cities/1394/Enjoy%20a%20camel%20ride%20at%20the%20White%20Desert.jpg?crop=370:240?crop=192:285&downsize=192:285",
-    title: "Gujrat",
-    price: "6,900",
-  },
-  {
-    img: "https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/cities/1268/mumbai-harbour.jpg?crop=192:285&downsize=192:285",
-    title: "Maharashtra",
-    price: "5,100",
-  },
-  {
-    img: "https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/cities/1315/Nainital_Ekesh-Tiwari.jpg?crop=192:285&downsize=192:285",
-    title: "Uttarakhand",
-    price: "9,900",
-  },
-  {
-    img: "https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/cities/2547/cape-town.jpg?crop=192:285&downsize=192:285",
-    title: "Sauth Africa",
-    price: "56,100",
-  },
-  {
-    img: "https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/cities/644/Cairo-2.jpg?crop=192:285&downsize=192:285",
-    title: "Egypt",
-    price: "90,100",
-  },
-];
 const Packages = () => {
   return (
     <>
@@ -180,7 +128,7 @@ const Packages = () => {
                         starting at <Icon name="rupee" size="small" />
                         {item.price} Per person
                       </p>
-                      <button className="packages_btn">See More</button>
+                      <button className="packages_btn">Book Now</button>
                     </Card.Description>
                   </div>
                 </Grid.Column>
@@ -205,7 +153,7 @@ const Packages = () => {
                         starting at <Icon name="rupee" size="small" />
                         {item.price} Per person
                       </p>
-                      <button className="packages_btn">See More</button>
+                      <button className="packages_btn">Book Now</button>
                     </Card.Description>
                   </div>
                 </Grid.Column>
