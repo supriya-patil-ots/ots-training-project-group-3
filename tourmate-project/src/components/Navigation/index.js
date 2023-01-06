@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Input, Menu, Image, Dropdown, Flag } from "semantic-ui-react";
+import { Input, Menu, Image, Dropdown, Flag, Button } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import "./index.css";
 import LoginOrSignup from "../LoginOrSignup";
@@ -10,10 +10,7 @@ import CityData from "../Data/CityData";
 
 const Navigation = () => {
   const dispatch = useDispatch();
-  const [modalOf, setModalOf] = useState("");
 
-  const [loginActive, setLoginActive] = useState(false);
-  const [signupActive, setSignupActive] = useState(false);
   const state = { activeItem: "home" };
 
   if (state.activeItem === "home") {
@@ -23,14 +20,6 @@ const Navigation = () => {
     this.setState({ activeItem: name });
   };
 
-  const handleSignup = () => {
-    setLoginActive(false);
-    setSignupActive(!signupActive);
-  };
-  const handleLoginActive = () => {
-    setSignupActive(false);
-    setLoginActive(!loginActive);
-  };
 
   const { activeItem } = state;
 
@@ -61,16 +50,12 @@ const Navigation = () => {
           </Menu.Menu>
 
           <Menu.Menu position="right">
-            <Menu.Item
-              name="Sign Up"
-              active={activeItem === "Sign Up"}
-              onClick={() => setModalOf("signup")}
-            />
-            <Menu.Item
-              name="login"
-              active={activeItem === "login"}
-              onClick={() => setModalOf("login")}
-            />
+            <Menu.Item>   
+              <LoginOrSignup name='Sign Up'/>
+            </Menu.Item>
+            <Menu.Item>
+              <LoginOrSignup name='Login'/>
+            </Menu.Item>
           </Menu.Menu>
         </Menu>
       </div>
@@ -120,11 +105,6 @@ const Navigation = () => {
             />
           </Link>
         </Menu>
-        <LoginOrSignup
-          modalOf={modalOf}
-          handleLoginActive={loginActive}
-          signupActive={signupActive}
-        />
       </div>
     </div>
   );
