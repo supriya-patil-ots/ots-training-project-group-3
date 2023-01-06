@@ -4,7 +4,7 @@ import { Navigate } from "react-router-dom";
 import "./index.css";
 
 const users =
-  JSON.parse(localStorage.getItem("users")).length > 0 &&
+  // JSON.parse(localStorage.getItem("users")).length > 0 &&
   JSON.parse(localStorage.getItem("users"));
 
 const LoginOrSignup = ({ handleLoginActive, signupActive }) => {
