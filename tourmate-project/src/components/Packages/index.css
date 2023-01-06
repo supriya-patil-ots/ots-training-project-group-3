@@ -101,7 +101,7 @@ h6 {
     display: flex;
     align-items: center;
   }
-  .ui.grid > .row > .column > img,
+  .packages .ui.grid > .row > .column > img,
   .ui.grid > .row > img {
     display: none;
   }
