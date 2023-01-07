@@ -4,12 +4,14 @@ import { Link } from "react-router-dom";
 import "./index.css";
 import LoginOrSignup from "../LoginOrSignup";
 import { searchData } from "../../redux/searchReducer";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { mainData } from "../../redux/mockDataReducer";
 import CityData from "../Data/CityData";
 
 const Navigation = () => {
   const dispatch = useDispatch();
+  const {userData}=useSelector((state)=>state.user.data);
+
 
   const state = { activeItem: "home" };
 
@@ -51,10 +53,10 @@ const Navigation = () => {
 
           <Menu.Menu position="right">
             <Menu.Item>   
-              <LoginOrSignup name='Sign Up'/>
+              <LoginOrSignup title='Sign Up'/>
             </Menu.Item>
             <Menu.Item>
-              <LoginOrSignup name='Login'/>
+            {Object.keys(userData).length===0 &&<LoginOrSignup title='Login'/>}
             </Menu.Item>
           </Menu.Menu>
         </Menu>
