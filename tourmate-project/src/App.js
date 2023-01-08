@@ -1,5 +1,5 @@
 // import logo from "./logo.svg";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useParams } from "react-router-dom";
 import "./App.css";
 import Navigation from "./components/Navigation";
 import Packages from "./components/Packages";
@@ -10,9 +10,9 @@ import { Provider } from "react-redux";
 import { store } from "./redux/store";
 import CityDetails from "./components/CityDetails";
 import Wishlist from "./components/wishlist";
+import HoneymoonPackage from "./components/HoneymoonPackage";
 
 function App() {
- 
   return (
     <div className="App">
       <Provider store={store}>
@@ -20,10 +20,12 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/packages" element={<Packages />} />
+          <Route path="/packages/:id" element={<HoneymoonPackage />} />
           <Route path="/City" element={<City />} />
-          <Route path={`/CityDetails/:id`} element={<CityDetails/>} />
-          <Route path='/Contact' element={<Contact />} />
+          <Route path={`/CityDetails/:id`} element={<CityDetails />} />
+          <Route path="/Contact" element={<Contact />} />
           <Route path="/Wishlist" element={<Wishlist />} />
+          <Route path="/Honeymoon" element={<HoneymoonPackage />} />
         </Routes>
       </Provider>
     </div>
