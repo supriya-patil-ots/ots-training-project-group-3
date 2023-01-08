@@ -3,12 +3,13 @@ import { Icon,Popup } from "semantic-ui-react";
 import { useDispatch, useSelector } from "react-redux";
 import { addCart } from "../../redux/cartReducer";
 import { removeFromCart } from "../../redux/cartReducer";
-import './index.css'
+import "./index.css";
 
 function Whishlist({ productData }) {
   const { cartItem } = useSelector((state) => state.cart.data);
   const { userData } = useSelector((state) => state.user.data);
   const [color, setColor] = useState("white");
+
   const dispatch = useDispatch();
   const handleWhishlist = () => {
 
@@ -36,7 +37,7 @@ function Whishlist({ productData }) {
         />: <Icon
         name="heart"
         size="large"
-        className="heartIcon "
+        className={color == "red" ? "redheart" : "heartIcon"}
         onClick={handleWhishlist}
         color={color}
       />}

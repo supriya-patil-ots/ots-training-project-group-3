@@ -7,11 +7,15 @@
   text-align: left;
   height: 130px;
 }
+.city-card .ui.card > .content h3 {
+  margin: 0 !important;
+  padding-top: 10px;
+}
 .city-card .ui.card {
   width: 100%;
 }
 .city-card .carousel-root {
-  height: 190px;
+  height: 240px;
 }
 
 .city-card .ui.card:hover {
@@ -39,13 +43,14 @@
 }
 .city-card .content {
   color: #000;
-  padding: 10px;
+  padding: 0px;
+  padding-top: 10px;
   min-height: 130px;
   text-align: left;
 }
 
-.city-card .image {
-  max-height: 190px;
+.city-card .carousel .slide .image {
+  height: 240px;
   object-fit: contain;
 }
 
@@ -53,8 +58,9 @@
 .ui.cards > .card > .image:not(.ui) > img {
   border: none;
 }
-.city-card .carousel .slide img {
-  height: 190px;
+.city-card img {
+  height: 240px;
+  border-radius: 12px;
 }
 .carousel .carousel-status {
   top: 85% !important;
@@ -67,10 +73,10 @@
 .city-card .content p {
   margin: 0 0 0.5rem;
 }
-.city-card .disc {
+/* .city-card .disc {
   min-height: 45px;
 }
 
 .city-card .desc {
   min-height: 45px;
-}
+} */

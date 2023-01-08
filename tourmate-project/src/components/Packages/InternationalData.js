@@ -16,7 +16,7 @@ const InternationalData = [
   },
   {
     img: "https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/cities/3067/I.jpg?crop=192:285&downsize=192:285",
-    title: "Tailand",
+    title: "Thailand",
     price: "28,200",
   },
   {

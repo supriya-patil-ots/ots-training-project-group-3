@@ -1,8 +1,18 @@
 .heartIcon {
   position: absolute;
   top: 5px;
-  right:0;
+  right: 5px;
   z-index: 1;
   color: white;
+  opacity: 0.5 !important;
+}
+
+.redheart {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 1;
+  color: white;
+  opacity: 1;
 }
 
