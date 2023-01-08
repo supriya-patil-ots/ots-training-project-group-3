@@ -1,7 +1,7 @@
 import React from "react";
 import { GoogleMap, MarkerF, useLoadScript } from "@react-google-maps/api";
 
-const GoogleMapContainer = ({ currentLocation }) => {
+const GoogleMapContainer = ({ currentLocation}) => {
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: "AIzaSyBmc9trQvqHIrTShvRAb0MoHOFZzzKB5GY",
   });
