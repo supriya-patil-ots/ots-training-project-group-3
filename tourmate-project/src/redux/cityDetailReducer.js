@@ -10,7 +10,6 @@ const cityDetailSlice = createSlice({
     initialState,
     reducers: {
         cityDetailData: (state, action) => {
-            console.log(action.payload);
             let newData= CityData.filter((c)=>c.id===Number(action.payload))
             state.data = { ...newData[0] }
 
