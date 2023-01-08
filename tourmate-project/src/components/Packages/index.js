@@ -1,5 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Grid, Image, Icon, Card, GridRow } from "semantic-ui-react";
+import { categoryData } from "../../redux/PackagesDataReducer";
+import { useDispatch, useSelector } from "react-redux";
 import Footer from "../Footer";
 import TopCarousel from "./TopCarousel";
 import InternationalData from "./InternationalData";
@@ -25,6 +28,8 @@ const packageData = [
 ];
 
 const Packages = () => {
+  const dispatch = useDispatch();
+
   return (
     <>
       <TopCarousel />
@@ -93,7 +98,7 @@ const Packages = () => {
                 <p>Pick from our specially curated packages</p>
               </div>
             </Grid.Column>
-            {packageData.map((item) => {
+            {packageData.map((item, index) => {
               return (
                 <Grid.Column>
                   <Card>
@@ -101,8 +106,14 @@ const Packages = () => {
                       <Image src={item.image} color="blue" />
                       <Card.Description className="package_card">
                         <h4> {item.Title}</h4>
-
-                        <button className="packages_btn">See More</button>
+                        <Link to={`/packages/${index}`}>
+                          <button
+                            className="packages_btn"
+                            onClick={() => dispatch(categoryData(index))}
+                          >
+                            See More
+                          </button>
+                        </Link>
                       </Card.Description>
                     </div>
                   </Card>

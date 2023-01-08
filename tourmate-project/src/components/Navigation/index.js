@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Input, Menu, Image, Dropdown, Flag } from "semantic-ui-react";
+import { Input, Menu, Image, Dropdown, Flag, Search } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import "./index.css";
 import LoginOrSignup from "../LoginOrSignup";
@@ -48,11 +48,16 @@ const Navigation = () => {
               width="20px"
               size="small"
             />
+            <Menu.Item
+              name="Tourmate"
+              active={activeItem === "Tourmate"}
+              onClick={handleItemClick}
+            />
           </Menu.Item>
 
           <Menu.Menu>
             <Menu.Item style={{ width: "100%" }}>
-              <Input
+              <Search
                 icon="search"
                 placeholder="Search..."
                 onChange={(e) => dispatch(searchData(e.target.value))}
@@ -120,11 +125,6 @@ const Navigation = () => {
             />
           </Link>
         </Menu>
-        <LoginOrSignup
-          modalOf={modalOf}
-          handleLoginActive={loginActive}
-          signupActive={signupActive}
-        />
       </div>
     </div>
   );

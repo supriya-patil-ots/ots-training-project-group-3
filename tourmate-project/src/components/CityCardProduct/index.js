@@ -42,7 +42,9 @@ const CityCardProduct = () => {
                         <Card.Content>
                           <Card.Header>
                             <p>
-                              {city.cityName} , {city.countryName}
+                              <b>
+                                {city.cityName} , {city.countryName}
+                              </b>
                             </p>
                             <p>
                               <Icon name="star" size="small" />
@@ -88,9 +90,11 @@ const CityCardProduct = () => {
                       <Link to={`/CityDetails/${city.id}`}>
                         <Card.Content>
                           <Card.Header>
-                            <p>
-                              {city.cityName} , {city.countryName}
-                            </p>
+                            <h3>
+                              <b>
+                                {city.cityName} , {city.countryName}
+                              </b>
+                            </h3>
                             <p>
                               <Icon name="star" size="small" />
                               {city.rating}

@@ -70,9 +70,9 @@ const City = () => {
                         <Link to={`/CityDetails/${city.id}`}>
                           <Card.Content>
                             <Card.Header>
-                              <p>
+                              <h3>
                                 {city.cityName} , {city.countryName}
-                              </p>
+                              </h3>
                               <p>
                                 <Icon name="star" size="small" />
                                 {city.rating}

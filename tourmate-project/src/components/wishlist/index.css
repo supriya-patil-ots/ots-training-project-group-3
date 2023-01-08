@@ -47,7 +47,9 @@
   padding: 0px;
   padding-top: 10px;
 }
-
+h4 {
+  margin: 0px !important;
+}
 .wishlist-card .ui.card > .image:not(.ui) > img,
 .ui.cards > .card > .image:not(.ui) > img {
   border: none;

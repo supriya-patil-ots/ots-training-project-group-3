@@ -1,5 +1,12 @@
 .nav {
   border: 1px solid #e4e4e4;
+  overflow: hidden;
+  background-color: #0160d6;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%;
+  z-index: 777;
+  border: none;
 }
 .nav .ui.secondary.menu {
   margin: 0 15px;
@@ -15,6 +22,7 @@
   justify-content: end;
 }
 .sub-nav {
+  margin-top: 60px;
   background-color: #0160d6;
 }
 .sub-nav .ui.menu .item {
@@ -28,6 +36,9 @@
 }
 .nav .ui.menu:not(.vertical) > .menu {
   width: 100%;
+}
+.ui.menu:not(.vertical) .item {
+  justify-content: end !important;
 }
 
 /*media query*/
