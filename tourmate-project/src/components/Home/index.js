@@ -18,6 +18,7 @@ const Home = () => {
         "https://api.openweathermap.org/data/2.5/weather?q=" +
           querry +
           "&appid=39a4ebd67c8aae0b7021e69ff34c45d7&units=metric"
+
       )
       .then((data) =>
         data1.push({ lat: data.data.coord.lat, lng: data.data.coord.lon })

@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Form, Button, Grid, Image } from "semantic-ui-react";
 import "./index.css";
 import Footer from "../Footer";
+import Model from "./Model";
 const Contact = () => {
+  const [saved,setSaved]=useState(null);
   return (
     <div className="contact_page">
       <Grid stackable divided="vertically">
@@ -23,12 +25,14 @@ const Contact = () => {
                     id="form-subcomponent-shorthand-input-source-city-name"
                     label="Sourece City"
                     placeholder="Sourece City"
+                    value={saved}
                   />
                   <Form.Input
                     fluid
                     id="form-subcomponent-shorthand-input-destination-city-name"
                     label="Destination City"
                     placeholder="Destination City"
+                    value={saved}
                   />
                 </Form.Group>
                 <Form.Group widths="equal">
@@ -37,18 +41,28 @@ const Contact = () => {
                     id="form-subcomponent-shorthand-input-first-name"
                     label="First name"
                     placeholder="First name"
+                    value={saved}
                   />
                   <Form.Input
                     fluid
                     id="form-subcomponent-shorthand-input-last-name"
                     label="Last name"
                     placeholder="Last name"
+                    value={saved}
                   />
                 </Form.Group>
                 <Form.Group widths="equal">
-                  <Form.Input label="Email" placeholder="joe@schmoe.com" />
+                  <Form.Input label="Email" placeholder="joe@schmoe.com"  value={saved}/>
                 </Form.Group>
-                <Button className="contact_btn">Submit</Button>
+                {/* <Button className="contact_btn"><a href = "mailto: sahil.singh@otssolutions.com" style={{color:'white'}}>Submit</a></Button> */}
+                <Button secondary circular 
+                onClick={()=>{
+                  setSaved('')
+                
+                }}>
+                  <Model/>
+                  </Button>
+                
               </Form>
             </div>
           </Grid.Column>

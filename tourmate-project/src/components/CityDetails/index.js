@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect,useMemo } from "react";
 import {
   Grid,
   Segment,
@@ -6,7 +6,6 @@ import {
   Icon,
   Button,
   Popup,
-  Header,
 } from "semantic-ui-react";
 import "./index.css";
 import { useSelector, useDispatch } from "react-redux";
@@ -43,39 +42,50 @@ const reviewData = [
   },
 ];
 
+
+
+
 const CityDetails = () => {
   const { id } = useParams();
   const cartItem = useSelector((state) => state.cityDetail.data);
   const { imageCollection } = cartItem;
   const [buttonText, setButtonText] = useState("Reserve");
-  const [startDate, setStartDate] = useState(new Date());
+  const [startDate, setStartDate] = useState(new Date()); 
   const [endDate, setEndDate] = useState(new Date());
   const [guest, setGuest] = useState({ adult: 0, child: 0, infant: 0 });
-  const [position,setPosition]=useState({lat:null,lng:null});
-  
+  const [position, setPosition] = useState({ lat: null, lng: null });
+
 
   // open weather map code -----------------------
-
-
+  let data1=[];
+  for(let i=0;i<1;i++){
     if(Object.keys(cartItem).length>0){
-      let querry= cartItem.cityName.toLowerCase();
-      for(let i=0;i<=1;i++){
-        axios
-        .get(
-          'https://api.openweathermap.org/data/2.5/weather?q='+querry+'&appid=40435e28e747d0e2478eb8b7fd9e3c0e&units=metric'
-        )
-        .then((data) =>
-        setPosition({
-          lat:data.data.coord.lat,
-          lng:data.data.coord.lon
-        })
-        )
-        .catch((err) => console.log(err));
-      }
-
+      data1.push(cartItem);
     }
- 
- 
+  }
+
+  console.log(data1);
+
+  if (data1.length > 0) {
+    let querry = data1[0].cityName.toLowerCase();
+    axios
+      .get(
+        'https://api.openweathermap.org/data/2.5/weather?q=' + querry + '&appid=40435e28e747d0e2478eb8b7fd9e3c0e&units=metric'
+      )
+      .then((data) =>
+      console.log(data)
+
+        // setPosition({
+        //   lat: data.data.coord.lat,
+        //   lng: data.data.coord.lon
+        // })
+      )
+      .catch((err) => console.log(err));
+  }
+
+
+
+
   let daysToStay = endDate.getDate() - startDate.getDate();
   let totalNightsPrice = cartItem.price * daysToStay;
 
@@ -218,7 +228,7 @@ const CityDetails = () => {
                             value={startDate}
                             onChange={(date) => setStartDate(date)}
                           />
-            
+
                         </p>
                         <p className="second_date">
                           <span>Check Out</span>
@@ -227,7 +237,7 @@ const CityDetails = () => {
                             value={endDate}
                             onChange={(date) => setEndDate(date)}
                           />
-                        
+
                         </p>
                       </div>
                       <Popup
@@ -371,10 +381,10 @@ const CityDetails = () => {
               })}
             </Carousel>
           </div>
-          { position.lat&&<div style={{textAlign:'center'}}>
+          {position.lat && <div style={{ textAlign: 'center' }}>
             <h2>See in Google Map</h2>
-            <GoogleMapContainer currentLocation={position}/>
-            </div>}
+            <GoogleMapContainer currentLocation={position} />
+          </div>}
           <Footer />
         </div>
       )}
@@ -382,4 +392,6 @@ const CityDetails = () => {
   );
 };
 document.querySelector(".demo-carousel");
-export default CityDetails;
+export default React.memo(CityDetails);
+
+// new api key :- d54d9485c38bf9ea9b1b7e471e5022bb
