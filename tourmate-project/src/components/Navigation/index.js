@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Input, Menu, Image, Dropdown, Flag, Search } from "semantic-ui-react";
+import React from "react";
+import { Input, Menu, Image} from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import "./index.css";
 import logo from "../image/logo2.png";

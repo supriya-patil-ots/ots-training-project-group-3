@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import Footer from "../Footer";
 import CityData from "../Data/CityData";
 import { Card, Image, Icon, Grid } from "semantic-ui-react";
 import Whishlist from "../whislist-Icon";

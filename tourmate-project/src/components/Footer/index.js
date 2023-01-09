@@ -1,7 +1,7 @@
 import React from "react";
 import "./index.css";
 import { Link } from "react-router-dom";
-import { Grid, Icon, Image } from "semantic-ui-react";
+import { Grid, Icon} from "semantic-ui-react";
 
 const Footer = () => {
   return (

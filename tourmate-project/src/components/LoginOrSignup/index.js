@@ -25,7 +25,6 @@ function LoginOrSignup({ title }) {
   }, [userData]);
 
   if (userInfo.email) {
-    console.log(userInfo);
     let storageData = JSON.parse(localStorage.getItem("storageData") || "[]");
     let data1 = { ...userInfo };
     storageData.push(data1);
@@ -167,6 +166,7 @@ function LoginOrSignup({ title }) {
           }
           onClose={() => setOpen(false)}
           onOpen={() => setOpen(true)}
+          size='small'
         >
           <Header icon="plane" content="Welcome To tourmate .." />
           <Modal.Content>

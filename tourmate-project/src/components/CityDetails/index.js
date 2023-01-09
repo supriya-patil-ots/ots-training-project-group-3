@@ -1,4 +1,4 @@
-import React, { useEffect,useMemo } from "react";
+import React, { useEffect} from "react";
 import {
   Grid,
   Segment,
@@ -11,7 +11,6 @@ import "./index.css";
 import { useSelector, useDispatch } from "react-redux";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import Footer from "../Footer";
 import { useState } from "react";
 import Counter from "../Counter";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
@@ -20,6 +19,7 @@ import { useParams } from "react-router-dom";
 import { cityDetailData } from "../../redux/cityDetailReducer";
 import axios from "axios";
 import GoogleMapContainer from "../Map/GoogleMapsContainerComponent";
+import { createSelector } from 'reselect'
 
 const reviewData = [
   {
@@ -56,12 +56,46 @@ const CityDetails = () => {
   const [position, setPosition] = useState({ lat: null, lng: null });
 
   // open weather map code -----------------------
+
+  // function getSquare(n) {
+  //   let result = n * n;
+  //   return result;
+  // }
+  
+  // let memo = [];
+  
+  // function getSquareMemo(n) {
+  //   if (memo[n]) return memo[n];
+  
+  //   memo[n] = n * n;
+  
+  //   return memo[n];
+  // }
+  
+  // console.log("With getSquare()\n----------------");
+  // console.time("Time");
+  // console.log(getSquare(30000));
+  // console.timeEnd("Time");
+  // console.log("\n");
+  
+  // console.log("With getSquareMemo()\n--------------------");
+  // console.time("Time - First Call");
+  // console.log(getSquareMemo(30000));
+  // console.timeEnd("Time - First Call");
+  
+  // console.time("Time - Second Call");
+  // console.log(getSquareMemo(30000));
+  // console.timeEnd("Time - Second Call");
+  
+
   let data1=[];
-  for(let i=0;i<1;i++){
-    if(Object.keys(cartItem).length>0){
-      data1.push(cartItem);
-    }
-  }
+  // let fn = function memoizedData(cartItem){
+  //    if(cartItem.cityName){
+  //     if(data1[cartItem.cityName]){
+  //      return data1[cartItem.cityName]
+  //     }else
+  //    }
+  //  }
 
   console.log(data1);
 
@@ -366,7 +400,7 @@ const CityDetails = () => {
               {reviewData.map((review) => {
                 return (
                   <div className="review">
-                    <img src={review.image} className="review_img" />
+                    <img src={review.image} className="review_img" alt="profile"/>
                     <h2>{review.name}</h2>
                     <p>{review.testimonial}</p>
                   </div>

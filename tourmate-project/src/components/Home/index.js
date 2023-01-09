@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import CityCardProduct from "../CityCardProduct";
-import Footer from "../Footer";
 import CityData from "../Data/CityData";
 import GoogleMapContainer2 from "../Map/GoogleMapsContainerComponent2";
 import { Button, Icon } from "semantic-ui-react";

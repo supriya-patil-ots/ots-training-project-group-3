@@ -24,7 +24,7 @@ const GoogleMapContainer2 = ({ arr }) => {
         >
           {data.length > 0 &&
             data.map((location) => {
-              <MarkerF position={location} />;
+             return <MarkerF position={location} />;
             })}
         </GoogleMap>
       </>
