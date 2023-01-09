@@ -19,12 +19,13 @@ const GoogleMapContainer2 = ({ arr }) => {
       <>
         <GoogleMap
           zoom={3}
-          center={{lat:28.704060,lng:77.102493}}
+          center={{ lat: 28.70406, lng: 77.102493 }}
           mapContainerStyle={{ height: "80vh", width: "95%", margin: 30 }}
         >
-          {data.length>0&&data.map((location) => {
-            <MarkerF position={location} />;
-          })}
+          {data.length > 0 &&
+            data.map((location) => {
+              <MarkerF position={location} />;
+            })}
         </GoogleMap>
       </>
     );

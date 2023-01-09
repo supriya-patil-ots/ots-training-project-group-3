@@ -1,5 +1,5 @@
 .footer {
-  background-color: #34a426;
+  background-color: #01afd1;
   text-align: left;
   margin-top: 40px;
   color: #fff;
@@ -7,6 +7,9 @@
 .footer ul {
   list-style-type: none;
   padding-left: 0;
+}
+.footer ul a {
+  color: #fff;
 }
 .social-icon {
   display: flex;
@@ -16,7 +19,7 @@
 .foote_end {
   text-align: center;
   color: #fff;
-  background-color: #127d04;
+  background-color: #0293b0;
   padding: 10px;
 }
 

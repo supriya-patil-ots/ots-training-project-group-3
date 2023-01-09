@@ -11,8 +11,7 @@ import CityData from "../Data/CityData";
 
 const Navigation = () => {
   const dispatch = useDispatch();
-  const {userData}=useSelector((state)=>state.user.data);
-
+  const { userData } = useSelector((state) => state.user.data);
 
   const state = { activeItem: "home" };
 
@@ -23,51 +22,46 @@ const Navigation = () => {
     this.setState({ activeItem: name });
   };
 
-
   const { activeItem } = state;
 
   return (
     <div>
       <div className="nav">
         <Menu secondary stackable>
-          <Menu.Item
-            name="logo"
-            active={activeItem === "logo"}
-            onClick={handleItemClick}
-          >
-            <Image src={logo} width="20px" size="small" />
-          </Menu.Item>
-
+          <Link to="/" style={{ width: "100%" }}>
+            <Menu.Item
+              name="logo"
+              active={activeItem === "logo"}
+              onClick={handleItemClick}
+            >
+              <Image src={logo} width="30%" size="small" />
+            </Menu.Item>
+          </Link>
           <Menu.Menu>
             <Menu.Item style={{ width: "100%" }}>
               <Input
                 icon="search"
                 placeholder="Search..."
                 onChange={(e) => dispatch(searchData(e.target.value))}
-                style={{width:250}}
+                style={{ width: 250 }}
               />
             </Menu.Item>
           </Menu.Menu>
 
           <Menu.Menu position="right">
-            <Menu.Item>   
-              <LoginOrSignup title='Sign Up'/>
+            <Menu.Item>
+              <LoginOrSignup title="Sign Up" />
             </Menu.Item>
             <Menu.Item>
-            {Object.keys(userData).length===0 &&<LoginOrSignup title='Login'/>}
+              {Object.keys(userData).length === 0 && (
+                <LoginOrSignup title="Login" />
+              )}
             </Menu.Item>
           </Menu.Menu>
         </Menu>
       </div>
       <div className="sub-nav">
         <Menu pointing secondary stackable>
-          <Link to="/">
-            <Menu.Item
-              name="tourmate"
-              active={activeItem === "Home"}
-              onClick={handleItemClick}
-            />
-          </Link>
           <Link to="/">
             <Menu.Item
               name="Trending Destinations"

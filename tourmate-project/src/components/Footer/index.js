@@ -1,5 +1,6 @@
 import React from "react";
 import "./index.css";
+import { Link } from "react-router-dom";
 import { Grid, Icon, Image } from "semantic-ui-react";
 
 const Footer = () => {
@@ -7,16 +8,26 @@ const Footer = () => {
     <>
       <div className="footer">
         <Grid doubling stackable>
-          <Grid.Row columns={3}>
+          <Grid.Row columns={4}>
             <Grid.Column>
               <div className="footer-child-two">
                 <h3>Our Services In India</h3>
                 <ul>
-                  <li>Manali</li>
-                  <li>Agonda</li>
-                  <li>Agra</li>
-                  <li>Karnataka</li>
-                  <li>Maldives</li>
+                  <Link to="/CityDetails/3">
+                    <li>Manali</li>
+                  </Link>
+                  <Link to="/CityDetails/12">
+                    <li>Reis Magos </li>
+                  </Link>
+                  <Link to="/CityDetails/14">
+                    <li>Agra</li>
+                  </Link>
+                  <Link to="/CityDetails/17">
+                    <li>Karnataka</li>
+                  </Link>
+                  <Link to="/CityDetails/9">
+                    <li>Maldives</li>
+                  </Link>
                 </ul>
               </div>
             </Grid.Column>
@@ -25,10 +36,38 @@ const Footer = () => {
                 <h3>Quick Links</h3>
 
                 <ul>
-                  <li>Trending Destinations</li>
-                  <li>Packages</li>
-                  <li>City</li>
-                  <li>Wishlist</li>
+                  <Link to="/">
+                    <li>Trending Destinations</li>
+                  </Link>
+                  <Link to="/packages">
+                    <li>Packages</li>
+                  </Link>
+                  <Link to="/city">
+                    <li>City</li>
+                  </Link>
+                  <Link to="/contact">
+                    <li>Contact</li>
+                  </Link>
+                  <Link to="/wishlist">
+                    <li>Wishlist</li>
+                  </Link>
+                </ul>
+              </div>
+            </Grid.Column>
+            <Grid.Column>
+              <div className="footer-child-three">
+                <h3>Our Packages</h3>
+
+                <ul>
+                  <Link to="/packages/0">
+                    <li>Honeymoon</li>
+                  </Link>
+                  <Link to="/packages/1">
+                    <li>Pilgrimage</li>
+                  </Link>
+                  <Link to="/packages/2">
+                    <li>Wild Escapes</li>
+                  </Link>
                 </ul>
               </div>
             </Grid.Column>
