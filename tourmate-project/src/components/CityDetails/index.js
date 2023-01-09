@@ -56,23 +56,26 @@ const CityDetails = () => {
 
   // open weather map code -----------------------
 
-  if(Object.keys(cartItem).length>0){
-    let querry= cartItem.cityName.toLowerCase();
-    axios
-    .get(
-      "https://api.openweathermap.org/data/2.5/weather?q="+querry+"&appid=39a4ebd67c8aae0b7021e69ff34c45d7&units=metric"
-    )
-    .then((data) =>setPosition({
-      lat:data.data.coord.lat,
-      lng:data.data.coord.lon
-    }))
-    .catch((err) => console.log(err));
-  }
 
+    if(Object.keys(cartItem).length>0){
+      let querry= cartItem.cityName.toLowerCase();
+      for(let i=0;i<=1;i++){
+        axios
+        .get(
+          'https://api.openweathermap.org/data/2.5/weather?q='+querry+'&appid=40435e28e747d0e2478eb8b7fd9e3c0e&units=metric'
+        )
+        .then((data) =>
+        setPosition({
+          lat:data.data.coord.lat,
+          lng:data.data.coord.lon
+        })
+        )
+        .catch((err) => console.log(err));
+      }
 
-
-
-
+    }
+ 
+ 
   let daysToStay = endDate.getDate() - startDate.getDate();
   let totalNightsPrice = cartItem.price * daysToStay;
 

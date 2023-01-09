@@ -12,7 +12,8 @@ const Home = () => {
   let data1 = [];
   let newCoords = CityData.map((city) => {
     let querry = city.cityName.toLowerCase();
-    let data = axios
+    for(let i=0;i<2;i++){
+      let data = axios
       .get(
         "https://api.openweathermap.org/data/2.5/weather?q=" +
           querry +
@@ -22,7 +23,10 @@ const Home = () => {
         data1.push({ lat: data.data.coord.lat, lng: data.data.coord.lon })
       )
       .catch((err) => console.log(err));
-    return data;
+      return data;
+    }
+
+    
   });
 
   return (
@@ -32,7 +36,7 @@ const Home = () => {
           onClick={() => setShowButtonText("Show Cards")}
           secondary
           circular
-          style={{ margin: 5 }}
+          style={{margin:5 }}
         >
           {showButtonText}
         </Button>

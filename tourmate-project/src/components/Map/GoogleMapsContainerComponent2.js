@@ -8,7 +8,7 @@ const GoogleMapContainer2 = ({ arr }) => {
     if (arr.length > 0) {
       setData(arr);
     }
-  }, []);
+  }, [arr]);
 
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: "AIzaSyBmc9trQvqHIrTShvRAb0MoHOFZzzKB5GY",
@@ -19,11 +19,11 @@ const GoogleMapContainer2 = ({ arr }) => {
       <>
         <GoogleMap
           zoom={3}
-          center={arr[6]}
+          center={{lat:28.704060,lng:77.102493}}
           mapContainerStyle={{ height: "80vh", width: "95%", margin: 30 }}
         >
-          {data.map((location) => {
-            <MarkerF position={location}  />;
+          {data.length>0&&data.map((location) => {
+            <MarkerF position={location} />;
           })}
         </GoogleMap>
       </>

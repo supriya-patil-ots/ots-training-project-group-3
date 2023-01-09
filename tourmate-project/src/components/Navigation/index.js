@@ -48,10 +48,11 @@ const Navigation = () => {
 
           <Menu.Menu>
             <Menu.Item style={{ width: "100%" }}>
-              <Search
+              <Input
                 icon="search"
                 placeholder="Search..."
                 onChange={(e) => dispatch(searchData(e.target.value))}
+                style={{width:250}}
               />
             </Menu.Item>
           </Menu.Menu>
