@@ -147,7 +147,6 @@ const City = () => {
           </Grid>
         )}
       </div>
-      <Footer />
     </>
   );
 };

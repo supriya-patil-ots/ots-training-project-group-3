@@ -370,7 +370,6 @@ const CityDetails = () => {
               <GoogleMapContainer currentLocation={position} />
             </div>
           )}
-          <Footer />
         </div>
       )}
     </>

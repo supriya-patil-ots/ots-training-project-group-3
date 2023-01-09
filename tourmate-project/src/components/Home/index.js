@@ -54,8 +54,6 @@ const Home = () => {
         </Button>
       )}
       {showButtonText === "Show Cards" && <GoogleMapContainer2 arr={data1} />}
-
-      <Footer />
     </div>
   );
 };

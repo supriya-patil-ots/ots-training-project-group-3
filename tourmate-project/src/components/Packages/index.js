@@ -173,7 +173,6 @@ const Packages = () => {
           </Grid.Row>
         </Grid>
       </div>
-      <Footer />
     </>
   );
 };
