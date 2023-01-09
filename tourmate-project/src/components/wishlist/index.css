@@ -1,34 +1,34 @@
-.wishlist-card .image{
+.wishlist-card .image {
   max-height: 100% !important;
 }
-.wishlist-card img{
-  width:100%;
+.wishlist-card img {
+  width: 100%;
 }
 
 .city-card {
   margin: 30px 30px;
 }
 
-.city-card .ui.card > .content,
+.wishlist-card .city-card .ui.card > .content,
 .ui.cards > .card > .content {
   text-align: left;
-  height: 190px;
+  height: 210px;
 }
-.city-card .ui.card {
+.wishlist-card .city-card .ui.card {
   width: 100%;
 }
-.city-card .carousel-root {
-  height: 190px;
+.wishlist-card .city-card .carousel-root {
+  height: 240px;
 }
 
-.city-card .ui.card:hover {
+.wishlist-card .city-card .ui.card:hover {
   transform: scale(1.04);
   transition: 0.6s;
 }
-.city-card .date {
+.wishlist-card .city-card .date {
   color: #000;
 }
-.cart-remove-btn {
+.wishlist-card .city-card .cart-remove-btn {
   padding: 10px;
   margin-top: 10px;
   background-color: #0160d6;
@@ -37,27 +37,59 @@
   border-radius: 4px;
 }
 
-.city-card .image {
-  max-height: 190px;
+.wishlist-card .image {
+  min-height: 240px;
+  width: 100%;
 }
-.city-card .content {
+.wishlist-card .content {
   display: flex;
   flex-direction: column;
+  padding: 0px;
+  padding-top: 10px;
 }
-
-.city-card .ui.card > .image:not(.ui) > img,
+h4 {
+  margin: 0px !important;
+}
+.wishlist-card .ui.card > .image:not(.ui) > img,
 .ui.cards > .card > .image:not(.ui) > img {
   border: none;
 }
-.city-card .carousel .slide img {
-  height: 190px;
+
+.wishlist-card .carousel .slide .image {
+  height: 240px;
+  width: 100%;
+}
+.wishlist-card .image img {
+  height: 100%;
+  border-radius: 12px;
 }
 .city-card .carousel .carousel-status {
   bottom: 0;
 }
 
-.city-card .ui.card > .content > .header:not(.ui),
+.wishlist-card .ui.card > .content > .header:not(.ui),
 .ui.cards > .card > .content > .header:not(.ui) {
   display: flex;
   justify-content: space-between;
+}
+.wishlist-card a {
+  color: #000 !important;
+  text-decoration: none;
+  width: 100%;
+  display: flex;
+  justify-content: space-between !important;
+}
+
+.wishlist-card .ui.secondary.button {
+  margin-top: 15px;
+}
+.wishlist-card .city-card .desc {
+  min-height: 45px;
+}
+.wishlist-card .name_city {
+  font-size: 17px;
+}
+.wishlist-card .ui.card,
+.ui.cards > .card {
+  box-shadow: none;
 }

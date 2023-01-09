@@ -1,24 +1,22 @@
-.city-card {
+.honeymoon {
   margin: 30px 30px;
   box-shadow: none;
 }
-h3 {
-  margin: 0px !important;
-}
-.city-card .ui.card > .content,
+
+.honeymoon .ui.card > .content,
 .ui.cards > .card > .content {
   text-align: left;
   height: 130px;
 }
-.city-card .ui.card > .content h3 {
+.honeymoon .ui.card > .content h3 {
   margin: 0 !important;
   padding-top: 10px;
 }
-.city-card .ui.card {
+.honeymoon .ui.card {
   width: 100%;
   box-shadow: none;
 }
-.city-card .carousel-root {
+.honeymoon .carousel-root {
   height: 240px;
 }
 
@@ -26,7 +24,7 @@ h3 {
   transform: scale(1.04);
   transition: 0.6s;
 }
-.city-card .carousel.carousel-slider .control-arrow {
+.honeymoon .carousel.carousel-slider .control-arrow {
   top: 40%;
   color: #000;
   font-size: 23px;
@@ -39,13 +37,13 @@ h3 {
   padding: 5px;
   z-index: 111;
 }
-.city-card .carousel .control-next.control-arrow:before {
+.honeymoon .carousel .control-next.control-arrow:before {
   border-left: 8px solid #000;
 }
-.city-card .carousel .control-prev.control-arrow:before {
+.honeymoon .carousel .control-prev.control-arrow:before {
   border-right: 8px solid #000;
 }
-.city-card .content {
+.honeymoon .content {
   color: #000;
   padding: 0px;
   padding-top: 10px;
@@ -53,16 +51,16 @@ h3 {
   text-align: left;
 }
 
-.city-card .carousel .slide .image {
+.honeymoon .carousel .slide .image {
   height: 240px;
   object-fit: contain;
 }
 
-.city-card .ui.card > .image:not(.ui) > img,
+.honeymoon .ui.card > .image:not(.ui) > img,
 .ui.cards > .card > .image:not(.ui) > img {
   border: none;
 }
-.city-card img {
+.honeymoon img {
   height: 240px;
   border-radius: 12px;
 }
@@ -70,17 +68,17 @@ h3 {
   top: 85% !important;
 }
 
-.city-card .header {
+.honeymoon .header {
   display: flex;
   justify-content: space-between;
 }
-.city-card .content p {
+.honeymoon .content p {
   margin: 0 0 0.5rem;
 }
 /* .city-card .disc {
-  min-height: 45px;
-}
-
-.city-card .desc {
-  min-height: 45px;
-} */
+    min-height: 45px;
+  }
+  
+  .city-card .desc {
+    min-height: 45px;
+  } */

@@ -1,6 +1,8 @@
+.contact_page {
+  height: 100vh;
+  margin: 50px 20px;
+}
 .contact {
-  width: 60%;
-  margin: 50px auto;
   text-align: left;
   padding: 20px;
   box-shadow: 0 0 12px 2px lightgrey;

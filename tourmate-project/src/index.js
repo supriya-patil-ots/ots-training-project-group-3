@@ -5,15 +5,15 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "semantic-ui-css/semantic.min.css";
-import { GoogleOAuthProvider } from '@react-oauth/google';
+import { GoogleOAuthProvider } from "@react-oauth/google";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-    <BrowserRouter>
+  <BrowserRouter>
     <GoogleOAuthProvider clientId="275703750791-ievo74l4ln5lgvlri7bj4csdamsuqvfa.apps.googleusercontent.com">
-       <App />
-    </GoogleOAuthProvider>;
-    </BrowserRouter>
+      <App />
+    </GoogleOAuthProvider>
+  </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function

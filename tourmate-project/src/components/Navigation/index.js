@@ -1,19 +1,18 @@
 import React, { useState } from "react";
-import { Input, Menu, Image, Dropdown, Flag } from "semantic-ui-react";
+import { Input, Menu, Image, Dropdown, Flag, Search } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import "./index.css";
 import LoginOrSignup from "../LoginOrSignup";
 import { searchData } from "../../redux/searchReducer";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { mainData } from "../../redux/mockDataReducer";
 import CityData from "../Data/CityData";
 
 const Navigation = () => {
   const dispatch = useDispatch();
-  const [modalOf, setModalOf] = useState("");
+  const {userData}=useSelector((state)=>state.user.data);
 
-  const [loginActive, setLoginActive] = useState(false);
-  const [signupActive, setSignupActive] = useState(false);
+
   const state = { activeItem: "home" };
 
   if (state.activeItem === "home") {
@@ -23,14 +22,6 @@ const Navigation = () => {
     this.setState({ activeItem: name });
   };
 
-  const handleSignup = () => {
-    setLoginActive(false);
-    setSignupActive(!signupActive);
-  };
-  const handleLoginActive = () => {
-    setSignupActive(false);
-    setLoginActive(!loginActive);
-  };
 
   const { activeItem } = state;
 
@@ -48,6 +39,11 @@ const Navigation = () => {
               width="20px"
               size="small"
             />
+            <Menu.Item
+              name="Tourmate"
+              active={activeItem === "Tourmate"}
+              onClick={handleItemClick}
+            />
           </Menu.Item>
 
           <Menu.Menu>
@@ -56,21 +52,18 @@ const Navigation = () => {
                 icon="search"
                 placeholder="Search..."
                 onChange={(e) => dispatch(searchData(e.target.value))}
+                style={{width:250}}
               />
             </Menu.Item>
           </Menu.Menu>
 
           <Menu.Menu position="right">
-            <Menu.Item
-              name="Sign Up"
-              active={activeItem === "Sign Up"}
-              onClick={() => setModalOf("signup")}
-            />
-            <Menu.Item
-              name="login"
-              active={activeItem === "login"}
-              onClick={() => setModalOf("login")}
-            />
+            <Menu.Item>   
+              <LoginOrSignup title='Sign Up'/>
+            </Menu.Item>
+            <Menu.Item>
+            {Object.keys(userData).length===0 &&<LoginOrSignup title='Login'/>}
+            </Menu.Item>
           </Menu.Menu>
         </Menu>
       </div>
@@ -120,11 +113,6 @@ const Navigation = () => {
             />
           </Link>
         </Menu>
-        <LoginOrSignup
-          modalOf={modalOf}
-          handleLoginActive={loginActive}
-          signupActive={signupActive}
-        />
       </div>
     </div>
   );
