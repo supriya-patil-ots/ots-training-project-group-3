@@ -1,18 +1,19 @@
 .nav {
   border: 1px solid #e4e4e4;
   overflow: hidden;
-  background-color: #0160d6;
+  background-color: #34a426;
   position: fixed; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
   width: 100%;
   z-index: 777;
   border: none;
+  color: #fff;
 }
 .nav .ui.secondary.menu {
   margin: 0 15px;
 }
 .nav .ui.small.image {
-  width: 50px;
+  width: 100px;
 }
 .nav .ui.menu .menu {
   width: 100%;
@@ -23,10 +24,10 @@
 }
 .sub-nav {
   margin-top: 60px;
-  background-color: #0160d6;
+  background-color: #fff;
 }
 .sub-nav .ui.menu .item {
-  color: #fff;
+  color: #000;
 }
 
 .sub-nav .ui.secondary.menu {

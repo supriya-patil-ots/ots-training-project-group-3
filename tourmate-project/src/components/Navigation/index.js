@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Input, Menu, Image, Dropdown, Flag, Search } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import "./index.css";
+import logo from "../image/logo2.png";
 import LoginOrSignup from "../LoginOrSignup";
 import { searchData } from "../../redux/searchReducer";
 import { useDispatch } from "react-redux";
@@ -43,16 +44,7 @@ const Navigation = () => {
             active={activeItem === "logo"}
             onClick={handleItemClick}
           >
-            <Image
-              src="https://cdn.pixabay.com/photo/2019/10/14/07/53/travel-4548127_1280.png"
-              width="20px"
-              size="small"
-            />
-            <Menu.Item
-              name="Tourmate"
-              active={activeItem === "Tourmate"}
-              onClick={handleItemClick}
-            />
+            <Image src={logo} width="20px" size="small" />
           </Menu.Item>
 
           <Menu.Menu>
