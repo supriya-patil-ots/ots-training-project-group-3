@@ -374,11 +374,12 @@ const CityDetails = () => {
               })}
             </Carousel>
           </div>
-          {position.lat && <div style={{ textAlign: 'center' }}>
-            <h2>See in Google Map</h2>
-            <GoogleMapContainer currentLocation={position} />
-          </div>}
-          <Footer />
+          {position.lat && (
+            <div style={{ textAlign: "center" }}>
+              <h2>See in Google Map</h2>
+              <GoogleMapContainer currentLocation={position} />
+            </div>
+          )}
         </div>
       )}
     </>
