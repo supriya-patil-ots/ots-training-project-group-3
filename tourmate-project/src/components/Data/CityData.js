@@ -21,7 +21,7 @@ const CityData = [
   {
     id: 2,
     countryName: "Thailand",
-    cityName: "Koh Samui",
+    cityName: "Ko Samui",
     rating: "4.9",
     description: "The mountains are calling and you must go.",
     date: "19-24 January",
@@ -78,7 +78,7 @@ const CityData = [
   {
     id: 5,
     countryName: "India",
-    cityName: "Agonda",
+    cityName: "Goa",
     rating: "4.3",
     description: "Agonda is waiting for you.",
     date: "19-24 february",
@@ -98,7 +98,7 @@ const CityData = [
   {
     id: 6,
     countryName: "Philippines",
-    cityName: "Floral Island",
+    cityName: "Makati",
     rating: "4.6",
     description: "Just another day in Paradise.",
     date: "19-24 march",
@@ -136,7 +136,7 @@ const CityData = [
   {
     id: 8,
     countryName: "SriLanka",
-    cityName: "Kathaluwa",
+    cityName: "Dambulla",
     rating: "4.7",
     description: "Just another day in Paradise.",
     date: "11-23 jan",
@@ -326,7 +326,7 @@ const CityData = [
   {
     id: 18,
     countryName: "India",
-    cityName: "Mashobara",
+    cityName: "Mashobra",
     rating: "4.7",
     description: "Mountain and valley views.",
     date: "6-8 jan",

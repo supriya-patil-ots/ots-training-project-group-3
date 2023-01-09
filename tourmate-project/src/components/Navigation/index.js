@@ -5,16 +5,15 @@ import "./index.css";
 import logo from "../image/logo2.png";
 import LoginOrSignup from "../LoginOrSignup";
 import { searchData } from "../../redux/searchReducer";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { mainData } from "../../redux/mockDataReducer";
 import CityData from "../Data/CityData";
 
 const Navigation = () => {
   const dispatch = useDispatch();
-  const [modalOf, setModalOf] = useState("");
+  const {userData}=useSelector((state)=>state.user.data);
 
-  const [loginActive, setLoginActive] = useState(false);
-  const [signupActive, setSignupActive] = useState(false);
+
   const state = { activeItem: "home" };
 
   if (state.activeItem === "home") {
@@ -24,14 +23,6 @@ const Navigation = () => {
     this.setState({ activeItem: name });
   };
 
-  const handleSignup = () => {
-    setLoginActive(false);
-    setSignupActive(!signupActive);
-  };
-  const handleLoginActive = () => {
-    setSignupActive(false);
-    setLoginActive(!loginActive);
-  };
 
   const { activeItem } = state;
 
@@ -49,25 +40,22 @@ const Navigation = () => {
 
           <Menu.Menu>
             <Menu.Item style={{ width: "100%" }}>
-              <Search
+              <Input
                 icon="search"
                 placeholder="Search..."
                 onChange={(e) => dispatch(searchData(e.target.value))}
+                style={{width:250}}
               />
             </Menu.Item>
           </Menu.Menu>
 
           <Menu.Menu position="right">
-            <Menu.Item
-              name="Sign Up"
-              active={activeItem === "Sign Up"}
-              onClick={() => setModalOf("signup")}
-            />
-            <Menu.Item
-              name="login"
-              active={activeItem === "login"}
-              onClick={() => setModalOf("login")}
-            />
+            <Menu.Item>   
+              <LoginOrSignup title='Sign Up'/>
+            </Menu.Item>
+            <Menu.Item>
+            {Object.keys(userData).length===0 &&<LoginOrSignup title='Login'/>}
+            </Menu.Item>
           </Menu.Menu>
         </Menu>
       </div>

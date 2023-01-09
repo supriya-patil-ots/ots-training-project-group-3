@@ -1,11 +1,11 @@
 import React from "react";
 
 function Pilgrimage() {
-  const Honeymoon = PackageData.category[1].data;
-  console.log(Honeymoon);
+  // const Honeymoon = PackageData.category[1].data;
+  // console.log(Honeymoon);
   return (
     <>
-      <div className="honeymoon">
+      {/* <div className="honeymoon">
         <Grid doubling stackable columns={4}>
           {Honeymoon.length > 0 &&
             Honeymoon.map((city, index) => {
@@ -51,7 +51,7 @@ function Pilgrimage() {
             })}
         </Grid>
       </div>
-      <Footer />
+      <Footer /> */}
     </>
   );
 }
