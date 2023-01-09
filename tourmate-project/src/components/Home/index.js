@@ -4,15 +4,15 @@ import CityCardProduct from "../CityCardProduct";
 import Footer from "../Footer";
 import CityData from "../Data/CityData";
 import GoogleMapContainer2 from "../Map/GoogleMapsContainerComponent2";
-import { Button } from "semantic-ui-react";
-
+import { Button, Icon } from "semantic-ui-react";
+import "./index.css";
 const Home = () => {
   const [showButtonText, setShowButtonText] = useState("Show Map");
 
   let data1 = [];
   let newCoords = CityData.map((city) => {
     let querry = city.cityName.toLowerCase();
-    for(let i=0;i<2;i++){
+    for (let i = 0; i < 2; i++) {
       let data = axios
       .get(
         "https://api.openweathermap.org/data/2.5/weather?q=" +
@@ -26,8 +26,6 @@ const Home = () => {
       .catch((err) => console.log(err));
       return data;
     }
-
-    
   });
 
   return (
@@ -37,8 +35,9 @@ const Home = () => {
           onClick={() => setShowButtonText("Show Cards")}
           secondary
           circular
-          style={{margin:5 }}
+          className="map_btn"
         >
+          <Icon name="map" size="small" />
           {showButtonText}
         </Button>
       )}
@@ -46,6 +45,7 @@ const Home = () => {
       {showButtonText === "Show Map" && <CityCardProduct />}
       {showButtonText === "Show Cards" && (
         <Button
+          className="map-btn"
           onClick={() => setShowButtonText("Show Map")}
           secondary
           circular
@@ -55,8 +55,6 @@ const Home = () => {
         </Button>
       )}
       {showButtonText === "Show Cards" && <GoogleMapContainer2 arr={data1} />}
-
-      <Footer />
     </div>
   );
 };

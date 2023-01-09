@@ -64,7 +64,6 @@ const HoneymoonPackage = () => {
             })}
         </Grid>
       </div>
-      <Footer />
     </>
   );
 };

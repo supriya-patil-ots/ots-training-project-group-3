@@ -18,7 +18,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from "react-responsive-carousel";
 import { useParams } from "react-router-dom";
 import { cityDetailData } from "../../redux/cityDetailReducer";
-import axios from 'axios';
+import axios from "axios";
 import GoogleMapContainer from "../Map/GoogleMapsContainerComponent";
 
 const reviewData = [
@@ -55,7 +55,6 @@ const CityDetails = () => {
   const [guest, setGuest] = useState({ adult: 0, child: 0, infant: 0 });
   const [position, setPosition] = useState({ lat: null, lng: null });
 
-
   // open weather map code -----------------------
   let data1=[];
   for(let i=0;i<1;i++){
@@ -82,7 +81,6 @@ const CityDetails = () => {
       )
       .catch((err) => console.log(err));
   }
-
 
 
 
@@ -228,7 +226,6 @@ const CityDetails = () => {
                             value={startDate}
                             onChange={(date) => setStartDate(date)}
                           />
-
                         </p>
                         <p className="second_date">
                           <span>Check Out</span>
@@ -237,7 +234,6 @@ const CityDetails = () => {
                             value={endDate}
                             onChange={(date) => setEndDate(date)}
                           />
-
                         </p>
                       </div>
                       <Popup
@@ -297,14 +293,15 @@ const CityDetails = () => {
                     </div>
                     {daysToStay === 0 ? (
                       <Button
+                        className="check-availability-btn"
                         content="Check Availablity"
-                        color="pink"
+                        style={{ background: "#01afd1" }}
                         circular
                       />
                     ) : (
                       <Button
                         content={buttonText}
-                        color="pink"
+                        style={{ background: "#01afd1" }}
                         circular
                         onClick={() => setButtonText("Destination Booked")}
                       />
@@ -312,48 +309,44 @@ const CityDetails = () => {
                     {daysToStay > 0 && (
                       <div>
                         <div className="pricing">
-                          <p>
+                          <h3>
                             <Icon name="rupee sign" />
-                            <b>
-                              {cartItem.price}
-                              <Icon name="close" size="tini" />
-                              {daysToStay}{" "}
-                            </b>
-                            night
-                            <b style={{ marginLeft: 150 }}>
-                              <Icon name="rupee sign" />
-                              {totalNightsPrice}
-                            </b>
-                          </p>
+                            {cartItem.price}
+                            <Icon name="close" size="tini" />
+                            {daysToStay} night
+                          </h3>
+
+                          <h3>
+                            <Icon name="rupee sign" />
+                            {totalNightsPrice}
+                          </h3>
                         </div>
                         <div className="pricing">
-                          <p>
-                            <b>Long Stay Discount </b>
-                            <b style={{ marginLeft: 150 }}>
+                          <h3>Long Stay Discount </h3>
+                          <strike>
+                            <h3>
                               -<Icon name="rupee sign" />
                               {(totalNightsPrice * 20) / 100}
-                            </b>
-                          </p>
+                            </h3>
+                          </strike>
                         </div>
                         <div className="pricing">
-                          <p>
-                            <b>Service Charge.. </b>
-                            <b style={{ marginLeft: 150 }}>
-                              +<Icon name="rupee sign" />
-                              {(totalNightsPrice * 17) / 100}
-                            </b>
-                          </p>
+                          <h3>Service Charge.. </h3>
+                          <h3>
+                            +<Icon name="rupee sign" />
+                            {(totalNightsPrice * 17) / 100}
+                          </h3>
                         </div>
                         <div className="pricing">
-                          <p>
-                            <b>Total Amount to pay </b>
-                            <b style={{ marginLeft: 150 }}>
-                              <Icon name="rupee sign" />
-                              {totalNightsPrice +
+                          <h3>Total Amount to pay </h3>
+                          <h3>
+                            <Icon name="rupee sign" />
+                            {Math.ceil(
+                              totalNightsPrice +
                                 (totalNightsPrice * 17) / 100 -
-                                (totalNightsPrice * 20) / 100}
-                            </b>
-                          </p>
+                                (totalNightsPrice * 20) / 100
+                            )}
+                          </h3>
                         </div>
                       </div>
                     )}

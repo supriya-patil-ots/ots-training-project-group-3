@@ -68,7 +68,6 @@ const Contact = () => {
           </Grid.Column>
         </Grid.Row>
       </Grid>
-      <Footer />
     </div>
   );
 };
