@@ -1,5 +1,5 @@
-import React from "react";
-import { Input, Menu, Image} from "semantic-ui-react";
+import React, { useState } from "react";
+import { Input, Menu, Image } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import "./index.css";
 import logo from "../image/logo2.png";
@@ -12,14 +12,13 @@ import CityData from "../Data/CityData";
 const Navigation = () => {
   const dispatch = useDispatch();
   const { userData } = useSelector((state) => state.user.data);
+  const [state, setState] = useState("Home");
 
-  const state = { activeItem: "home" };
-
-  if (state.activeItem === "home") {
+  if (state.activeItem === "Home") {
     dispatch(mainData(CityData));
   }
   const handleItemClick = (e, { name }) => {
-    this.setState({ activeItem: name });
+    setState({ activeItem: name });
   };
 
   const { activeItem } = state;

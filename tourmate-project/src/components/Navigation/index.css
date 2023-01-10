@@ -25,6 +25,21 @@
   box-shadow: 0 0 0 1px #fff inset !important;
 }
 
+.ui.secondary.pointing.menu .active.item:hover {
+  background-color: transparent;
+  border-color: #01afd1 !important;
+  color: #01afd1 !important;
+}
+.ui.secondary.pointing.menu .active.item {
+  background-color: transparent;
+  border-color: #01afd1 !important;
+  color: #01afd1 !important;
+}
+.ui.secondary.pointing.menu a.item:active {
+  background-color: transparent;
+  border-color: none !important;
+}
+
 .nav .ui.small.image {
   width: 30%;
   height: auto;
@@ -80,5 +95,12 @@
   }
   .ui.stackable.menu .item img {
     margin: 0 auto;
+  }
+  .ui.stackable.menu .item {
+    width: auto;
+  }
+  .ui.secondary.pointing.menu .active.item:hover {
+    width: 30% !important;
+    margin: 0 auto !important;
   }
 }
