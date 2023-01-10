@@ -12,9 +12,9 @@ import CityData from "../Data/CityData";
 const Navigation = () => {
   const dispatch = useDispatch();
   const { userData } = useSelector((state) => state.user.data);
-  const [state, setState] = useState("Home");
+  const [state, setState] = useState({ activeItem: "home" });
 
-  if (state.activeItem === "Home") {
+  if (state.activeItem === "home") {
     dispatch(mainData(CityData));
   }
   const handleItemClick = (e, { name }) => {
