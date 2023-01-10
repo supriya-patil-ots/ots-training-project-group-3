@@ -6,13 +6,13 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useState } from "react";
 import Counter from "../Counter";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import "react-responsive-carousel/lib/styles/carousel.min.css"; 
 import { Carousel } from "react-responsive-carousel";
 import { useParams } from "react-router-dom";
 import { cityDetailData } from "../../redux/cityDetailReducer";
 import axios from "axios";
 import GoogleMapContainer from "../Map/GoogleMapsContainerComponent";
-import { createSelector } from "reselect";
+
 
 const reviewData = [
   {

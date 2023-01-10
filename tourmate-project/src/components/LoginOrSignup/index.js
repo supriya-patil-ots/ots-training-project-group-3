@@ -43,7 +43,6 @@ function LoginOrSignup({ title }) {
             },
           }
         );
-        // console.log(data.data);
         dispatch(signUpData(data.data));
       } catch (error) {
         console.log(error);
