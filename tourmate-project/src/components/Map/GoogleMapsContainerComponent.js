@@ -9,7 +9,7 @@ const GoogleMapContainer = ({ currentLocation }) => {
   if (isLoaded) {
     return (
       <GoogleMap
-        zoom={10}
+        zoom={13}
         center={currentLocation}
         mapContainerStyle={{ height: "70vh", width: "100%" }}
       >

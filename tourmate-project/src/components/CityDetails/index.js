@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect} from "react";
 import {
   Grid,
   Segment,
@@ -6,13 +6,11 @@ import {
   Icon,
   Button,
   Popup,
-  Header,
 } from "semantic-ui-react";
 import "./index.css";
 import { useSelector, useDispatch } from "react-redux";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import Footer from "../Footer";
 import { useState } from "react";
 import Counter from "../Counter";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
@@ -21,6 +19,7 @@ import { useParams } from "react-router-dom";
 import { cityDetailData } from "../../redux/cityDetailReducer";
 import axios from "axios";
 import GoogleMapContainer from "../Map/GoogleMapsContainerComponent";
+import { createSelector } from 'reselect'
 
 const reviewData = [
   {
@@ -43,36 +42,48 @@ const reviewData = [
   },
 ];
 
+
+
+
 const CityDetails = () => {
   const { id } = useParams();
   const cartItem = useSelector((state) => state.cityDetail.data);
   const { imageCollection } = cartItem;
   const [buttonText, setButtonText] = useState("Reserve");
-  const [startDate, setStartDate] = useState(new Date());
+  const [startDate, setStartDate] = useState(new Date()); 
   const [endDate, setEndDate] = useState(new Date());
   const [guest, setGuest] = useState({ adult: 0, child: 0, infant: 0 });
   const [position, setPosition] = useState({ lat: null, lng: null });
+  const [apiCall, setapiCall] = useState(false);
+
+
 
   // open weather map code -----------------------
 
-  if (Object.keys(cartItem).length > 0) {
-    let querry = cartItem.cityName.toLowerCase();
-    for (let i = 0; i <= 1; i++) {
+let cityInfo='';
+if(Object.keys(cartItem).length>0){
+  cityInfo= cityInfo.concat(cartItem.cityName.toLowerCase());
+}
+
+  useEffect(() => {
+    if (cityInfo) {
+      setapiCall(true);
       axios
         .get(
-          "https://api.openweathermap.org/data/2.5/weather?q=" +
-            querry +
-            "&appid=40435e28e747d0e2478eb8b7fd9e3c0e&units=metric"
-        )
-        .then((data) =>
+          `https://api.openweathermap.org/data/2.5/weather?q=${cityInfo}&appid=877ea5d6c238269928dee4b65e6858a3&units=metric`
+        ).then((data) => {
+
           setPosition({
             lat: data.data.coord.lat,
-            lng: data.data.coord.lon,
-          })
-        )
-        .catch((err) => console.log(err));
+            lng: data.data.coord.lon
+          });
+          setapiCall(false);
+        }
+        ).catch((err) => {
+          console.log(err)
+        });
     }
-  }
+  }, [cityInfo]);
 
   let daysToStay = endDate.getDate() - startDate.getDate();
   let totalNightsPrice = cartItem.price * daysToStay;
@@ -83,12 +94,11 @@ const CityDetails = () => {
     setGuest(newGuest);
   };
   const dispatch = useDispatch();
-
   useEffect(() => {
     if (id) {
       dispatch(cityDetailData(id));
     }
-  }, [id]);
+  }, []);
 
   return (
     <>
@@ -356,7 +366,7 @@ const CityDetails = () => {
               {reviewData.map((review) => {
                 return (
                   <div className="review">
-                    <img src={review.image} className="review_img" />
+                    <img src={review.image} className="review_img" alt="profile"/>
                     <h2>{review.name}</h2>
                     <p>{review.testimonial}</p>
                   </div>
@@ -377,3 +387,5 @@ const CityDetails = () => {
 };
 document.querySelector(".demo-carousel");
 export default CityDetails;
+
+// new api key :- d54d9485c38bf9ea9b1b7e471e5022bb

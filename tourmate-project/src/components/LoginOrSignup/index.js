@@ -15,6 +15,7 @@ function LoginOrSignup({ title }) {
     password: "",
   });
   const [userInfo, setUserInfo] = useState({});
+
   useEffect(() => {
     if (Object.keys(userData).length > 0) {
       let newData = Object.keys(userData).map((user) => {
@@ -25,7 +26,6 @@ function LoginOrSignup({ title }) {
   }, [userData]);
 
   if (userInfo.email) {
-    console.log(userInfo);
     let storageData = JSON.parse(localStorage.getItem("storageData") || "[]");
     let data1 = { ...userInfo };
     storageData.push(data1);
@@ -88,7 +88,7 @@ function LoginOrSignup({ title }) {
           <Header>{title}</Header>
 
           <Modal.Content>
-            <Form>
+            <Form autocomplete="off">
               {title === "Sign Up" && (
                 <Form.Field>
                   <Input
@@ -96,6 +96,7 @@ function LoginOrSignup({ title }) {
                     onChange={addData}
                     name="name"
                     value={input.name}
+                    required='true'
                   />
                 </Form.Field>
               )}
@@ -106,6 +107,7 @@ function LoginOrSignup({ title }) {
                     onChange={addData}
                     name="phone"
                     value={input.phone}
+                    required='true'
                   />
                 </Form.Field>
               )}
@@ -115,6 +117,7 @@ function LoginOrSignup({ title }) {
                   onChange={addData}
                   name="email"
                   value={input.email}
+                  required='true'
                 />
               </Form.Field>
               <Form.Field>
@@ -123,6 +126,7 @@ function LoginOrSignup({ title }) {
                   onChange={addData}
                   name="password"
                   value={input.password}
+                  required='true'
                 />
               </Form.Field>
             </Form>
@@ -167,6 +171,7 @@ function LoginOrSignup({ title }) {
           }
           onClose={() => setOpen(false)}
           onOpen={() => setOpen(true)}
+          size='small'
         >
           <Header icon="plane" content="Welcome To tourmate .." />
           <Modal.Content>

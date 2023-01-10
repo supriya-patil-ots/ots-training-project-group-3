@@ -1,15 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { GoogleMap, MarkerF, useLoadScript } from "@react-google-maps/api";
+import data from "./Coordinates";
 
-const GoogleMapContainer2 = ({ arr }) => {
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    if (arr.length > 0) {
-      setData(arr);
-    }
-  }, [arr]);
-
+const GoogleMapContainer2 = () => {
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: "AIzaSyBmc9trQvqHIrTShvRAb0MoHOFZzzKB5GY",
   });
@@ -17,16 +10,16 @@ const GoogleMapContainer2 = ({ arr }) => {
   if (isLoaded) {
     return (
       <>
-        <GoogleMap
+        {data.length > 0 && <GoogleMap
           zoom={3}
-          center={{ lat: 28.70406, lng: 77.102493 }}
+          center={data[4]}
           mapContainerStyle={{ height: "80vh", width: "95%", margin: 30 }}
         >
-          {data.length > 0 &&
+          {
             data.map((location) => {
-              <MarkerF position={location} />;
+              return <MarkerF position={location} />;
             })}
-        </GoogleMap>
+        </GoogleMap>}
       </>
     );
   }

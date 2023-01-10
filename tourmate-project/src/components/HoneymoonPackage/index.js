@@ -1,6 +1,5 @@
 import React from "react";
-import Footer from "../Footer";
-import PackageData from "../packageData";
+// import PackageData from "../packageData";
 
 import { Link, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
