@@ -1,12 +1,5 @@
-import React, { useEffect} from "react";
-import {
-  Grid,
-  Segment,
-  Image,
-  Icon,
-  Button,
-  Popup,
-} from "semantic-ui-react";
+import React, { useEffect } from "react";
+import { Grid, Segment, Image, Icon, Button, Popup } from "semantic-ui-react";
 import "./index.css";
 import { useSelector, useDispatch } from "react-redux";
 import DatePicker from "react-datepicker";
@@ -19,7 +12,7 @@ import { useParams } from "react-router-dom";
 import { cityDetailData } from "../../redux/cityDetailReducer";
 import axios from "axios";
 import GoogleMapContainer from "../Map/GoogleMapsContainerComponent";
-import { createSelector } from 'reselect'
+import { createSelector } from "reselect";
 
 const reviewData = [
   {
@@ -42,28 +35,23 @@ const reviewData = [
   },
 ];
 
-
-
-
 const CityDetails = () => {
   const { id } = useParams();
   const cartItem = useSelector((state) => state.cityDetail.data);
   const { imageCollection } = cartItem;
   const [buttonText, setButtonText] = useState("Reserve");
-  const [startDate, setStartDate] = useState(new Date()); 
+  const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
   const [guest, setGuest] = useState({ adult: 0, child: 0, infant: 0 });
   const [position, setPosition] = useState({ lat: null, lng: null });
   const [apiCall, setapiCall] = useState(false);
 
-
-
   // open weather map code -----------------------
 
-let cityInfo='';
-if(Object.keys(cartItem).length>0){
-  cityInfo= cityInfo.concat(cartItem.cityName.toLowerCase());
-}
+  let cityInfo = "";
+  if (Object.keys(cartItem).length > 0) {
+    cityInfo = cityInfo.concat(cartItem.cityName.toLowerCase());
+  }
 
   useEffect(() => {
     if (cityInfo) {
@@ -71,16 +59,16 @@ if(Object.keys(cartItem).length>0){
       axios
         .get(
           `https://api.openweathermap.org/data/2.5/weather?q=${cityInfo}&appid=877ea5d6c238269928dee4b65e6858a3&units=metric`
-        ).then((data) => {
-
+        )
+        .then((data) => {
           setPosition({
             lat: data.data.coord.lat,
-            lng: data.data.coord.lon
+            lng: data.data.coord.lon,
           });
           setapiCall(false);
-        }
-        ).catch((err) => {
-          console.log(err)
+        })
+        .catch((err) => {
+          console.log(err);
         });
     }
   }, [cityInfo]);
@@ -119,7 +107,7 @@ if(Object.keys(cartItem).length>0){
             </span>
           </div>
           <div className="city-details-grid">
-            <Grid container stackable columns={3} divided>
+            <Grid stackable columns={3} divided>
               <Grid.Row stretched>
                 <Grid.Column>
                   <Segment>
@@ -366,7 +354,11 @@ if(Object.keys(cartItem).length>0){
               {reviewData.map((review) => {
                 return (
                   <div className="review">
-                    <img src={review.image} className="review_img" alt="profile"/>
+                    <img
+                      src={review.image}
+                      className="review_img"
+                      alt="profile"
+                    />
                     <h2>{review.name}</h2>
                     <p>{review.testimonial}</p>
                   </div>

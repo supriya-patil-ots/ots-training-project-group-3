@@ -170,7 +170,12 @@ input:focus {
   justify-content: space-between;
   margin-top: 10px;
 }
-
+.city-details-grid {
+  margin: 10px 65px;
+}
+.details_desc p {
+  margin: 0px !important;
+}
 /* review css */
 .testimonial {
   margin: 40px 50px;
