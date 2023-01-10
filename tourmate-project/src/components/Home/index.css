@@ -1,0 +1,11 @@
+.map_btn {
+  background-color: #01afd1 !important;
+  position: sticky;
+  top: 60%;
+  z-index: 9;
+  padding: 25px 30px in !important;
+  box-shadow: 0 0 13px 0px gray !important;
+}
+.map-btn {
+  background-color: #01afd1 !important;
+}

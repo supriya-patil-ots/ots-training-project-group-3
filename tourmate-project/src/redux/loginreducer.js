@@ -49,7 +49,6 @@ const userSlice = createSlice({
       }
     },
     logOutData: (state, action) => {
-      console.log(action.payload);
       if (state.data.userData[action.payload].email === action.payload) {
         let item = delete state.data.userData[action.payload];
         state.data = { userData: { ...state.data.userData, ...item } };

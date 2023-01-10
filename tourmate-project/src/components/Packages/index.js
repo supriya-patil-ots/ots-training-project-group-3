@@ -1,9 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Grid, Image, Icon, Card, GridRow } from "semantic-ui-react";
+import { Grid, Image, Icon, Card} from "semantic-ui-react";
 import { categoryData } from "../../redux/PackagesDataReducer";
-import { useDispatch, useSelector } from "react-redux";
-import Footer from "../Footer";
+import { useDispatch} from "react-redux";
 import TopCarousel from "./TopCarousel";
 import InternationalData from "./InternationalData";
 import unexploredData from "./unexploredData";
@@ -139,7 +138,9 @@ const Packages = () => {
                         starting at <Icon name="rupee" size="small" />
                         {item.price} Per person
                       </p>
-                      <button className="packages_btn">Book Now</button>
+                      <Link to="/">
+                        <button className="packages_btn">See More</button>
+                      </Link>
                     </Card.Description>
                   </div>
                 </Grid.Column>
@@ -164,7 +165,9 @@ const Packages = () => {
                         starting at <Icon name="rupee" size="small" />
                         {item.price} Per person
                       </p>
-                      <button className="packages_btn">Book Now</button>
+                      <Link to="/">
+                        <button className="packages_btn">See More</button>
+                      </Link>
                     </Card.Description>
                   </div>
                 </Grid.Column>
@@ -173,7 +176,6 @@ const Packages = () => {
           </Grid.Row>
         </Grid>
       </div>
-      <Footer />
     </>
   );
 };

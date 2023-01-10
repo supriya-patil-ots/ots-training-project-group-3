@@ -4,6 +4,7 @@ import { googleLogout, useGoogleLogin } from "@react-oauth/google";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { signUpData, loginData, logOutData } from "../../redux/loginreducer";
+import "./index.css";
 
 function LoginOrSignup({ title }) {
   const { userData } = useSelector((state) => state.user.data);
@@ -14,6 +15,7 @@ function LoginOrSignup({ title }) {
     password: "",
   });
   const [userInfo, setUserInfo] = useState({});
+
   useEffect(() => {
     if (Object.keys(userData).length > 0) {
       let newData = Object.keys(userData).map((user) => {
@@ -24,7 +26,6 @@ function LoginOrSignup({ title }) {
   }, [userData]);
 
   if (userInfo.email) {
-    console.log(userInfo);
     let storageData = JSON.parse(localStorage.getItem("storageData") || "[]");
     let data1 = { ...userInfo };
     storageData.push(data1);
@@ -87,7 +88,7 @@ function LoginOrSignup({ title }) {
           <Header>{title}</Header>
 
           <Modal.Content>
-            <Form>
+            <Form autocomplete="off">
               {title === "Sign Up" && (
                 <Form.Field>
                   <Input
@@ -95,6 +96,7 @@ function LoginOrSignup({ title }) {
                     onChange={addData}
                     name="name"
                     value={input.name}
+                    required='true'
                   />
                 </Form.Field>
               )}
@@ -105,6 +107,7 @@ function LoginOrSignup({ title }) {
                     onChange={addData}
                     name="phone"
                     value={input.phone}
+                    required='true'
                   />
                 </Form.Field>
               )}
@@ -114,6 +117,7 @@ function LoginOrSignup({ title }) {
                   onChange={addData}
                   name="email"
                   value={input.email}
+                  required='true'
                 />
               </Form.Field>
               <Form.Field>
@@ -122,13 +126,18 @@ function LoginOrSignup({ title }) {
                   onChange={addData}
                   name="password"
                   value={input.password}
+                  required='true'
                 />
               </Form.Field>
             </Form>
             <Button
               secondary
               onClick={handleset}
-              style={{ margin: 5 }}
+              style={{
+                backgroundColor: "#01afd1",
+                color: "#fff",
+                margin: "5px",
+              }}
               circular
             >
               {title}
@@ -140,7 +149,11 @@ function LoginOrSignup({ title }) {
               }}
               secondary
               circular
-              style={{ margin: 5 }}
+              style={{
+                backgroundColor: "#01afd1",
+                color: "#fff",
+                margin: "5px",
+              }}
             >
               <Icon name="google" /> {title} with google
             </Button>
@@ -151,13 +164,14 @@ function LoginOrSignup({ title }) {
           closeIcon
           open={open}
           trigger={
-            <Button basic circular color="black">
-              <Icon name="user circle" size="big" />
-              {userInfo.name}
+            <Button circular className="userinfo_btn">
+              <Icon name="user circle" size="large" className="usericon" />
+              <span className="username"> {userInfo.name}</span>
             </Button>
           }
           onClose={() => setOpen(false)}
           onOpen={() => setOpen(true)}
+          size='small'
         >
           <Header icon="plane" content="Welcome To tourmate .." />
           <Modal.Content>
@@ -165,7 +179,7 @@ function LoginOrSignup({ title }) {
           </Modal.Content>
           <Modal.Actions>
             <Button
-              color="red"
+              style={{ backgroundColor: "red", color: "#fff" }}
               onClick={() => {
                 dispatch(logOutData(userInfo.email));
                 googleLogout();
@@ -174,7 +188,11 @@ function LoginOrSignup({ title }) {
             >
               <Icon name="remove" /> Log Out
             </Button>
-            <Button color="blue" onClick={() => setOpen(false)}>
+            <Button
+              className="signup_btn"
+              onClick={() => setOpen(false)}
+              style={{ backgroundColor: "#01afd1", color: "#fff" }}
+            >
               <Icon name="plane" /> Proceed to tourmate
             </Button>
           </Modal.Actions>
