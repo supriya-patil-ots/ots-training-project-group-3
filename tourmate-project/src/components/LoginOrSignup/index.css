@@ -1,13 +1,32 @@
-.loginorsignin .ui.button {
-  background-color: #0160d6;
-}
-.sub-btn {
-  background-color: #0160d6 !important;
-  color: #fff !important;
-}
 .err {
   color: red;
 }
 .content input {
   text-align: left !important;
+}
+.action .signup_btn {
+  background-color: #01afd1;
+}
+.action .signout_btn {
+  background-color: red;
+}
+.usericon {
+  color: #fff;
+}
+.username {
+  color: #fff;
+}
+.userinfo_btn {
+  box-shadow: 0 0 0 1px #fff !important;
+  color: #fff;
+  background: transparent !important;
+  display: flex !important;
+  justify-content: center;
+  align-items: center !important;
+}
+.userinfo_btn:hover {
+  background: transparent !important;
+}
+.userinfo_btn:focus {
+  background: transparent !important;
 }

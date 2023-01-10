@@ -1,18 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import Footer from "../Footer";
 import CityData from "../Data/CityData";
-import { Card, Image, Icon, Grid } from "semantic-ui-react";
+import { Card, Image, Icon, Grid, Button } from "semantic-ui-react";
 import Whishlist from "../whislist-Icon";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import "./index.css";
+import GoogleMapContainer2 from "../Map/GoogleMapsContainerComponent2";
 const City = () => {
   const data1 = useSelector((state) => state.search.data);
   const [cityList, setCityList] = useState([]);
   const [searchCityData, setSearchCityData] = useState([]);
   const [sortedCityList, setSortedCityList] = useState([]);
+  const [showButtonText, setShowButtonText] = useState("Show Map");
 
   useEffect(() => {
     if (data1 !== "") {
@@ -50,6 +51,18 @@ const City = () => {
 
   return (
     <>
+          {showButtonText === "Show Map" && (
+        <Button
+          onClick={() => setShowButtonText("Show Cards")}
+          secondary
+          circular
+          className="map_btn"
+        >
+          <Icon name="map" size="small" />
+          {showButtonText}
+        </Button>
+      )}
+      {showButtonText === "Show Map" && 
       <div className="city-card">
         {data1 ? (
           <Grid doubling stackable columns={4}>
@@ -146,8 +159,19 @@ const City = () => {
               })}
           </Grid>
         )}
-      </div>
-      <Footer />
+      </div>}
+      {showButtonText === "Show Cards" && (
+        <Button
+          className="map-btn"
+          onClick={() => setShowButtonText("Show Map")}
+          secondary
+          circular
+          style={{ margin: 5 }}
+        >
+          {showButtonText}
+        </Button>
+      )}
+      {showButtonText === "Show Cards" && <GoogleMapContainer2 />}
     </>
   );
 };

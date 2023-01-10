@@ -22,7 +22,7 @@
   display: flex;
 }
 .booking_date p {
-  margin: 0px;
+  margin: 0px !important;
 }
 .booking_section .react-datepicker-wrapper {
   width: 100%;
@@ -123,7 +123,7 @@
 .ui.buttons .or {
   font-size: 1rem;
   width: 100%;
-  background-color: #0160d6;
+  background-color: #01afd1;
   color: #fff;
   padding: 15px;
 }
@@ -158,6 +158,17 @@ input:focus {
 .ui[class*="vertically divided"].grid > .column:not(.row) {
   padding-left: 0 !important;
   padding-right: 0 !important;
+}
+.check-availability-btn {
+  color: #fff !important;
+}
+.check-availability-btn:hover {
+  color: #fff !important;
+}
+.pricing {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
 }
 
 /* review css */

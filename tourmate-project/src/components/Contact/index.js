@@ -1,10 +1,18 @@
 import React, { useState } from "react";
 import { Form, Button, Grid, Image } from "semantic-ui-react";
 import "./index.css";
-import Footer from "../Footer";
 import Model from "./Model";
 const Contact = () => {
-  const [saved,setSaved]=useState(null);
+  const [input, setInput] = useState({
+    scity: "",
+    dcity: "",
+    fname: "",
+    lname: "",
+    email:''
+  });
+  function addData(e) {
+    setInput({ ...input, [e.target.name]: e.target.value });
+  }
   return (
     <div className="contact_page">
       <Grid stackable divided="vertically">
@@ -24,15 +32,21 @@ const Contact = () => {
                     fluid
                     id="form-subcomponent-shorthand-input-source-city-name"
                     label="Sourece City"
+                    name='scity'
                     placeholder="Sourece City"
-                    value={saved}
+                    value={input.scity}
+                    onChange={addData}
+                    required='true'
                   />
                   <Form.Input
                     fluid
                     id="form-subcomponent-shorthand-input-destination-city-name"
                     label="Destination City"
+                    name='dcity'
                     placeholder="Destination City"
-                    value={saved}
+                    value={input.dcity}
+                    onChange={addData}
+                    required='true'
                   />
                 </Form.Group>
                 <Form.Group widths="equal">
@@ -40,24 +54,35 @@ const Contact = () => {
                     fluid
                     id="form-subcomponent-shorthand-input-first-name"
                     label="First name"
+                    name='fname'
                     placeholder="First name"
-                    value={saved}
+                    value={input.fname}
+                    onChange={addData}
+                    required='true'
                   />
                   <Form.Input
                     fluid
                     id="form-subcomponent-shorthand-input-last-name"
                     label="Last name"
+                    name='lname'
                     placeholder="Last name"
-                    value={saved}
+                    value={input.lname}
+                    onChange={addData}
+                    required='true'
                   />
                 </Form.Group>
                 <Form.Group widths="equal">
-                  <Form.Input label="Email" placeholder="joe@schmoe.com"  value={saved}/>
+                  <Form.Input label="Email" placeholder="joe@schmoe.com" name='email' required='true'  value={input.email} onChange={addData}/>
                 </Form.Group>
-                {/* <Button className="contact_btn"><a href = "mailto: sahil.singh@otssolutions.com" style={{color:'white'}}>Submit</a></Button> */}
                 <Button secondary circular 
                 onClick={()=>{
-                  setSaved('')
+                  setInput({
+                    scity: "",
+                    dcity: "",
+                    fname: "",
+                    lname: "",
+                    email:''
+                  })
                 
                 }}>
                   <Model/>
@@ -68,7 +93,6 @@ const Contact = () => {
           </Grid.Column>
         </Grid.Row>
       </Grid>
-      <Footer />
     </div>
   );
 };

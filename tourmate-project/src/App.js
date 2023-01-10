@@ -1,5 +1,5 @@
 // import logo from "./logo.svg";
-import { Route, Routes, useParams } from "react-router-dom";
+import { Route, Routes} from "react-router-dom";
 import "./App.css";
 import Navigation from "./components/Navigation";
 import Packages from "./components/Packages";
@@ -11,6 +11,7 @@ import { store } from "./redux/store";
 import CityDetails from "./components/CityDetails";
 import Wishlist from "./components/wishlist";
 import HoneymoonPackage from "./components/HoneymoonPackage";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -27,14 +28,13 @@ function App() {
           <Route path="/Wishlist" element={<Wishlist />} />
           <Route path="/Honeymoon" element={<HoneymoonPackage />} />
         </Routes>
+        <Footer />
       </Provider>
     </div>
   );
 }
 
 export default App;
-
-
 
 // client-id for office id :- 33829118762-jshen9lnlnqtq7fju10ml0sbp21ldail.apps.googleusercontent.com
 // secret id :-  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
