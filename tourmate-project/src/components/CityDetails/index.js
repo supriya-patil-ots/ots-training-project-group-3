@@ -48,6 +48,7 @@ const reviewData = [
 const CityDetails = () => {
   const { id } = useParams();
   const cartItem = useSelector((state) => state.cityDetail.data);
+  console.log(cartItem);
   const { imageCollection } = cartItem;
   const [buttonText, setButtonText] = useState("Reserve");
   const [startDate, setStartDate] = useState(new Date()); 
@@ -56,32 +57,33 @@ const CityDetails = () => {
   const [position, setPosition] = useState({ lat: null, lng: null });
 
 
+
   // open weather map code -----------------------
-  let data1=[];
-  for(let i=0;i<1;i++){
-    if(Object.keys(cartItem).length>0){
-      data1.push(cartItem);
+  // let data1=[];
+  // for(let i=0;i<1;i++){
+  //   if(Object.keys(cartItem).length>0){
+  //     data1.push(cartItem);
+  //   }
+  // }
+
+  // console.log(data1);
+
+  useEffect(() => {
+    if (cartItem && Object.keys(cartItem).length>0) {
+      let querry = cartItem.cityName.toLowerCase();
+      axios
+        .get(
+          'https://api.openweathermap.org/data/2.5/weather?q=' + querry + '&appid=d54d9485c38bf9ea9b1b7e471e5022bb&units=metric'
+        )
+        .then((data) =>
+          setPosition({
+            lat: data.data.coord.lat,
+            lng: data.data.coord.lon
+          })
+        )
+        .catch((err) => console.log(err));
     }
-  }
-
-  console.log(data1);
-
-  if (data1.length > 0) {
-    let querry = data1[0].cityName.toLowerCase();
-    axios
-      .get(
-        'https://api.openweathermap.org/data/2.5/weather?q=' + querry + '&appid=40435e28e747d0e2478eb8b7fd9e3c0e&units=metric'
-      )
-      .then((data) =>
-      console.log(data)
-
-        // setPosition({
-        //   lat: data.data.coord.lat,
-        //   lng: data.data.coord.lon
-        // })
-      )
-      .catch((err) => console.log(err));
-  }
+  }, [])
 
 
 
@@ -95,12 +97,16 @@ const CityDetails = () => {
     setGuest(newGuest);
   };
   const dispatch = useDispatch();
+  // if (id) {
+  //   dispatch(cityDetailData(id));
+  // }
 
+  
   useEffect(() => {
     if (id) {
       dispatch(cityDetailData(id));
     }
-  }, [id]);
+  }, []);
 
   return (
     <>
@@ -392,6 +398,6 @@ const CityDetails = () => {
   );
 };
 document.querySelector(".demo-carousel");
-export default React.memo(CityDetails);
+export default CityDetails;
 
 // new api key :- d54d9485c38bf9ea9b1b7e471e5022bb
