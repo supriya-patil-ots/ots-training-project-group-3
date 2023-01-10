@@ -139,7 +139,9 @@ const Packages = () => {
                         starting at <Icon name="rupee" size="small" />
                         {item.price} Per person
                       </p>
-                      <button className="packages_btn">Book Now</button>
+                      <Link to="/">
+                        <button className="packages_btn">See More</button>
+                      </Link>
                     </Card.Description>
                   </div>
                 </Grid.Column>
@@ -164,7 +166,9 @@ const Packages = () => {
                         starting at <Icon name="rupee" size="small" />
                         {item.price} Per person
                       </p>
-                      <button className="packages_btn">Book Now</button>
+                      <Link to="/">
+                        <button className="packages_btn">See More</button>
+                      </Link>
                     </Card.Description>
                   </div>
                 </Grid.Column>
