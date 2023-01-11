@@ -6,13 +6,13 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useState } from "react";
 import Counter from "../Counter";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import { useParams } from "react-router-dom";
 import { cityDetailData } from "../../redux/cityDetailReducer";
 import axios from "axios";
 import GoogleMapContainer from "../Map/GoogleMapsContainerComponent";
-import { createSelector } from "reselect";
+
 
 const reviewData = [
   {
@@ -44,7 +44,7 @@ const CityDetails = () => {
   const [endDate, setEndDate] = useState(new Date());
   const [guest, setGuest] = useState({ adult: 0, child: 0, infant: 0 });
   const [position, setPosition] = useState({ lat: null, lng: null });
-  const [apiCall, setapiCall] = useState(false);
+ 
 
   // open weather map code -----------------------
 
@@ -55,7 +55,6 @@ const CityDetails = () => {
 
   useEffect(() => {
     if (cityInfo) {
-      setapiCall(true);
       axios
         .get(
           `https://api.openweathermap.org/data/2.5/weather?q=${cityInfo}&appid=877ea5d6c238269928dee4b65e6858a3&units=metric`
@@ -65,7 +64,6 @@ const CityDetails = () => {
             lat: data.data.coord.lat,
             lng: data.data.coord.lon,
           });
-          setapiCall(false);
         })
         .catch((err) => {
           console.log(err);
@@ -380,4 +378,3 @@ const CityDetails = () => {
 document.querySelector(".demo-carousel");
 export default CityDetails;
 
-// new api key :- d54d9485c38bf9ea9b1b7e471e5022bb

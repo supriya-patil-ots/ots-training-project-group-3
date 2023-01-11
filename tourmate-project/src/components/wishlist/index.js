@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Card, Image, Icon, Grid, Button, Header } from "semantic-ui-react";
+import { Card, Image, Icon, Grid, Button} from "semantic-ui-react";
 import { removeFromCart } from "../../redux/cartReducer";
 import "./index.css";
 import { Link } from "react-router-dom";
@@ -12,12 +12,7 @@ function Wishlist() {
   return (
     <div className="wishlist-card">
       {Object.keys(userData).length === 0 ? <div style={{justifyContent:'center'}}>
-
-        <span><Icon name="hand point right outline" size="huge"/><span style={{fontSize:'xx-large',marginTop:2}}>Please login or sign up</span></span>
-
-
-
-        
+        <span><Icon name="hand point right outline" size="huge"/><span style={{fontSize:'xx-large',marginTop:2}}>Please login or sign up</span></span> 
       </div> :
         <div className="city-card">
           <Grid doubling stackable columns={4}>

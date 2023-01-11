@@ -25,10 +25,26 @@ function LoginOrSignup({ title }) {
     }
   }, [userData]);
 
+
   if (userInfo.email) {
     let storageData = JSON.parse(localStorage.getItem("storageData") || "[]");
     let data1 = { ...userInfo };
-    storageData.push(data1);
+    if(storageData.length===0){
+      storageData.push(data1);
+    }else if(storageData.length>0){
+      let data= storageData.filter((c)=>{
+       if(c.email===data1.email){
+        return true
+       }else{
+        return false;
+       }
+      });
+
+      if(data.length===0){
+        storageData.push(data1);
+      }
+    }
+    
     localStorage.setItem("storageData", JSON.stringify(storageData));
   }
   const dispatch = useDispatch();
@@ -43,7 +59,6 @@ function LoginOrSignup({ title }) {
             },
           }
         );
-        // console.log(data.data);
         dispatch(signUpData(data.data));
       } catch (error) {
         console.log(error);
@@ -88,7 +103,7 @@ function LoginOrSignup({ title }) {
           <Header>{title}</Header>
 
           <Modal.Content>
-            <Form autocomplete="off">
+            <Form autoComplete="off">
               {title === "Sign Up" && (
                 <Form.Field>
                   <Input
@@ -118,6 +133,7 @@ function LoginOrSignup({ title }) {
                   name="email"
                   value={input.email}
                   required='true'
+                  type="email"
                 />
               </Form.Field>
               <Form.Field>
@@ -127,6 +143,7 @@ function LoginOrSignup({ title }) {
                   name="password"
                   value={input.password}
                   required='true'
+                  type="password"
                 />
               </Form.Field>
             </Form>
