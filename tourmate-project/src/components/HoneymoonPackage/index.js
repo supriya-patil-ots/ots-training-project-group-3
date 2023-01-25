@@ -12,7 +12,6 @@ import "./index.css";
 const HoneymoonPackage = () => {
   // const Honeymoon = PackageData.category[id].data;
   const { id } = useParams();
-  console.log("id", id);
   const Honeymoon = useSelector((state) => state.categoryData.data);
   // console.log(Honeymoon);
   return (

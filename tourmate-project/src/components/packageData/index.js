@@ -162,7 +162,7 @@ const PackageData = {
       category: "Pilgrimage",
       data: [
         {
-          id: 1,
+          id: 21,
           countryName: " India",
           cityName: "Nashik",
           rating: "4.5",
@@ -181,7 +181,7 @@ const PackageData = {
           count: 1,
         },
         {
-          id: 2,
+          id: 22,
           countryName: " India",
           cityName: "Varanasi",
           rating: "4.5",
@@ -200,7 +200,7 @@ const PackageData = {
           count: 1,
         },
         {
-          id: 3,
+          id: 23,
           countryName: " India",
           cityName: "Amritsar",
           rating: "4.5",
@@ -219,7 +219,7 @@ const PackageData = {
           count: 1,
         },
         {
-          id: 4,
+          id: 24,
           countryName: " India",
           cityName: "Mathura",
           rating: "4.5",
@@ -238,7 +238,7 @@ const PackageData = {
           count: 1,
         },
         {
-          id: 5,
+          id: 25,
           countryName: " India",
           cityName: "Tirupati",
           rating: "4.5",
@@ -257,7 +257,7 @@ const PackageData = {
           count: 1,
         },
         {
-          id: 6,
+          id: 26,
           countryName: " India",
           cityName: "Tirupati",
           rating: "4.5",
@@ -276,7 +276,7 @@ const PackageData = {
           count: 1,
         },
         {
-          id: 7,
+          id: 27,
           countryName: " India",
           cityName: "Rameshwaram",
           rating: "4.5",
@@ -295,7 +295,7 @@ const PackageData = {
           count: 1,
         },
         {
-          id: 8,
+          id: 28,
           countryName: " India",
           cityName: "Shirdi",
           rating: "4.5",
@@ -319,7 +319,7 @@ const PackageData = {
       category: "Wild-Escapes",
       data: [
         {
-          id: 1,
+          id: 29,
           countryName: "United Kingdom",
           cityName: "England",
           rating: "4.7",
@@ -338,7 +338,7 @@ const PackageData = {
           count: 1,
         },
         {
-          id: 2,
+          id: 30,
           countryName: "Australia",
           cityName: "Queensland",
           rating: "4.7",
@@ -357,7 +357,7 @@ const PackageData = {
           count: 1,
         },
         {
-          id: 3,
+          id: 31,
           countryName: "United Kingdom",
           cityName: "England",
           rating: "4.7",
@@ -376,7 +376,7 @@ const PackageData = {
           count: 1,
         },
         {
-          id: 4,
+          id: 32,
           countryName: "Varėnos r. sav.",
           cityName: "Lithuania",
           rating: "4.7",
@@ -395,7 +395,7 @@ const PackageData = {
           count: 1,
         },
         {
-          id: 5,
+          id: 33,
           countryName: "New Zealand",
           cityName: "Tasman",
           rating: "4.7",
@@ -414,7 +414,7 @@ const PackageData = {
           count: 1,
         },
         {
-          id: 6,
+          id: 34,
           countryName: "United States",
           cityName: "Utah",
           rating: "4.7",
@@ -433,7 +433,7 @@ const PackageData = {
           count: 1,
         },
         {
-          id: 7,
+          id: 35,
           countryName: "Guadeloupe",
           cityName: "Grande-Terre",
           rating: "4.7",
@@ -452,7 +452,7 @@ const PackageData = {
           count: 1,
         },
         {
-          id: 8,
+          id: 36,
           countryName: "United States",
           cityName: "Texas",
           rating: "4.7",
