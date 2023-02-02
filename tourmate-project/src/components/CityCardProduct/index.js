@@ -33,12 +33,12 @@ const CityCardProduct = () => {
                       <Whishlist productData={city} />
                       <Carousel verticalSwipe="standard" showStatus={false}>
                         {city.imageCollection.map((item) => (
-                          <Link to={`/CityDetails/${city.id}`}>
+                          <Link to={`/CityDetails/${city._id}`}>
                             <Image src={item} wrapped ui={false} />
                           </Link>
                         ))}
                       </Carousel>
-                      <Link to={`/CityDetails/${city.id}`}>
+                      <Link to={`/CityDetails/${city._id}`}>
                         <Card.Content>
                           <Card.Header>
                             <p>
@@ -82,12 +82,12 @@ const CityCardProduct = () => {
                       <Whishlist productData={city} />
                       <Carousel verticalSwipe="standard" showStatus={false}>
                         {city.imageCollection.map((item) => (
-                          <Link to={`/CityDetails/${city.id}`}>
+                          <Link to={`/CityDetails/${city._id}`}>
                             <Image src={item} wrapped ui={false} />
                           </Link>
                         ))}
                       </Carousel>
-                      <Link to={`/CityDetails/${city.id}`}>
+                      <Link to={`/CityDetails/${city._id}`}>
                         <Card.Content>
                           <Card.Header>
                             <h3>

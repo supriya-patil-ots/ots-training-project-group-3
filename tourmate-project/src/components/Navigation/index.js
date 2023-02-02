@@ -7,15 +7,21 @@ import LoginOrSignup from "../LoginOrSignup";
 import { searchData } from "../../redux/searchReducer";
 import { useDispatch, useSelector } from "react-redux";
 import { mainData } from "../../redux/mockDataReducer";
-import CityData from "../Data/CityData";
+// import CityData from "../Data/CityData";
+import axios from "axios";
 
 const Navigation = () => {
+  const [cityData,SetCityData]= useState([]);
   const dispatch = useDispatch();
   const { userData } = useSelector((state) => state.user.data);
   const [state, setState] = useState({ activeItem: "home" });
 
   if (state.activeItem === "home") {
-    dispatch(mainData(CityData));
+    axios.get("http://localhost:3002").then((data)=>SetCityData(data.data));
+
+    if(cityData.length>0){
+      dispatch(mainData(cityData));
+    } 
   }
   const handleItemClick = (e, { name }) => {
     setState({ activeItem: name });

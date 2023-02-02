@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Grid, Segment, Image, Icon, Button, Popup } from "semantic-ui-react";
 import "./index.css";
-import { useSelector, useDispatch } from "react-redux";
+// import { useSelector, useDispatch } from "react-redux";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useState } from "react";
@@ -9,7 +9,7 @@ import Counter from "../Counter";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import { useParams } from "react-router-dom";
-import { cityDetailData } from "../../redux/cityDetailReducer";
+// import { cityDetailData } from "../../redux/cityDetailReducer";
 import axios from "axios";
 import GoogleMapContainer from "../Map/GoogleMapsContainerComponent";
 
@@ -37,7 +37,16 @@ const reviewData = [
 
 const CityDetails = () => {
   const { id } = useParams();
-  const cartItem = useSelector((state) => state.cityDetail.data);
+  const [cartItem,setCartItem]=useState({});
+  
+    const getCityDetail = async(id)=>{
+      const response= await axios.get("http://localhost:3002/city/"+id);
+      if(response.data._id){
+        setCartItem({...response.data})
+      }  
+    }
+
+  // const cartItem = useSelector((state) => state.cityDetail.data);
   const { imageCollection } = cartItem;
   const [buttonText, setButtonText] = useState("Reserve");
   const [startDate, setStartDate] = useState(new Date());
@@ -79,10 +88,11 @@ const CityDetails = () => {
     newGuest[of] = counter;
     setGuest(newGuest);
   };
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   useEffect(() => {
     if (id) {
-      dispatch(cityDetailData(id));
+      // dispatch(cityDetailData(id));
+      getCityDetail(id);
     }
   }, []);
 
